@@ -2,8 +2,9 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { Globe2, Menu, X } from "lucide-react"
+import { Globe2 } from "lucide-react"
 
+import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { ModeToggle } from "@/components/mode-toggle"
 
@@ -54,26 +55,51 @@ export function SiteHeader() {
             className="size-14"
             onClick={() => setOpen((v) => !v)}
             aria-label="Toggle menu"
+            aria-expanded={open}
           >
-            {open ? <X className="size-7" /> : <Menu className="size-7" />}
+            <span className="relative flex size-7 flex-col items-center justify-center">
+              <span
+                className={cn(
+                  "absolute h-0.5 w-7 rounded-full bg-current transition-all duration-300 ease-in-out motion-reduce:transition-none",
+                  open ? "rotate-45" : "-translate-y-2"
+                )}
+              />
+              <span
+                className={cn(
+                  "absolute h-0.5 w-7 rounded-full bg-current transition-all duration-300 ease-in-out motion-reduce:transition-none",
+                  open ? "scale-x-0 opacity-0" : "scale-x-100 opacity-100"
+                )}
+              />
+              <span
+                className={cn(
+                  "absolute h-0.5 w-7 rounded-full bg-current transition-all duration-300 ease-in-out motion-reduce:transition-none",
+                  open ? "-rotate-45" : "translate-y-2"
+                )}
+              />
+            </span>
           </Button>
         </div>
       </div>
 
-      {open && (
-        <nav className="flex flex-col gap-1 border-t border-border/60 px-6 py-4 md:hidden">
-          {links.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={() => setOpen(false)}
-              className="rounded-md px-2 py-2.5 text-sm text-muted-foreground hover:bg-muted hover:text-foreground"
-            >
-              {link.label}
-            </a>
-          ))}
-        </nav>
-      )}
+      <div
+        className="grid transition-[grid-template-rows] duration-300 ease-in-out motion-reduce:transition-none md:hidden"
+        style={{ gridTemplateRows: open ? "1fr" : "0fr" }}
+      >
+        <div className="overflow-hidden">
+          <nav className="flex flex-col gap-1 border-t border-border/60 px-6 py-4">
+            {links.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={() => setOpen(false)}
+                className="rounded-md px-2 py-2.5 text-sm text-muted-foreground hover:bg-muted hover:text-foreground"
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
+        </div>
+      </div>
     </header>
   )
 }
