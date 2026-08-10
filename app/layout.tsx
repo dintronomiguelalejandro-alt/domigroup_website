@@ -1,4 +1,5 @@
-import { Geist, Geist_Mono, Inter } from "next/font/google"
+import { Geist_Mono, Inter } from "next/font/google"
+import type { Metadata } from "next"
 
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
@@ -10,6 +11,12 @@ const fontMono = Geist_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
 })
+
+export const metadata: Metadata = {
+  title: "Domi Global Group | Trading Company",
+  description:
+    "Domi Global Group is a Miami-based trading company connecting leading brands with markets across the United States, Mexico, and Canada.",
+}
 
 export default function RootLayout({
   children,
