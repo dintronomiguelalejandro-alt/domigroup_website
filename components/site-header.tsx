@@ -19,10 +19,10 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-md">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-8">
         <Link href="#" className="flex items-center gap-3">
-          <Globe2 className="size-7 text-primary" strokeWidth={1.75} />
-          <span className="text-lg font-semibold tracking-tight">
+          <Globe2 className="size-9 text-primary md:size-8" strokeWidth={1.75} />
+          <span className="text-2xl font-semibold tracking-tight md:text-xl">
             Domi Global Group
           </span>
         </Link>
@@ -32,7 +32,7 @@ export function SiteHeader() {
             <a
               key={link.href}
               href={link.href}
-              className="text-base text-muted-foreground transition-colors hover:text-foreground"
+              className="text-lg text-muted-foreground transition-colors hover:text-foreground"
             >
               {link.label}
             </a>
@@ -46,15 +46,16 @@ export function SiteHeader() {
           </Button>
         </div>
 
-        <div className="flex items-center gap-1 md:hidden">
+        <div className="flex items-center gap-2 md:hidden">
           <ModeToggle />
           <Button
             variant="ghost"
             size="icon-lg"
+            className="size-14"
             onClick={() => setOpen((v) => !v)}
             aria-label="Toggle menu"
           >
-            {open ? <X className="size-5" /> : <Menu className="size-5" />}
+            {open ? <X className="size-7" /> : <Menu className="size-7" />}
           </Button>
         </div>
       </div>
