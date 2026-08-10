@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Link from "next/link"
 import { Globe2 } from "lucide-react"
 
@@ -17,6 +17,13 @@ const links = [
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false)
+
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : ""
+    return () => {
+      document.body.style.overflow = ""
+    }
+  }, [open])
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-md">
@@ -82,23 +89,40 @@ export function SiteHeader() {
       </div>
 
       <div
-        className="grid transition-[grid-template-rows] duration-300 ease-in-out motion-reduce:transition-none md:hidden"
-        style={{ gridTemplateRows: open ? "1fr" : "0fr" }}
+        className={cn(
+          "fixed inset-0 z-40 bg-background transition-all duration-300 ease-in-out motion-reduce:transition-none md:hidden",
+          open
+            ? "pointer-events-auto opacity-100"
+            : "pointer-events-none opacity-0"
+        )}
       >
-        <div className="overflow-hidden">
-          <nav className="flex flex-col gap-1 border-t border-border/60 px-6 py-4">
-            {links.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={() => setOpen(false)}
-                className="rounded-md px-2 py-2.5 text-sm text-muted-foreground hover:bg-muted hover:text-foreground"
-              >
-                {link.label}
-              </a>
-            ))}
-          </nav>
-        </div>
+        <nav className="flex h-full flex-col items-center justify-center gap-2">
+          {links.map((link, i) => (
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={() => setOpen(false)}
+              style={{ transitionDelay: open ? `${i * 60}ms` : "0ms" }}
+              className={cn(
+                "rounded-md px-6 py-4 text-3xl font-semibold tracking-tight text-foreground transition-all duration-300 ease-out motion-reduce:transition-none",
+                open
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-4 opacity-0"
+              )}
+            >
+              {link.label}
+            </a>
+          ))}
+          <Button
+            size="lg"
+            className="mt-6"
+            nativeButton={false}
+            render={<a href="#contact" />}
+            onClick={() => setOpen(false)}
+          >
+            Work With Us
+          </Button>
+        </nav>
       </div>
     </header>
   )
