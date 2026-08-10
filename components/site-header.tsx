@@ -19,29 +19,29 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-md">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <Link href="#" className="flex items-center gap-2.5">
-          <Globe2 className="size-5 text-primary" strokeWidth={1.75} />
-          <span className="text-sm font-semibold tracking-tight">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
+        <Link href="#" className="flex items-center gap-3">
+          <Globe2 className="size-7 text-primary" strokeWidth={1.75} />
+          <span className="text-lg font-semibold tracking-tight">
             Domi Global Group
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden items-center gap-10 md:flex">
           {links.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+              className="text-base text-muted-foreground transition-colors hover:text-foreground"
             >
               {link.label}
             </a>
           ))}
         </nav>
 
-        <div className="hidden items-center gap-2 md:flex">
+        <div className="hidden items-center gap-3 md:flex">
           <ModeToggle />
-          <Button size="sm" nativeButton={false} render={<a href="#contact" />}>
+          <Button size="lg" nativeButton={false} render={<a href="#contact" />}>
             Work With Us
           </Button>
         </div>
@@ -50,11 +50,11 @@ export function SiteHeader() {
           <ModeToggle />
           <Button
             variant="ghost"
-            size="icon"
+            size="icon-lg"
             onClick={() => setOpen((v) => !v)}
             aria-label="Toggle menu"
           >
-            {open ? <X className="size-4" /> : <Menu className="size-4" />}
+            {open ? <X className="size-5" /> : <Menu className="size-5" />}
           </Button>
         </div>
       </div>
