@@ -92,11 +92,12 @@ export function SiteHeader() {
 
       <div
         className={cn(
-          "fixed inset-0 z-40 bg-background transition-all duration-300 ease-in-out motion-reduce:transition-none md:hidden",
-          open
-            ? "pointer-events-auto opacity-100"
-            : "pointer-events-none opacity-0"
+          "fixed inset-0 z-40 bg-background transition-[clip-path] duration-[400ms] ease-in-out motion-reduce:transition-none md:hidden",
+          open ? "pointer-events-auto" : "pointer-events-none"
         )}
+        style={{
+          clipPath: open ? "inset(0 0 0% 0)" : "inset(0 0 100% 0)",
+        }}
       >
         <nav className="flex h-full flex-col items-center justify-center gap-2">
           {links.map((link, i) => (
