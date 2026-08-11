@@ -92,7 +92,7 @@ export function SiteHeader() {
 
       <div
         className={cn(
-          "fixed inset-0 z-40 bg-background transition-[clip-path] duration-[400ms] ease-in-out motion-reduce:transition-none md:hidden",
+          "fixed inset-0 z-40 bg-background transition-[clip-path] duration-[550ms] ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none md:hidden",
           open ? "pointer-events-auto" : "pointer-events-none"
         )}
         style={{
@@ -105,9 +105,9 @@ export function SiteHeader() {
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              style={{ transitionDelay: open ? `${i * 60}ms` : "0ms" }}
+              style={{ transitionDelay: open ? `${100 + i * 70}ms` : "0ms" }}
               className={cn(
-                "rounded-md px-6 py-4 text-3xl font-semibold tracking-tight text-foreground transition-all duration-300 ease-out hover:bg-muted hover:text-primary active:scale-95 motion-reduce:transition-none motion-reduce:active:scale-100",
+                "rounded-md px-6 py-4 text-3xl font-semibold tracking-tight text-foreground transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:bg-muted hover:text-primary active:scale-95 motion-reduce:transition-none motion-reduce:active:scale-100",
                 open
                   ? "translate-y-0 opacity-100"
                   : "translate-y-4 opacity-0"
