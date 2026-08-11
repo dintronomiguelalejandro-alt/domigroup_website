@@ -106,7 +106,7 @@ export function SiteHeader() {
               onClick={() => setOpen(false)}
               style={{ transitionDelay: open ? `${i * 60}ms` : "0ms" }}
               className={cn(
-                "rounded-md px-6 py-4 text-3xl font-semibold tracking-tight text-foreground transition-all duration-300 ease-out motion-reduce:transition-none",
+                "rounded-md px-6 py-4 text-3xl font-semibold tracking-tight text-foreground transition-all duration-300 ease-out hover:bg-muted hover:text-primary active:scale-95 motion-reduce:transition-none motion-reduce:active:scale-100",
                 open
                   ? "translate-y-0 opacity-100"
                   : "translate-y-4 opacity-0"
