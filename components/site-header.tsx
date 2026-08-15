@@ -129,7 +129,10 @@ export function SiteHeader() {
               "size-14 transition-colors duration-300",
               scrolled
                 ? "text-black hover:bg-primary/10 hover:text-primary"
-                : "text-white hover:bg-white/10 hover:text-white/80"
+                : cn(
+                    "hover:bg-black/10 hover:text-black",
+                    open ? "text-black" : "text-white"
+                  )
             )}
             onClick={() => setOpen((v) => !v)}
             aria-label="Toggle menu"
