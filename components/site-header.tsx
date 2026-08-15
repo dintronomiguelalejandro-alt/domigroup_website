@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 import Link from "next/link"
-import { Globe2 } from "lucide-react"
+import Image from "next/image"
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
@@ -42,7 +42,14 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-8">
         <Link href="#" className="flex items-center gap-3">
-          <Globe2 className="size-9 text-primary md:size-8" strokeWidth={1.75} />
+          <Image
+            src="/logo.svg"
+            alt="Domi Global Group"
+            width={36}
+            height={36}
+            className="size-9 md:size-8"
+            priority
+          />
           <span className="text-2xl font-semibold tracking-tight md:text-xl">
             Domi Global Group
           </span>
