@@ -55,28 +55,19 @@ export function SiteHeader() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-10 md:flex">
-          {links.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-lg text-muted-foreground transition-colors hover:text-foreground"
-            >
-              {link.label}
-            </a>
-          ))}
-        </nav>
-
-        <div className="hidden items-center gap-3 md:flex">
+        <div className="hidden items-center gap-10 md:flex">
           <ModeToggle />
-          <Button
-            size="lg"
-            className="rounded-full"
-            nativeButton={false}
-            render={<a href="#contact" />}
-          >
-            Work With Us
-          </Button>
+          <nav className="flex items-center gap-10">
+            {links.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-lg text-muted-foreground transition-colors hover:text-foreground"
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
         </div>
 
         <div className="flex items-center gap-2 md:hidden">
