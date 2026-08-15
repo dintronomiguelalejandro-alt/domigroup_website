@@ -1,10 +1,9 @@
+import Link from "next/link"
 import { Globe2 } from "lucide-react"
 
-const links = [
-  { href: "#about", label: "About" },
-  { href: "#categories", label: "Categories" },
-  { href: "#markets", label: "Markets" },
-  { href: "#contact", label: "Contact" },
+const legalLinks = [
+  { href: "/privacy", label: "Privacy Policy" },
+  { href: "/cookies", label: "Cookie Policy" },
 ]
 
 export function SiteFooter() {
@@ -27,14 +26,14 @@ export function SiteFooter() {
         </div>
 
         <nav className="flex gap-6">
-          {links.map((link) => (
-            <a
+          {legalLinks.map((link) => (
+            <Link
               key={link.href}
               href={link.href}
               className="text-sm text-primary-foreground/70 transition-colors hover:text-primary-foreground"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
       </div>
