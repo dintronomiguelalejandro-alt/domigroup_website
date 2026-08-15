@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
+import { usePathname } from "next/navigation"
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
@@ -16,6 +17,8 @@ const links = [
 ]
 
 export function SiteHeader() {
+  const pathname = usePathname()
+  const isHome = pathname === "/"
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
@@ -59,9 +62,11 @@ export function SiteHeader() {
         <Link
           href="/"
           onClick={(e) => {
-            e.preventDefault()
             setOpen(false)
-            window.scrollTo({ top: 0, behavior: "smooth" })
+            if (isHome) {
+              e.preventDefault()
+              window.scrollTo({ top: 0, behavior: "smooth" })
+            }
           }}
           className="flex items-center gap-3"
         >
@@ -99,7 +104,7 @@ export function SiteHeader() {
             {links.map((link) => (
               <a
                 key={link.href}
-                href={link.href}
+                href={isHome ? link.href : `/${link.href}`}
                 className={cn(
                   "text-lg transition-colors duration-300",
                   scrolled
@@ -178,7 +183,7 @@ export function SiteHeader() {
           {links.map((link, i) => (
             <a
               key={link.href}
-              href={link.href}
+              href={isHome ? link.href : `/${link.href}`}
               onClick={() => setOpen(false)}
               style={{ transitionDelay: open ? `${100 + i * 70}ms` : "0ms" }}
               className={cn(
@@ -195,7 +200,7 @@ export function SiteHeader() {
             size="lg"
             className="mt-6 rounded-full bg-card text-primary hover:bg-card/90"
             nativeButton={false}
-            render={<a href="#contact" />}
+            render={<a href={isHome ? "#contact" : "/#contact"} />}
             onClick={() => setOpen(false)}
           >
             Work With Us
