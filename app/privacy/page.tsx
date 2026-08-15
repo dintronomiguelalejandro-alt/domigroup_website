@@ -45,7 +45,7 @@ export default function PrivacyPage() {
 
       <main>
         <section className="border-b border-primary-foreground/15">
-          <div className="mx-auto max-w-3xl px-6 py-24 text-center md:py-32">
+          <div className="mx-auto max-w-3xl px-8 py-24 text-center md:py-32">
             <p className="text-xs font-medium tracking-widest text-primary-foreground uppercase">
               Legal
             </p>
@@ -63,7 +63,7 @@ export default function PrivacyPage() {
         </section>
 
         <section className="bg-card text-card-foreground">
-          <div className="mx-auto max-w-4xl px-6 py-24">
+          <div className="mx-auto max-w-4xl px-8 py-24">
             <div className="grid gap-4 sm:grid-cols-2">
               {points.map((point) => (
                 <Card

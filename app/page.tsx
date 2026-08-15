@@ -151,7 +151,7 @@ export default function Page() {
 
       <main>
         <section className="border-b border-primary-foreground/15">
-          <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
+          <div className="mx-auto max-w-6xl px-8 py-24 md:py-32">
             <div className="mx-auto max-w-2xl text-center md:mx-0 md:text-left">
               <p className="text-xs font-medium tracking-widest text-primary-foreground uppercase">
                 Miami, Florida &middot; Est. 2026
@@ -202,7 +202,7 @@ export default function Page() {
         </section>
 
         <section id="about" className="border-b border-border/60 bg-card text-card-foreground">
-          <div className="mx-auto grid max-w-6xl gap-16 px-6 py-24 md:grid-cols-[1.1fr_0.9fr]">
+          <div className="mx-auto grid max-w-6xl gap-16 px-8 py-24 md:grid-cols-[1.1fr_0.9fr]">
             <div className="text-center md:text-left">
               <p className="text-xs font-medium tracking-widest text-primary uppercase">
                 Who We Are
@@ -251,7 +251,7 @@ export default function Page() {
         </section>
 
         <section id="categories" className="border-b border-primary-foreground/15">
-          <div className="mx-auto max-w-6xl px-6 py-24 text-center md:text-left">
+          <div className="mx-auto max-w-6xl px-8 py-24 text-center md:text-left">
             <p className="text-xs font-medium tracking-widest text-primary-foreground uppercase">
               Product Categories
             </p>
@@ -312,7 +312,7 @@ export default function Page() {
         </section>
 
         <section id="markets" className="border-b border-border/60 bg-card text-card-foreground">
-          <div className="mx-auto max-w-6xl px-6 py-24 text-center md:text-left">
+          <div className="mx-auto max-w-6xl px-8 py-24 text-center md:text-left">
             <p className="text-xs font-medium tracking-widest text-primary uppercase">
               Our Markets
             </p>
@@ -342,7 +342,7 @@ export default function Page() {
         </section>
 
         <section className="bg-primary">
-          <div className="mx-auto flex max-w-6xl flex-col items-center gap-8 px-6 py-16 text-center text-primary-foreground md:flex-row md:items-center md:justify-between md:text-left">
+          <div className="mx-auto flex max-w-6xl flex-col items-center gap-8 px-8 py-16 text-center text-primary-foreground md:flex-row md:items-center md:justify-between md:text-left">
             <div>
               <h2 className="text-2xl font-semibold tracking-tight text-balance md:text-3xl">
                 Ready to bring your products to new markets?
@@ -364,7 +364,7 @@ export default function Page() {
         </section>
 
         <section id="contact" className="bg-card text-card-foreground">
-          <div className="mx-auto grid max-w-6xl gap-16 px-6 py-24 md:grid-cols-2">
+          <div className="mx-auto grid max-w-6xl gap-16 px-8 py-24 md:grid-cols-2">
             <div className="text-center md:text-left">
               <h2 className="text-3xl font-semibold tracking-tight text-balance">
                 Let&apos;s work together

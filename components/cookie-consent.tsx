@@ -24,7 +24,7 @@ export function CookieConsent() {
           : "pointer-events-none translate-y-full opacity-0 duration-300 ease-[cubic-bezier(0.64,0,0.78,0)]"
       )}
     >
-      <div className="mx-auto flex max-w-4xl flex-col gap-4 px-6 py-4 sm:flex-row sm:items-center sm:justify-between">
+      <div className="mx-auto flex max-w-4xl flex-col gap-4 px-8 py-4 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex items-center gap-3">
           <div className="flex size-9 shrink-0 items-center justify-center rounded-full bg-primary/10">
             <Cookie className="size-4 text-primary" strokeWidth={1.75} />
