@@ -55,7 +55,7 @@ export function SiteHeader() {
         "sticky top-0 z-50 border-b-2 transition-colors duration-300",
         scrolled
           ? "border-primary bg-card/90 backdrop-blur-md"
-          : "border-black bg-transparent"
+          : "border-transparent bg-transparent"
       )}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-8 py-8">
