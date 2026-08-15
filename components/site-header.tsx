@@ -52,10 +52,10 @@ export function SiteHeader() {
     <>
     <header
       className={cn(
-        "sticky top-0 z-50 border-b transition-colors duration-300",
+        "sticky top-0 z-50 border-b-2 transition-colors duration-300",
         scrolled
           ? "border-primary bg-card/90 backdrop-blur-md"
-          : "border-transparent bg-transparent"
+          : "border-black bg-transparent"
       )}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-8 py-8">
