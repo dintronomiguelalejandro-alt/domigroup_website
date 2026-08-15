@@ -39,7 +39,7 @@ export function SiteHeader() {
 
   return (
     <>
-    <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-border/60 bg-card/80 text-card-foreground backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-8">
         <Link href="#" className="flex items-center gap-3">
           <Image
@@ -62,7 +62,7 @@ export function SiteHeader() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-lg text-muted-foreground transition-colors hover:text-foreground"
+                className="text-lg text-muted-foreground transition-colors hover:text-card-foreground"
               >
                 {link.label}
               </a>
@@ -122,7 +122,7 @@ export function SiteHeader() {
               onClick={() => setOpen(false)}
               style={{ transitionDelay: open ? `${100 + i * 70}ms` : "0ms" }}
               className={cn(
-                "rounded-md px-6 py-4 text-3xl font-semibold tracking-tight text-foreground transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:bg-muted hover:text-primary active:scale-95 motion-reduce:transition-none motion-reduce:active:scale-100",
+                "rounded-md px-6 py-4 text-3xl font-semibold tracking-tight text-foreground transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:bg-primary-foreground/10 active:scale-95 motion-reduce:transition-none motion-reduce:active:scale-100",
                 open
                   ? "translate-y-0 opacity-100"
                   : "translate-y-4 opacity-0"
@@ -133,7 +133,7 @@ export function SiteHeader() {
           ))}
           <Button
             size="lg"
-            className="mt-6 rounded-full"
+            className="mt-6 rounded-full bg-card text-primary hover:bg-card/90"
             nativeButton={false}
             render={<a href="#contact" />}
             onClick={() => setOpen(false)}
