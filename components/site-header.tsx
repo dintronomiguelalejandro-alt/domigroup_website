@@ -8,6 +8,7 @@ import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { ModeToggle } from "@/components/mode-toggle"
+import { LogoFull } from "@/components/logo-full"
 
 const links = [
   { href: "#about", label: "About" },
@@ -68,7 +69,7 @@ export function SiteHeader() {
               window.scrollTo({ top: 0, behavior: "smooth" })
             }
           }}
-          className="flex items-center gap-3"
+          className="flex items-center"
         >
           <Image
             src="/logo.svg"
@@ -76,19 +77,17 @@ export function SiteHeader() {
             width={36}
             height={36}
             className={cn(
-              "size-9 transition-[filter] duration-300 md:size-8",
+              "size-9 transition-[filter] duration-300 md:hidden",
               !scrolled && "brightness-0 invert"
             )}
             priority
           />
-          <span
+          <LogoFull
             className={cn(
-              "text-2xl font-semibold tracking-tight transition-colors duration-300 md:text-xl",
+              "hidden h-14 w-auto transition-colors duration-300 md:block",
               scrolled ? "text-primary" : "text-white"
             )}
-          >
-            Domi Global Group
-          </span>
+          />
         </Link>
 
         <div className="hidden items-center gap-10 md:flex">
