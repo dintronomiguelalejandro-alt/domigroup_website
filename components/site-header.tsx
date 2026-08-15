@@ -128,9 +128,9 @@ export function SiteHeader() {
             className={cn(
               "size-14 transition-colors duration-300",
               scrolled
-                ? "text-black hover:bg-primary/10 hover:text-primary"
+                ? "text-black hover:bg-primary/10 hover:text-primary aria-expanded:bg-primary/10 aria-expanded:text-primary"
                 : cn(
-                    "hover:bg-black/10 hover:text-black",
+                    "hover:bg-black/10 hover:text-black aria-expanded:bg-black/10 aria-expanded:text-black",
                     open ? "text-black" : "text-white"
                   )
             )}
