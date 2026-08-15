@@ -201,16 +201,16 @@ export default function Page() {
           </div>
         </section>
 
-        <section id="about" className="border-b border-primary-foreground/15">
+        <section id="about" className="border-b border-border/60 bg-card text-card-foreground">
           <div className="mx-auto grid max-w-6xl gap-16 px-6 py-24 md:grid-cols-[1.1fr_0.9fr]">
             <div className="text-center md:text-left">
-              <p className="text-xs font-medium tracking-widest text-primary-foreground uppercase">
+              <p className="text-xs font-medium tracking-widest text-primary uppercase">
                 Who We Are
               </p>
               <h2 className="mt-4 text-3xl font-semibold tracking-tight text-balance">
                 A professional trading company based in Miami
               </h2>
-              <p className="mx-auto mt-5 max-w-lg text-primary-foreground/80 md:mx-0">
+              <p className="mx-auto mt-5 max-w-lg text-muted-foreground md:mx-0">
                 Domi Global Group is a Florida-registered trading company
                 specializing in the procurement and distribution of consumer
                 goods across the United States, Mexico, and Canada.
@@ -220,14 +220,14 @@ export default function Page() {
                 {features.map((feature) => (
                   <div key={feature.title} className="flex gap-4">
                     <feature.icon
-                      className="mt-0.5 size-5 shrink-0 text-primary-foreground"
+                      className="mt-0.5 size-5 shrink-0 text-primary"
                       strokeWidth={1.75}
                     />
                     <div>
                       <h3 className="text-sm font-semibold">
                         {feature.title}
                       </h3>
-                      <p className="mt-1 text-sm text-primary-foreground/70">
+                      <p className="mt-1 text-sm text-muted-foreground">
                         {feature.description}
                       </p>
                     </div>
@@ -311,15 +311,15 @@ export default function Page() {
           </div>
         </section>
 
-        <section id="markets" className="border-b border-primary-foreground/15">
+        <section id="markets" className="border-b border-border/60 bg-card text-card-foreground">
           <div className="mx-auto max-w-6xl px-6 py-24 text-center md:text-left">
-            <p className="text-xs font-medium tracking-widest text-primary-foreground uppercase">
+            <p className="text-xs font-medium tracking-widest text-primary uppercase">
               Our Markets
             </p>
             <h2 className="mt-4 text-3xl font-semibold tracking-tight text-balance">
               Where we operate
             </h2>
-            <p className="mx-auto mt-5 max-w-xl text-primary-foreground/80 md:mx-0">
+            <p className="mx-auto mt-5 max-w-xl text-muted-foreground md:mx-0">
               We actively trade across three major North American markets,
               bringing products to millions of consumers through Amazon and
               major US marketplaces.
@@ -341,20 +341,20 @@ export default function Page() {
           </div>
         </section>
 
-        <section className="bg-card text-card-foreground">
-          <div className="mx-auto flex max-w-6xl flex-col items-center gap-8 px-6 py-16 text-center md:flex-row md:items-center md:justify-between md:text-left">
+        <section className="bg-primary">
+          <div className="mx-auto flex max-w-6xl flex-col items-center gap-8 px-6 py-16 text-center text-primary-foreground md:flex-row md:items-center md:justify-between md:text-left">
             <div>
               <h2 className="text-2xl font-semibold tracking-tight text-balance md:text-3xl">
                 Ready to bring your products to new markets?
               </h2>
-              <p className="mx-auto mt-3 max-w-xl text-muted-foreground md:mx-0">
+              <p className="mx-auto mt-3 max-w-xl text-primary-foreground/80 md:mx-0">
                 Partner with Domi Global Group and reach millions of
                 consumers across the United States, Mexico, and Canada.
               </p>
             </div>
             <Button
               size="lg"
-              className="shrink-0 rounded-full"
+              className="shrink-0 rounded-full bg-card text-primary hover:bg-card/90"
               nativeButton={false}
               render={<a href="#contact" />}
             >
@@ -363,13 +363,13 @@ export default function Page() {
           </div>
         </section>
 
-        <section id="contact">
+        <section id="contact" className="bg-card text-card-foreground">
           <div className="mx-auto grid max-w-6xl gap-16 px-6 py-24 md:grid-cols-2">
             <div className="text-center md:text-left">
               <h2 className="text-3xl font-semibold tracking-tight text-balance">
                 Let&apos;s work together
               </h2>
-              <p className="mx-auto mt-5 max-w-md text-primary-foreground/80 md:mx-0">
+              <p className="mx-auto mt-5 max-w-md text-muted-foreground md:mx-0">
                 We are always looking to partner with authorized distributors
                 and suppliers. Reach out to discuss how we can work together.
               </p>
@@ -377,11 +377,11 @@ export default function Page() {
               <div className="mt-10 space-y-6 text-left">
                 <div className="flex gap-4">
                   <Mail
-                    className="mt-0.5 size-5 shrink-0 text-primary-foreground"
+                    className="mt-0.5 size-5 shrink-0 text-primary"
                     strokeWidth={1.75}
                   />
                   <div>
-                    <p className="text-[11px] font-medium tracking-widest text-primary-foreground/70 uppercase">
+                    <p className="text-[11px] font-medium tracking-widest text-muted-foreground uppercase">
                       Email
                     </p>
                     <p className="mt-1 text-sm font-semibold">
@@ -391,11 +391,11 @@ export default function Page() {
                 </div>
                 <div className="flex gap-4">
                   <MapPin
-                    className="mt-0.5 size-5 shrink-0 text-primary-foreground"
+                    className="mt-0.5 size-5 shrink-0 text-primary"
                     strokeWidth={1.75}
                   />
                   <div>
-                    <p className="text-[11px] font-medium tracking-widest text-primary-foreground/70 uppercase">
+                    <p className="text-[11px] font-medium tracking-widest text-muted-foreground uppercase">
                       Address
                     </p>
                     <p className="mt-1 text-sm font-semibold">
@@ -405,11 +405,11 @@ export default function Page() {
                 </div>
                 <div className="flex gap-4">
                   <Clock
-                    className="mt-0.5 size-5 shrink-0 text-primary-foreground"
+                    className="mt-0.5 size-5 shrink-0 text-primary"
                     strokeWidth={1.75}
                   />
                   <div>
-                    <p className="text-[11px] font-medium tracking-widest text-primary-foreground/70 uppercase">
+                    <p className="text-[11px] font-medium tracking-widest text-muted-foreground uppercase">
                       Business Hours
                     </p>
                     <p className="mt-1 text-sm font-semibold">
