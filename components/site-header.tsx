@@ -41,7 +41,15 @@ export function SiteHeader() {
     <>
     <header className="sticky top-0 z-50 border-b border-border/60 bg-card/80 text-card-foreground backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-8">
-        <Link href="#" className="flex items-center gap-3">
+        <Link
+          href="/"
+          onClick={(e) => {
+            e.preventDefault()
+            setOpen(false)
+            window.scrollTo({ top: 0, behavior: "smooth" })
+          }}
+          className="flex items-center gap-3"
+        >
           <Image
             src="/logo.svg"
             alt="Domi Global Group"
