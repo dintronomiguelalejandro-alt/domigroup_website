@@ -168,6 +168,7 @@ export default function Page() {
               <div className="mt-8 flex flex-wrap justify-center gap-3 md:justify-start">
                 <Button
                   size="lg"
+                  className="rounded-full"
                   nativeButton={false}
                   render={<a href="#contact" />}
                 >
@@ -176,6 +177,7 @@ export default function Page() {
                 <Button
                   size="lg"
                   variant="outline"
+                  className="rounded-full"
                   nativeButton={false}
                   render={<a href="#categories" />}
                 >
@@ -274,10 +276,9 @@ export default function Page() {
                   >
                     {cat.badge}
                   </Badge>
-                  <cat.icon
-                    className="mt-5 size-6 text-primary"
-                    strokeWidth={1.75}
-                  />
+                  <div className="mt-5 flex size-12 items-center justify-center rounded-full bg-primary/10">
+                    <cat.icon className="size-6 text-primary" strokeWidth={1.75} />
+                  </div>
                   <h3 className="mt-4 text-base font-semibold">
                     {cat.title}
                   </h3>
@@ -297,10 +298,9 @@ export default function Page() {
                   key={cat.title}
                   className="gap-0 rounded-2xl border border-border/60 p-6 shadow-none transition-colors hover:border-primary/50"
                 >
-                  <cat.icon
-                    className="size-5 text-primary"
-                    strokeWidth={1.75}
-                  />
+                  <div className="flex size-10 items-center justify-center rounded-full bg-primary/10">
+                    <cat.icon className="size-5 text-primary" strokeWidth={1.75} />
+                  </div>
                   <h3 className="mt-4 text-sm font-semibold">{cat.title}</h3>
                   <p className="mt-2 text-xs text-muted-foreground">
                     {cat.description}
@@ -338,6 +338,28 @@ export default function Page() {
                 </Card>
               ))}
             </div>
+          </div>
+        </section>
+
+        <section className="bg-primary">
+          <div className="mx-auto flex max-w-6xl flex-col items-center gap-8 px-6 py-16 text-center text-primary-foreground md:flex-row md:items-center md:justify-between md:text-left">
+            <div>
+              <h2 className="text-2xl font-semibold tracking-tight text-balance md:text-3xl">
+                Ready to bring your products to new markets?
+              </h2>
+              <p className="mx-auto mt-3 max-w-xl text-primary-foreground/80 md:mx-0">
+                Partner with Domi Global Group and reach millions of
+                consumers across the United States, Mexico, and Canada.
+              </p>
+            </div>
+            <Button
+              size="lg"
+              className="shrink-0 rounded-full bg-background text-primary hover:bg-background/90"
+              nativeButton={false}
+              render={<a href="#contact" />}
+            >
+              Get In Touch
+            </Button>
           </div>
         </section>
 
@@ -438,7 +460,7 @@ export default function Page() {
                     placeholder="Tell us about your products and how we can work together..."
                   />
                 </div>
-                <Button type="submit" className="w-full">
+                <Button type="submit" className="w-full rounded-full">
                   Send Message
                 </Button>
               </form>

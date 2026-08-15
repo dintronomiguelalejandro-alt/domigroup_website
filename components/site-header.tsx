@@ -62,7 +62,12 @@ export function SiteHeader() {
 
         <div className="hidden items-center gap-3 md:flex">
           <ModeToggle />
-          <Button size="lg" nativeButton={false} render={<a href="#contact" />}>
+          <Button
+            size="lg"
+            className="rounded-full"
+            nativeButton={false}
+            render={<a href="#contact" />}
+          >
             Work With Us
           </Button>
         </div>
@@ -130,7 +135,7 @@ export function SiteHeader() {
           ))}
           <Button
             size="lg"
-            className="mt-6"
+            className="mt-6 rounded-full"
             nativeButton={false}
             render={<a href="#contact" />}
             onClick={() => setOpen(false)}
