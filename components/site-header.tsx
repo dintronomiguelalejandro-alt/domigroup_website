@@ -15,6 +15,11 @@ const links = [
   { href: "#contact", label: "Contact" },
 ]
 
+const legalLinks = [
+  { href: "/privacy", label: "Privacy Policy" },
+  { href: "/cookies", label: "Cookie Policy" },
+]
+
 export function SiteHeader() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
@@ -95,20 +100,20 @@ export function SiteHeader() {
                 : "text-white hover:bg-white/10 hover:text-white/80"
             )}
           />
-          <nav className="flex items-center gap-10">
-            {links.map((link) => (
-              <a
+          <nav className="flex items-center gap-8">
+            {legalLinks.map((link) => (
+              <Link
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  "text-lg transition-colors duration-300",
+                  "text-sm font-medium transition-colors duration-300",
                   scrolled
                     ? "text-black hover:text-primary"
                     : "text-white hover:text-white/80"
                 )}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </nav>
         </div>
