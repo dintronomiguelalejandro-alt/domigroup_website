@@ -1,76 +1,62 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import Link from "next/link"
 import { Cookie } from "lucide-react"
 
+import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 
-const categories = [
-  {
-    name: "Necessary",
-    description:
-      "Required for core site functionality like navigation and security. Always active.",
-  },
-  {
-    name: "Analytics",
-    description:
-      "Help us understand how visitors use the site so we can improve it.",
-  },
-  {
-    name: "Preferences",
-    description: "Remember choices like your light/dark mode setting.",
-  },
-]
-
 export function CookieConsent() {
-  const [visible, setVisible] = useState(true)
+  const [open, setOpen] = useState(false)
 
-  if (!visible) return null
+  useEffect(() => {
+    const id = requestAnimationFrame(() => setOpen(true))
+    return () => cancelAnimationFrame(id)
+  }, [])
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-50 max-h-[85vh] overflow-y-auto border-t border-border bg-card text-card-foreground shadow-[0_-8px_30px_rgba(0,0,0,0.15)]">
-      <div className="mx-auto flex max-w-6xl flex-col gap-6 px-6 py-6 md:flex-row md:items-start md:justify-between">
-        <div className="flex gap-4">
-          <div className="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary/10">
-            <Cookie className="size-5 text-primary" strokeWidth={1.75} />
+    <div
+      className={cn(
+        "fixed inset-x-0 bottom-0 z-50 border-t border-border bg-card text-card-foreground shadow-[0_-8px_30px_rgba(0,0,0,0.15)] transition-all motion-reduce:transition-none",
+        open
+          ? "translate-y-0 opacity-100 duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
+          : "pointer-events-none translate-y-full opacity-0 duration-300 ease-[cubic-bezier(0.64,0,0.78,0)]"
+      )}
+    >
+      <div className="mx-auto flex max-w-4xl flex-col gap-4 px-6 py-4 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex items-center gap-3">
+          <div className="flex size-9 shrink-0 items-center justify-center rounded-full bg-primary/10">
+            <Cookie className="size-4 text-primary" strokeWidth={1.75} />
           </div>
-          <div>
-            <h2 className="text-sm font-semibold">We value your privacy</h2>
-            <p className="mt-1 max-w-2xl text-sm text-muted-foreground">
-              We use cookies to keep the site running smoothly, understand
-              how it&apos;s used, and remember your preferences. Choose which
-              types you&apos;re comfortable with below.
-            </p>
-            <dl className="mt-4 grid gap-3 sm:grid-cols-3">
-              {categories.map((category) => (
-                <div key={category.name}>
-                  <dt className="text-xs font-semibold tracking-wide uppercase">
-                    {category.name}
-                  </dt>
-                  <dd className="mt-1 text-xs text-muted-foreground">
-                    {category.description}
-                  </dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          <p className="text-sm text-muted-foreground">
+            We use cookies to improve your experience and understand site
+            usage. See our{" "}
+            <Link
+              href="/cookies"
+              className="font-medium text-primary hover:underline"
+            >
+              Cookie Policy
+            </Link>{" "}
+            for details.
+          </p>
         </div>
 
-        <div className="flex shrink-0 flex-wrap gap-3 md:flex-col">
+        <div className="flex shrink-0 gap-3">
           <Button
-            size="lg"
-            className="rounded-full"
-            onClick={() => setVisible(false)}
-          >
-            Accept All
-          </Button>
-          <Button
-            size="lg"
+            size="sm"
             variant="outline"
             className="rounded-full"
-            onClick={() => setVisible(false)}
+            onClick={() => setOpen(false)}
           >
             Necessary Only
+          </Button>
+          <Button
+            size="sm"
+            className="rounded-full"
+            onClick={() => setOpen(false)}
+          >
+            Accept All
           </Button>
         </div>
       </div>
