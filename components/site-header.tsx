@@ -17,6 +17,14 @@ const links = [
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 10)
+    onScroll()
+    window.addEventListener("scroll", onScroll, { passive: true })
+    return () => window.removeEventListener("scroll", onScroll)
+  }, [])
 
   useEffect(() => {
     if (!open) return
@@ -39,7 +47,14 @@ export function SiteHeader() {
 
   return (
     <>
-    <header className="sticky top-0 z-50 border-b border-border/60 bg-card/80 text-card-foreground backdrop-blur-md">
+    <header
+      className={cn(
+        "sticky top-0 z-50 border-b transition-colors duration-300",
+        scrolled
+          ? "border-border/60 bg-card/90 backdrop-blur-md"
+          : "border-transparent bg-transparent"
+      )}
+    >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-8">
         <Link
           href="/"
@@ -55,22 +70,42 @@ export function SiteHeader() {
             alt="Domi Global Group"
             width={36}
             height={36}
-            className="size-9 md:size-8"
+            className={cn(
+              "size-9 transition-[filter] duration-300 md:size-8",
+              !scrolled && "brightness-0 invert"
+            )}
             priority
           />
-          <span className="text-2xl font-semibold tracking-tight md:text-xl">
+          <span
+            className={cn(
+              "text-2xl font-semibold tracking-tight transition-colors duration-300 md:text-xl",
+              scrolled ? "text-primary" : "text-white"
+            )}
+          >
             Domi Global Group
           </span>
         </Link>
 
         <div className="hidden items-center gap-10 md:flex">
-          <ModeToggle />
+          <ModeToggle
+            className={cn(
+              "transition-colors duration-300",
+              scrolled
+                ? "text-black hover:bg-primary/10 hover:text-primary"
+                : "text-white hover:bg-white/10 hover:text-white/80"
+            )}
+          />
           <nav className="flex items-center gap-10">
             {links.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-lg text-muted-foreground transition-colors hover:text-card-foreground"
+                className={cn(
+                  "text-lg transition-colors duration-300",
+                  scrolled
+                    ? "text-black hover:text-primary"
+                    : "text-white hover:text-white/80"
+                )}
               >
                 {link.label}
               </a>
@@ -79,11 +114,23 @@ export function SiteHeader() {
         </div>
 
         <div className="flex items-center gap-2 md:hidden">
-          <ModeToggle />
+          <ModeToggle
+            className={cn(
+              "transition-colors duration-300",
+              scrolled
+                ? "text-black hover:bg-primary/10 hover:text-primary"
+                : "text-white hover:bg-white/10 hover:text-white/80"
+            )}
+          />
           <Button
             variant="ghost"
             size="icon-lg"
-            className="size-14"
+            className={cn(
+              "size-14 transition-colors duration-300",
+              scrolled
+                ? "text-black hover:bg-primary/10 hover:text-primary"
+                : "text-white hover:bg-white/10 hover:text-white/80"
+            )}
             onClick={() => setOpen((v) => !v)}
             aria-label="Toggle menu"
             aria-expanded={open}
