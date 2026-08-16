@@ -37,6 +37,66 @@ const points = [
   },
 ]
 
+const sections = [
+  {
+    title: "1. Information We Collect",
+    body: [
+      "We collect information in two ways. First, information you give us directly: when you submit our contact form, we collect your first name, last name, business email, company name, and the message you write. We don't require an account, and we don't ask for payment or financial information anywhere on this site.",
+      "Second, information collected automatically: like most websites, our hosting and analytics providers automatically log standard technical data when you visit — your IP address, browser type, device type, the pages you view, and the site that referred you here. This data is collected through cookies and similar technologies; see our Cookie Policy for the full breakdown of what we use and why.",
+    ],
+  },
+  {
+    title: "2. How We Use Your Information",
+    body: [
+      "We use the information above to respond to your inquiries, evaluate and follow up on potential distribution or supplier partnerships, keep the site secure and working correctly, and understand in general terms how visitors use the site so we can improve it. We do not use your contact form submissions for advertising or automated decision-making.",
+    ],
+  },
+  {
+    title: "3. How We Share Information",
+    body: [
+      "We do not sell, rent, or trade your personal information. We only share it with the service providers that help us run this website and our business — for example, our email delivery and website hosting providers — and only to the extent needed for them to perform that service. These providers are bound by confidentiality obligations and are not permitted to use your information for their own purposes.",
+      "We may also disclose information if required to do so by law, or to protect the rights, property, or safety of Domi Global Group, our users, or others.",
+    ],
+  },
+  {
+    title: "4. Data Retention",
+    body: [
+      "We keep contact form submissions for as long as reasonably necessary to respond to your inquiry and maintain a record of the business relationship — generally no longer than 24 months from your last message, unless a longer period is required by law or an active partnership continues beyond that window. You can ask us to delete your information sooner at any time; see \"Your Rights\" below.",
+    ],
+  },
+  {
+    title: "5. Your Rights and Choices",
+    body: [
+      "You can ask us at any time to confirm what personal information we hold about you, correct inaccurate information, or delete your information from our records. You can also withdraw consent for non-essential cookies at any time from the cookie banner or your browser settings, without affecting the site's core functionality.",
+      "To exercise any of these rights, email us at sales@domiglobalgroup.com. We'll respond within a reasonable timeframe, typically within 30 days.",
+    ],
+  },
+  {
+    title: "6. Data Security",
+    body: [
+      "We use reasonable technical and organizational measures to protect the information you share with us, including encrypted transmission (HTTPS) across the site and restricting access to personal information to the people who need it to do their jobs. That said, no method of transmission or storage is 100% secure, and we can't guarantee absolute security.",
+    ],
+  },
+  {
+    title: "7. International Data Transfers",
+    body: [
+      "Domi Global Group is based in Miami, Florida, and operates across the United States, Mexico, and Canada. Information you provide may be processed and stored in the United States, which may have different data protection laws than your home country. Wherever your information is processed, we apply the protections described in this policy.",
+    ],
+  },
+  {
+    title: "8. Children's Privacy",
+    body: [
+      "This site is intended for business use and is not directed at children. We do not knowingly collect personal information from anyone under 16. If you believe a child has provided us with personal information, please contact us and we'll delete it.",
+    ],
+  },
+  {
+    title: "9. Changes to This Policy",
+    body: [
+      "We may update this Privacy Policy from time to time to reflect changes in our practices or for legal reasons. We'll update the \"Last updated\" date at the top of this page when we do. We encourage you to review this page periodically.",
+    ],
+  },
+]
+
 export default function PrivacyPage() {
   return (
     <div className="min-h-svh bg-background">
@@ -53,7 +113,7 @@ export default function PrivacyPage() {
             </h1>
             <p className="mx-auto mt-5 max-w-xl text-primary-foreground/80">
               Short version: we collect very little, and we only use it to
-              talk to you.
+              talk to you. The full details are below.
             </p>
             <p className="mt-8 text-xs tracking-widest text-primary-foreground/60 uppercase">
               Last updated &middot; August 2026
@@ -80,7 +140,22 @@ export default function PrivacyPage() {
               ))}
             </div>
 
-            <div className="mt-10 flex gap-4 border-t border-border/60 pt-10">
+            <div className="mt-14 space-y-10 border-t border-border/60 pt-14">
+              {sections.map((section) => (
+                <div key={section.title}>
+                  <h2 className="text-lg font-semibold">{section.title}</h2>
+                  <div className="mt-3 space-y-3">
+                    {section.body.map((paragraph, i) => (
+                      <p key={i} className="text-sm text-muted-foreground">
+                        {paragraph}
+                      </p>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-14 flex gap-4 border-t border-border/60 pt-14">
               <Mail className="mt-0.5 size-5 shrink-0 text-primary" strokeWidth={1.75} />
               <div>
                 <h2 className="text-base font-semibold">Questions?</h2>

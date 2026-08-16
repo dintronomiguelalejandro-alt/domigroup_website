@@ -4,6 +4,8 @@ import { Globe2 } from "lucide-react"
 const legalLinks = [
   { href: "/privacy", label: "Privacy Policy" },
   { href: "/cookies", label: "Cookie Policy" },
+  { href: "/terms", label: "Terms & Conditions" },
+  { href: "/responsible-disclosure", label: "Responsible Disclosure" },
 ]
 
 export function SiteFooter() {
@@ -25,7 +27,7 @@ export function SiteFooter() {
           </p>
         </div>
 
-        <nav className="flex gap-6">
+        <nav className="flex flex-wrap gap-x-6 gap-y-2 sm:max-w-56 sm:justify-end">
           {legalLinks.map((link) => (
             <Link
               key={link.href}
