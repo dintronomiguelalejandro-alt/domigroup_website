@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
+import { CategoryCard } from "@/components/category-card"
 import { allCategories } from "@/lib/categories"
 
 export const metadata: Metadata = {
@@ -35,40 +36,11 @@ export default function CategoriesPage() {
           <div className="mx-auto max-w-6xl px-8 py-24">
             <div className="grid gap-4 text-left sm:grid-cols-2 lg:grid-cols-4">
               {allCategories.map((cat) => (
-                <div
+                <CategoryCard
                   key={cat.title}
-                  className="overflow-hidden rounded-2xl border border-border/60 transition-colors hover:border-primary/50"
-                >
-                  <div className="flex h-24 items-center justify-center bg-primary">
-                    <cat.icon
-                      className="size-8 text-primary-foreground"
-                      strokeWidth={1.5}
-                    />
-                  </div>
-                  <div className="bg-[#04182a] p-5">
-                    {cat.badge && (
-                      <span className="text-[10px] font-semibold tracking-widest text-sky-400 uppercase">
-                        {cat.badge}
-                      </span>
-                    )}
-                    <h2 className="mt-1 text-sm font-bold tracking-tight text-white uppercase">
-                      {cat.title}
-                    </h2>
-                    <p className="mt-1.5 text-xs text-white/60">
-                      {cat.description}
-                    </p>
-                    <div className="mt-3 flex flex-wrap gap-1.5">
-                      {cat.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="rounded-md bg-white/10 px-2 py-0.5 text-[11px] text-white/80"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
+                  category={cat}
+                  className="border-border/60 hover:border-primary/50"
+                />
               ))}
             </div>
           </div>
