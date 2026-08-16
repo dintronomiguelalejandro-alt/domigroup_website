@@ -169,10 +169,10 @@ export function SiteHeader() {
 
       <div
         className={cn(
-          "fixed inset-0 z-40 bg-background transition-[clip-path] motion-reduce:transition-none md:hidden",
+          "fixed inset-0 z-40 bg-[#04182a] transition-[clip-path] motion-reduce:transition-none md:hidden",
           open
             ? "pointer-events-auto duration-[550ms] ease-[cubic-bezier(0.22,1,0.36,1)]"
-            : "pointer-events-none duration-[400ms] ease-[cubic-bezier(0.64,0,0.78,0)]"
+            : "pointer-events-none duration-[700ms] ease-[cubic-bezier(0.64,0,0.78,0)]"
         )}
         style={{
           clipPath: open ? "inset(0 0 0% 0)" : "inset(0 0 100% 0)",
@@ -189,7 +189,7 @@ export function SiteHeader() {
                 "rounded-md px-6 py-4 text-3xl font-semibold tracking-tight text-foreground transition-all hover:bg-primary-foreground/10 active:scale-95 motion-reduce:transition-none motion-reduce:active:scale-100",
                 open
                   ? "translate-y-0 opacity-100 duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
-                  : "translate-y-4 opacity-0 duration-300 ease-[cubic-bezier(0.64,0,0.78,0)]"
+                  : "translate-y-4 opacity-0 duration-500 ease-[cubic-bezier(0.64,0,0.78,0)]"
               )}
             >
               {link.label}
