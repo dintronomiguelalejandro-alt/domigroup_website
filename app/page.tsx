@@ -144,6 +144,27 @@ const markets = [
   { flag: "🇨🇦", name: "Canada" },
 ]
 
+const brandLogos = [
+  "Lumière",
+  "VitaCore",
+  "Havenly",
+  "Playnest",
+  "TorquePro",
+  "IronCraft",
+  "Pawmore",
+  "DeskPoint",
+  "Harvest & Co.",
+  "PeakGear",
+  "Littlewick",
+  "Verdant Skin",
+  "RoadEdge",
+  "Wonderblox",
+  "Bramwell",
+  "CleanNest",
+  "Furlyn",
+  "Notaro",
+]
+
 export default function Page() {
   return (
     <div className="min-h-svh bg-background">
@@ -251,7 +272,21 @@ export default function Page() {
 
         <section id="categories" className="border-b border-primary-foreground/15">
           <div className="mx-auto max-w-6xl px-8 py-24 text-center md:text-left">
-            <p className="text-xs font-medium tracking-widest text-primary-foreground uppercase">
+            <p className="text-xs font-medium tracking-widest text-primary-foreground/60 uppercase">
+              Brands we could bring to market
+            </p>
+            <div className="mt-6 grid grid-cols-2 gap-x-8 gap-y-6 sm:grid-cols-3 lg:grid-cols-6">
+              {brandLogos.map((brand) => (
+                <span
+                  key={brand}
+                  className="text-lg font-semibold tracking-tight text-primary-foreground/40"
+                >
+                  {brand}
+                </span>
+              ))}
+            </div>
+
+            <p className="mt-16 text-xs font-medium tracking-widest text-primary-foreground uppercase">
               Product Categories
             </p>
             <h2 className="mt-4 text-3xl font-semibold tracking-tight text-balance">
