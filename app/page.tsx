@@ -153,10 +153,7 @@ export default function Page() {
         <section className="border-b border-primary-foreground/15">
           <div className="mx-auto max-w-6xl px-8 py-24 md:py-32">
             <div className="mx-auto max-w-2xl text-center md:mx-0 md:text-left">
-              <p className="text-xs font-medium tracking-widest text-primary-foreground uppercase">
-                Miami, Florida &middot; Est. 2026
-              </p>
-              <h1 className="mt-5 text-5xl font-semibold tracking-tight text-balance md:text-6xl">
+              <h1 className="text-5xl font-semibold tracking-tight text-balance md:text-6xl">
                 Connecting brands to{" "}
                 <span className="text-primary-foreground/80">
                   millions of consumers
