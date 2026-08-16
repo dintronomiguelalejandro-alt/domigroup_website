@@ -13,7 +13,7 @@ export function CategoryCard({
   return (
     <div
       className={cn(
-        "group relative mx-auto flex aspect-[4/5] w-[78%] overflow-hidden border border-primary-foreground/15 transition-shadow hover:ring-2 hover:ring-white hover:ring-inset sm:mx-0 sm:w-full",
+        "group relative mx-auto flex aspect-[4/5] w-[78%] overflow-hidden border border-primary-foreground/15 transition-shadow hover:ring-[3px] hover:ring-white hover:ring-inset sm:mx-0 sm:w-full",
         className
       )}
     >
