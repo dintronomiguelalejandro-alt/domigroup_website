@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
@@ -22,12 +22,24 @@ export function SiteHeader() {
   const isHome = pathname === "/"
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const headerRef = useRef<HTMLElement>(null)
+  const [headerHeight, setHeaderHeight] = useState(0)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10)
     onScroll()
     window.addEventListener("scroll", onScroll, { passive: true })
     return () => window.removeEventListener("scroll", onScroll)
+  }, [])
+
+  useEffect(() => {
+    const el = headerRef.current
+    if (!el) return
+    const update = () => setHeaderHeight(el.offsetHeight)
+    update()
+    const observer = new ResizeObserver(update)
+    observer.observe(el)
+    return () => observer.disconnect()
   }, [])
 
   useEffect(() => {
@@ -52,6 +64,7 @@ export function SiteHeader() {
   return (
     <>
     <header
+      ref={headerRef}
       className={cn(
         "sticky top-0 z-50 border-b-2 transition-colors duration-300",
         scrolled
@@ -171,12 +184,13 @@ export function SiteHeader() {
 
       <div
         className={cn(
-          "fixed inset-0 z-40 bg-[#04182a] transition-[clip-path] motion-reduce:transition-none md:hidden",
+          "fixed inset-x-0 bottom-0 z-40 bg-[#04182a] transition-[clip-path] motion-reduce:transition-none md:hidden",
           open
             ? "pointer-events-auto duration-[550ms] ease-[cubic-bezier(0.22,1,0.36,1)]"
             : "pointer-events-none duration-[700ms] ease-[cubic-bezier(0.64,0,0.78,0)]"
         )}
         style={{
+          top: headerHeight,
           clipPath: open ? "inset(0 0 0% 0)" : "inset(0 0 100% 0)",
         }}
       >
