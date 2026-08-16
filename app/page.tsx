@@ -74,7 +74,7 @@ export default function Page() {
               <div className="mt-8 flex flex-wrap justify-center gap-3 md:justify-start">
                 <Button
                   size="lg"
-                  className="rounded-full bg-card text-primary hover:bg-card/90"
+                  className="bg-card text-primary hover:bg-card/90"
                   nativeButton={false}
                   render={<a href="#contact" />}
                 >
@@ -83,7 +83,7 @@ export default function Page() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="rounded-full border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
+                  className="border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
                   nativeButton={false}
                   render={<a href="#categories" />}
                 >
@@ -183,7 +183,7 @@ export default function Page() {
                 </div>
                 <Button
                   variant="outline"
-                  className="mt-6 w-fit rounded-full border-white/30 text-white hover:bg-white/10 hover:text-white"
+                  className="mt-6 w-fit border-white/30 text-white hover:bg-white/10 hover:text-white"
                   nativeButton={false}
                   render={<a href="/categories" />}
                 >
@@ -275,7 +275,7 @@ export default function Page() {
             </div>
             <Button
               size="lg"
-              className="shrink-0 rounded-full bg-card text-primary hover:bg-card/90"
+              className="shrink-0 bg-card text-primary hover:bg-card/90"
               nativeButton={false}
               render={<a href="#contact" />}
             >
@@ -381,7 +381,7 @@ export default function Page() {
                     placeholder="Tell us about your products and how we can work together..."
                   />
                 </div>
-                <Button type="submit" className="w-full rounded-full">
+                <Button type="submit" className="w-full">
                   Send Message
                 </Button>
               </form>

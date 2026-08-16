@@ -199,7 +199,7 @@ export function SiteHeader() {
           ))}
           <Button
             size="lg"
-            className="mt-6 rounded-full bg-card text-primary hover:bg-card/90"
+            className="mt-6 bg-card text-primary hover:bg-card/90"
             nativeButton={false}
             render={<a href={isHome ? "#contact" : "/#contact"} />}
             onClick={() => setOpen(false)}

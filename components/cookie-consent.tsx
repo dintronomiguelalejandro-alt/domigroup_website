@@ -46,16 +46,11 @@ export function CookieConsent() {
           <Button
             size="sm"
             variant="outline"
-            className="rounded-full"
             onClick={() => setOpen(false)}
           >
             Necessary Only
           </Button>
-          <Button
-            size="sm"
-            className="rounded-full"
-            onClick={() => setOpen(false)}
-          >
+          <Button size="sm" onClick={() => setOpen(false)}>
             Accept All
           </Button>
         </div>
