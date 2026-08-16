@@ -59,7 +59,7 @@ export function SiteHeader() {
           : "border-transparent bg-transparent"
       )}
     >
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-10 py-4">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-10 py-6">
         <Link
           href="/"
           onClick={(e) => {
