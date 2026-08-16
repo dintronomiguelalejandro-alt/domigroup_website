@@ -77,14 +77,14 @@ export function SiteHeader() {
             width={36}
             height={36}
             className={cn(
-              "size-9 transition-[filter] duration-300 md:hidden",
+              "size-8 transition-[filter] duration-300 md:hidden",
               !scrolled && "brightness-0 invert"
             )}
             priority
           />
           <LogoFull
             className={cn(
-              "hidden h-14 w-auto transition-colors duration-300 md:block",
+              "hidden h-12 w-auto transition-colors duration-300 md:block",
               scrolled ? "text-primary" : "text-white"
             )}
           />
