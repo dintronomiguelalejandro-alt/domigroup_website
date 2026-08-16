@@ -21,7 +21,6 @@ import {
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
 import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -70,6 +69,7 @@ const featuredCategories = [
     title: "Beauty & Personal Care",
     description:
       "Highest average net margins on Amazon. Deodorants, skincare, hair care, and personal hygiene products from recognized brands.",
+    tags: ["Skincare", "Hair Care", "Hygiene"],
   },
   {
     icon: HeartPulse,
@@ -77,6 +77,7 @@ const featuredCategories = [
     title: "Health & Household",
     description:
       "17% of Amazon seller market. Vitamins, cleaning essentials, and wellness products with loyal repeat buyers every 30-60 days.",
+    tags: ["Vitamins", "Cleaning", "Wellness"],
   },
   {
     icon: Sofa,
@@ -84,6 +85,7 @@ const featuredCategories = [
     title: "Home & Kitchen",
     description:
       "Largest category on Amazon FBA. Cleaning supplies, organizers, kitchen essentials and home improvement products.",
+    tags: ["Cleaning Supplies", "Organizers", "Kitchen"],
   },
 ]
 
@@ -93,48 +95,56 @@ const additionalCategories = [
     title: "Toys & Games",
     description:
       "STEM kits, board games, outdoor toys. Peak sales in Q4 with up to 65% of annual revenue.",
+    tags: ["STEM Kits", "Board Games"],
   },
   {
     icon: Car,
     title: "Automotive",
     description:
       "Motor oils, car care, accessories and automotive supplies. Consistent repeat purchases year-round.",
+    tags: ["Motor Oils", "Car Care"],
   },
   {
     icon: Wrench,
     title: "Tools & Hardware",
     description:
       "Hand tools, power tool accessories, and home improvement products with steady demand.",
+    tags: ["Hand Tools", "Power Tools"],
   },
   {
     icon: Dog,
     title: "Pet Supplies",
     description:
       "Pet food, accessories and grooming. Low return rate and highly loyal repeat buyers.",
+    tags: ["Pet Food", "Grooming"],
   },
   {
     icon: ClipboardList,
     title: "Office Supplies",
     description:
       "Stationery and office essentials. Lower competition with stable year-round demand.",
+    tags: ["Stationery", "Essentials"],
   },
   {
     icon: ShoppingBasket,
     title: "Grocery & Gourmet",
     description:
       "Non-perishable food items, beverages and pantry essentials with high purchase frequency.",
+    tags: ["Non-Perishables", "Pantry"],
   },
   {
     icon: Dumbbell,
     title: "Sports & Outdoors",
     description:
       "Resistance bands, fitness accessories, and outdoor gear with strong new-seller activity.",
+    tags: ["Fitness", "Outdoor Gear"],
   },
   {
     icon: Baby,
     title: "Baby Products",
     description:
       "Baby essentials with exceptional word-of-mouth. Parents recommend products constantly to other parents.",
+    tags: ["Baby Essentials"],
   },
 ]
 
@@ -265,26 +275,41 @@ export default function Page() {
 
             <div className="mt-12 grid gap-4 text-left md:grid-cols-3">
               {featuredCategories.map((cat) => (
-                <Card
+                <div
                   key={cat.title}
-                  className="gap-0 rounded-2xl border border-border/60 p-7 shadow-none transition-colors hover:border-primary/50"
+                  className="overflow-hidden rounded-2xl border border-primary-foreground/15 transition-colors hover:border-primary-foreground/40"
                 >
-                  <Badge
-                    variant="secondary"
-                    className="w-fit rounded-full text-[11px] font-medium tracking-wide text-primary uppercase"
-                  >
-                    {cat.badge}
-                  </Badge>
-                  <div className="mt-5 flex size-12 items-center justify-center rounded-full bg-primary/10">
-                    <cat.icon className="size-6 text-primary" strokeWidth={1.75} />
+                  <div className="flex h-36 items-center justify-center bg-primary">
+                    <cat.icon
+                      className="size-12 text-primary-foreground"
+                      strokeWidth={1.5}
+                    />
                   </div>
-                  <h3 className="mt-4 text-base font-semibold">
-                    {cat.title}
-                  </h3>
-                  <p className="mt-2 text-sm text-muted-foreground">
-                    {cat.description}
-                  </p>
-                </Card>
+                  <div className="bg-[#04182a] p-6">
+                    <span className="text-[11px] font-semibold tracking-widest text-sky-400 uppercase">
+                      {cat.badge}
+                    </span>
+                    <h3 className="mt-2 text-lg font-bold tracking-tight text-white uppercase">
+                      {cat.title}
+                    </h3>
+                    <p className="mt-2 text-sm text-white/60">
+                      {cat.description}
+                    </p>
+                    <p className="mt-5 text-[10px] font-semibold tracking-widest text-white/40 uppercase">
+                      Includes
+                    </p>
+                    <div className="mt-2 flex flex-wrap gap-2">
+                      {cat.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="rounded-md bg-white/10 px-2.5 py-1 text-xs text-white/80"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               ))}
             </div>
 
@@ -293,18 +318,35 @@ export default function Page() {
             </p>
             <div className="mt-5 grid gap-4 text-left sm:grid-cols-2 lg:grid-cols-4">
               {additionalCategories.map((cat) => (
-                <Card
+                <div
                   key={cat.title}
-                  className="gap-0 rounded-2xl border border-border/60 p-6 shadow-none transition-colors hover:border-primary/50"
+                  className="overflow-hidden rounded-2xl border border-primary-foreground/15 transition-colors hover:border-primary-foreground/40"
                 >
-                  <div className="flex size-10 items-center justify-center rounded-full bg-primary/10">
-                    <cat.icon className="size-5 text-primary" strokeWidth={1.75} />
+                  <div className="flex h-20 items-center justify-center bg-primary">
+                    <cat.icon
+                      className="size-7 text-primary-foreground"
+                      strokeWidth={1.5}
+                    />
                   </div>
-                  <h3 className="mt-4 text-sm font-semibold">{cat.title}</h3>
-                  <p className="mt-2 text-xs text-muted-foreground">
-                    {cat.description}
-                  </p>
-                </Card>
+                  <div className="bg-[#04182a] p-5">
+                    <h3 className="text-sm font-bold tracking-tight text-white uppercase">
+                      {cat.title}
+                    </h3>
+                    <p className="mt-1.5 text-xs text-white/60">
+                      {cat.description}
+                    </p>
+                    <div className="mt-3 flex flex-wrap gap-1.5">
+                      {cat.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="rounded-md bg-white/10 px-2 py-0.5 text-[11px] text-white/80"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               ))}
             </div>
           </div>
