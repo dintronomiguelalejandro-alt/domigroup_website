@@ -1,22 +1,4 @@
-import {
-  Baby,
-  Car,
-  CheckCircle2,
-  ClipboardList,
-  Dog,
-  Dumbbell,
-  Globe2,
-  Heart,
-  HeartPulse,
-  Mail,
-  MapPin,
-  Clock,
-  Puzzle,
-  ShoppingBasket,
-  Sofa,
-  Users,
-  Wrench,
-} from "lucide-react"
+import { CheckCircle2, Globe2, Mail, MapPin, Clock, Users } from "lucide-react"
 
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
@@ -26,6 +8,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Separator } from "@/components/ui/separator"
+import { featuredCategories } from "@/lib/categories"
 
 const stats = [
   { value: "3", label: "Markets" },
@@ -60,92 +43,6 @@ const companyInfo = [
   { label: "Headquarters", value: "Miami, Florida 33130" },
   { label: "Business Type", value: "General Merchandise Trade" },
   { label: "Established", value: "2026" },
-]
-
-const featuredCategories = [
-  {
-    icon: Heart,
-    badge: "#1 Most Sold",
-    title: "Beauty & Personal Care",
-    description:
-      "Highest average net margins on Amazon. Deodorants, skincare, hair care, and personal hygiene products from recognized brands.",
-    tags: ["Skincare", "Hair Care", "Hygiene"],
-  },
-  {
-    icon: HeartPulse,
-    badge: "Top Seller",
-    title: "Health & Household",
-    description:
-      "17% of Amazon seller market. Vitamins, cleaning essentials, and wellness products with loyal repeat buyers every 30-60 days.",
-    tags: ["Vitamins", "Cleaning", "Wellness"],
-  },
-  {
-    icon: Sofa,
-    badge: "High Demand",
-    title: "Home & Kitchen",
-    description:
-      "Largest category on Amazon FBA. Cleaning supplies, organizers, kitchen essentials and home improvement products.",
-    tags: ["Cleaning Supplies", "Organizers", "Kitchen"],
-  },
-]
-
-const additionalCategories = [
-  {
-    icon: Puzzle,
-    title: "Toys & Games",
-    description:
-      "STEM kits, board games, outdoor toys. Peak sales in Q4 with up to 65% of annual revenue.",
-    tags: ["STEM Kits", "Board Games"],
-  },
-  {
-    icon: Car,
-    title: "Automotive",
-    description:
-      "Motor oils, car care, accessories and automotive supplies. Consistent repeat purchases year-round.",
-    tags: ["Motor Oils", "Car Care"],
-  },
-  {
-    icon: Wrench,
-    title: "Tools & Hardware",
-    description:
-      "Hand tools, power tool accessories, and home improvement products with steady demand.",
-    tags: ["Hand Tools", "Power Tools"],
-  },
-  {
-    icon: Dog,
-    title: "Pet Supplies",
-    description:
-      "Pet food, accessories and grooming. Low return rate and highly loyal repeat buyers.",
-    tags: ["Pet Food", "Grooming"],
-  },
-  {
-    icon: ClipboardList,
-    title: "Office Supplies",
-    description:
-      "Stationery and office essentials. Lower competition with stable year-round demand.",
-    tags: ["Stationery", "Essentials"],
-  },
-  {
-    icon: ShoppingBasket,
-    title: "Grocery & Gourmet",
-    description:
-      "Non-perishable food items, beverages and pantry essentials with high purchase frequency.",
-    tags: ["Non-Perishables", "Pantry"],
-  },
-  {
-    icon: Dumbbell,
-    title: "Sports & Outdoors",
-    description:
-      "Resistance bands, fitness accessories, and outdoor gear with strong new-seller activity.",
-    tags: ["Fitness", "Outdoor Gear"],
-  },
-  {
-    icon: Baby,
-    title: "Baby Products",
-    description:
-      "Baby essentials with exceptional word-of-mouth. Parents recommend products constantly to other parents.",
-    tags: ["Baby Essentials"],
-  },
 ]
 
 const markets = [
@@ -273,7 +170,27 @@ export default function Page() {
               marketplaces.
             </p>
 
-            <div className="mt-12 grid gap-4 text-left md:grid-cols-3">
+            <div className="mt-12 grid gap-4 text-left sm:grid-cols-2 lg:grid-cols-4">
+              <div className="flex flex-col justify-between rounded-2xl border border-primary-foreground/15 bg-[#04182a] p-6">
+                <div>
+                  <h3 className="text-lg font-bold tracking-tight text-white uppercase">
+                    View All Categories
+                  </h3>
+                  <p className="mt-2 text-sm text-white/60">
+                    Explore every product category we source and distribute
+                    across North America.
+                  </p>
+                </div>
+                <Button
+                  variant="outline"
+                  className="mt-6 w-fit rounded-full border-white/30 text-white hover:bg-white/10 hover:text-white"
+                  nativeButton={false}
+                  render={<a href="/categories" />}
+                >
+                  View All Categories
+                </Button>
+              </div>
+
               {featuredCategories.map((cat) => (
                 <div
                   key={cat.title}
@@ -303,43 +220,6 @@ export default function Page() {
                         <span
                           key={tag}
                           className="rounded-md bg-white/10 px-2.5 py-1 text-xs text-white/80"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <p className="mt-14 text-xs font-medium tracking-widest text-primary-foreground/70 uppercase">
-              Additional Categories
-            </p>
-            <div className="mt-5 grid gap-4 text-left sm:grid-cols-2 lg:grid-cols-4">
-              {additionalCategories.map((cat) => (
-                <div
-                  key={cat.title}
-                  className="overflow-hidden rounded-2xl border border-primary-foreground/15 transition-colors hover:border-primary-foreground/40"
-                >
-                  <div className="flex h-20 items-center justify-center bg-primary">
-                    <cat.icon
-                      className="size-7 text-primary-foreground"
-                      strokeWidth={1.5}
-                    />
-                  </div>
-                  <div className="bg-[#04182a] p-5">
-                    <h3 className="text-sm font-bold tracking-tight text-white uppercase">
-                      {cat.title}
-                    </h3>
-                    <p className="mt-1.5 text-xs text-white/60">
-                      {cat.description}
-                    </p>
-                    <div className="mt-3 flex flex-wrap gap-1.5">
-                      {cat.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="rounded-md bg-white/10 px-2 py-0.5 text-[11px] text-white/80"
                         >
                           {tag}
                         </span>
