@@ -13,7 +13,7 @@ export function CategoryCard({
   return (
     <div
       className={cn(
-        "group relative flex aspect-[4/5] overflow-hidden border border-primary-foreground/15 transition-colors hover:border-primary-foreground/40",
+        "group relative flex aspect-[16/11] overflow-hidden border border-primary-foreground/15 transition-colors hover:border-primary-foreground/40 sm:aspect-[4/5]",
         className
       )}
     >
