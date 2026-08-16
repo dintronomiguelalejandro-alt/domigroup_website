@@ -10,6 +10,8 @@ import { Textarea } from "@/components/ui/textarea"
 import { Separator } from "@/components/ui/separator"
 import { featuredCategories } from "@/lib/categories"
 
+const [beauty, health, home] = featuredCategories
+
 const stats = [
   { value: "3", label: "Markets" },
   { value: "10+", label: "Categories" },
@@ -171,7 +173,7 @@ export default function Page() {
             </p>
 
             <div className="mt-12 grid gap-4 text-left sm:grid-cols-2 lg:grid-cols-4">
-              <div className="flex flex-col justify-between rounded-2xl border border-primary-foreground/15 bg-[#04182a] p-6">
+              <div className="flex h-full flex-col justify-between border border-primary-foreground/15 bg-[#04182a] p-6">
                 <div>
                   <h3 className="text-lg font-bold tracking-tight text-white uppercase">
                     View All Categories
@@ -191,35 +193,33 @@ export default function Page() {
                 </Button>
               </div>
 
-              {featuredCategories.map((cat) => (
-                <div
-                  key={cat.title}
-                  className="overflow-hidden rounded-2xl border border-primary-foreground/15 transition-colors hover:border-primary-foreground/40"
-                >
-                  <div className="flex h-36 items-center justify-center bg-primary">
-                    <cat.icon
-                      className="size-12 text-primary-foreground"
-                      strokeWidth={1.5}
-                    />
-                  </div>
-                  <div className="bg-[#04182a] p-6">
-                    <span className="text-[11px] font-semibold tracking-widest text-sky-400 uppercase">
-                      {cat.badge}
-                    </span>
-                    <h3 className="mt-2 text-lg font-bold tracking-tight text-white uppercase">
-                      {cat.title}
-                    </h3>
-                    <p className="mt-2 text-sm text-white/60">
-                      {cat.description}
-                    </p>
-                    <p className="mt-5 text-[10px] font-semibold tracking-widest text-white/40 uppercase">
+              {/* Beauty & Personal Care — icon block + info panel */}
+              <div className="flex h-full flex-col overflow-hidden border border-primary-foreground/15 transition-colors hover:border-primary-foreground/40">
+                <div className="flex h-36 shrink-0 items-center justify-center bg-primary">
+                  <beauty.icon
+                    className="size-12 text-primary-foreground"
+                    strokeWidth={1.5}
+                  />
+                </div>
+                <div className="flex flex-1 flex-col bg-[#04182a] p-6">
+                  <span className="text-[11px] font-semibold tracking-widest text-sky-400 uppercase">
+                    {beauty.badge}
+                  </span>
+                  <h3 className="mt-2 text-lg font-bold tracking-tight text-white uppercase">
+                    {beauty.title}
+                  </h3>
+                  <p className="mt-2 text-sm text-white/60">
+                    {beauty.description}
+                  </p>
+                  <div className="mt-auto pt-5">
+                    <p className="text-[10px] font-semibold tracking-widest text-white/40 uppercase">
                       Includes
                     </p>
                     <div className="mt-2 flex flex-wrap gap-2">
-                      {cat.tags.map((tag) => (
+                      {beauty.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="rounded-md bg-white/10 px-2.5 py-1 text-xs text-white/80"
+                          className="bg-white/10 px-2.5 py-1 text-xs text-white/80"
                         >
                           {tag}
                         </span>
@@ -227,7 +227,83 @@ export default function Page() {
                     </div>
                   </div>
                 </div>
-              ))}
+              </div>
+
+              {/* Health & Household — stat-forward */}
+              <div className="flex h-full flex-col border border-primary-foreground/15 bg-[#04182a] p-6 transition-colors hover:border-primary-foreground/40">
+                <div className="flex items-start justify-between">
+                  <div>
+                    <span className="text-[11px] font-semibold tracking-widest text-sky-400 uppercase">
+                      {health.badge}
+                    </span>
+                    <p className="mt-3 text-5xl font-bold tracking-tight text-white">
+                      {health.stat}
+                    </p>
+                    <p className="mt-1 text-[10px] font-semibold tracking-widest text-white/40 uppercase">
+                      {health.statLabel}
+                    </p>
+                  </div>
+                  <health.icon
+                    className="size-8 shrink-0 text-sky-400"
+                    strokeWidth={1.5}
+                  />
+                </div>
+                <h3 className="mt-6 text-lg font-bold tracking-tight text-white uppercase">
+                  {health.title}
+                </h3>
+                <p className="mt-2 text-sm text-white/60">
+                  {health.description}
+                </p>
+                <div className="mt-auto pt-5">
+                  <p className="text-[10px] font-semibold tracking-widest text-white/40 uppercase">
+                    Includes
+                  </p>
+                  <div className="mt-2 flex flex-wrap gap-2">
+                    {health.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="bg-white/10 px-2.5 py-1 text-xs text-white/80"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Home & Kitchen — outline card */}
+              <div className="flex h-full flex-col border-2 border-primary-foreground/30 p-6 transition-colors hover:border-primary-foreground/60 hover:bg-primary-foreground/5">
+                <div className="flex size-12 items-center justify-center bg-primary-foreground/10">
+                  <home.icon
+                    className="size-6 text-primary-foreground"
+                    strokeWidth={1.5}
+                  />
+                </div>
+                <span className="mt-5 text-[11px] font-semibold tracking-widest text-primary-foreground/70 uppercase">
+                  {home.badge}
+                </span>
+                <h3 className="mt-2 text-lg font-bold tracking-tight text-white uppercase">
+                  {home.title}
+                </h3>
+                <p className="mt-2 text-sm text-primary-foreground/70">
+                  {home.description}
+                </p>
+                <div className="mt-auto pt-5">
+                  <p className="text-[10px] font-semibold tracking-widest text-primary-foreground/50 uppercase">
+                    Includes
+                  </p>
+                  <div className="mt-2 flex flex-wrap gap-2">
+                    {home.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="border border-primary-foreground/30 px-2.5 py-1 text-xs text-primary-foreground/80"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>

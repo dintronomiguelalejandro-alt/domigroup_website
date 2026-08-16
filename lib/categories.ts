@@ -19,6 +19,8 @@ export type Category = {
   description: string
   tags: string[]
   badge?: string
+  stat?: string
+  statLabel?: string
 }
 
 export const featuredCategories: Category[] = [
@@ -35,8 +37,10 @@ export const featuredCategories: Category[] = [
     badge: "Top Seller",
     title: "Health & Household",
     description:
-      "17% of Amazon seller market. Vitamins, cleaning essentials, and wellness products with loyal repeat buyers every 30-60 days.",
+      "Vitamins, cleaning essentials, and wellness products with loyal repeat buyers every 30-60 days.",
     tags: ["Vitamins", "Cleaning", "Wellness"],
+    stat: "17%",
+    statLabel: "Of Amazon Seller Market",
   },
   {
     icon: Sofa,
