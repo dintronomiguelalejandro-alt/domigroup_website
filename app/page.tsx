@@ -157,8 +157,10 @@ export default function Page() {
                 Miami, Florida &middot; Est. 2026
               </p>
               <h1 className="mt-5 text-5xl font-semibold tracking-tight text-balance md:text-6xl">
-                Domi Global{" "}
-                <span className="text-primary-foreground/80">Group</span>
+                Connecting brands to{" "}
+                <span className="text-primary-foreground/80">
+                  millions of consumers
+                </span>
               </h1>
               <p className="mx-auto mt-6 max-w-xl text-lg text-primary-foreground/80 md:mx-0">
                 Your trusted partner in global trade. We connect leading
