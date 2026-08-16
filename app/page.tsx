@@ -98,7 +98,7 @@ export default function Page() {
 
               <div className="relative mt-16 hidden aspect-[4/5] overflow-hidden border border-primary-foreground/15 md:mt-0 md:block">
                 <Image
-                  src="/hero/delivery.jpg"
+                  src="/hero/delivery.webp"
                   alt="A courier delivering a package to a customer's front door"
                   fill
                   priority
