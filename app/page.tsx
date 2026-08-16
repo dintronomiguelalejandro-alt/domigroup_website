@@ -94,6 +94,19 @@ export default function Page() {
                     Our Categories
                   </Button>
                 </div>
+
+                <div className="mt-16 flex flex-wrap justify-center gap-x-12 gap-y-6 border-t border-primary-foreground/15 pt-8 text-center md:justify-start md:text-left">
+                  {stats.map((stat) => (
+                    <div key={stat.label}>
+                      <div className="text-3xl font-semibold tabular-nums">
+                        {stat.value}
+                      </div>
+                      <div className="mt-1 text-xs tracking-widest text-primary-foreground/80 uppercase">
+                        {stat.label}
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
 
               <div className="relative mt-16 hidden aspect-[4/5] overflow-hidden border border-primary-foreground/15 md:mt-0 md:block">
@@ -106,19 +119,6 @@ export default function Page() {
                   className="object-cover"
                 />
               </div>
-            </div>
-
-            <div className="mt-20 flex flex-wrap justify-center gap-x-12 gap-y-6 border-t border-primary-foreground/15 pt-8 text-center md:justify-start md:text-left">
-              {stats.map((stat) => (
-                <div key={stat.label}>
-                  <div className="text-3xl font-semibold tabular-nums">
-                    {stat.value}
-                  </div>
-                  <div className="mt-1 text-xs tracking-widest text-primary-foreground/80 uppercase">
-                    {stat.label}
-                  </div>
-                </div>
-              ))}
             </div>
           </div>
         </section>
