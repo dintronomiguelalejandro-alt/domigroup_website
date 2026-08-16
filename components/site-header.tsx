@@ -134,8 +134,10 @@ export function SiteHeader() {
               scrolled
                 ? "text-black hover:bg-primary/10 hover:text-primary aria-expanded:bg-primary/10 aria-expanded:text-primary"
                 : cn(
-                    "hover:bg-black/10 hover:text-black aria-expanded:bg-black/10 aria-expanded:text-black",
-                    open ? "text-black" : "text-white"
+                    "text-white",
+                    open
+                      ? "hover:bg-white/10 hover:text-white/50 aria-expanded:bg-transparent aria-expanded:text-white"
+                      : "hover:bg-black/10 hover:text-black"
                   )
             )}
             onClick={() => setOpen((v) => !v)}
