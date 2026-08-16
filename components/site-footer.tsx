@@ -23,6 +23,18 @@ export function SiteFooter() {
           <p className="mt-4 text-xs text-primary-foreground/70">
             &copy; 2026 Domi Global Group. All rights reserved.
           </p>
+          <p className="mt-1 text-[11px] text-primary-foreground/40">
+            Homepage photo by{" "}
+            <a
+              href="https://www.flickr.com/photos/195311218@N08/52160093284"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-primary-foreground/70"
+            >
+              The Bag N Box Man LTD
+            </a>{" "}
+            (CC BY 2.0)
+          </p>
         </div>
 
         <nav className="flex gap-6">

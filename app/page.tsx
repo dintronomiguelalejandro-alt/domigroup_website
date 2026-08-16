@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { CheckCircle2, Globe2, Mail, MapPin, Clock, Users } from "lucide-react"
 
 import { SiteHeader } from "@/components/site-header"
@@ -60,36 +61,50 @@ export default function Page() {
       <main>
         <section className="border-b border-primary-foreground/15">
           <div className="mx-auto max-w-6xl px-8 py-24 md:py-32">
-            <div className="mx-auto max-w-2xl text-center md:mx-0 md:text-left">
-              <h1 className="text-5xl font-semibold tracking-tight text-balance md:text-6xl">
-                Connecting brands to{" "}
-                <span className="text-primary-foreground/80">
-                  millions of consumers
-                </span>
-              </h1>
-              <p className="mx-auto mt-6 max-w-xl text-lg text-primary-foreground/80 md:mx-0">
-                Your trusted partner in global trade. We connect leading
-                brands with markets across the Americas — delivering quality
-                products with reliability, speed, and professional service.
-              </p>
-              <div className="mt-8 flex flex-wrap justify-center gap-3 md:justify-start">
-                <Button
-                  size="lg"
-                  className="bg-card text-primary hover:bg-card/90"
-                  nativeButton={false}
-                  render={<a href="#contact" />}
-                >
-                  Work With Us
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
-                  nativeButton={false}
-                  render={<a href="#categories" />}
-                >
-                  Our Categories
-                </Button>
+            <div className="md:grid md:grid-cols-2 md:items-center md:gap-12 lg:gap-20">
+              <div className="mx-auto max-w-2xl text-center md:mx-0 md:max-w-none md:text-left">
+                <h1 className="text-5xl font-semibold tracking-tight text-balance md:text-6xl">
+                  Connecting brands to{" "}
+                  <span className="text-primary-foreground/80">
+                    millions of consumers
+                  </span>
+                </h1>
+                <p className="mx-auto mt-6 max-w-xl text-lg text-primary-foreground/80 md:mx-0">
+                  Your trusted partner in global trade. We connect leading
+                  brands with markets across the Americas — delivering
+                  quality products with reliability, speed, and professional
+                  service.
+                </p>
+                <div className="mt-8 flex flex-wrap justify-center gap-3 md:justify-start">
+                  <Button
+                    size="lg"
+                    className="bg-card text-primary hover:bg-card/90"
+                    nativeButton={false}
+                    render={<a href="#contact" />}
+                  >
+                    Work With Us
+                  </Button>
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
+                    nativeButton={false}
+                    render={<a href="#categories" />}
+                  >
+                    Our Categories
+                  </Button>
+                </div>
+              </div>
+
+              <div className="relative mt-16 hidden aspect-[4/5] overflow-hidden border border-primary-foreground/15 md:mt-0 md:block">
+                <Image
+                  src="/hero/delivery.jpg"
+                  alt="A courier delivering a package to a customer's front door"
+                  fill
+                  priority
+                  sizes="(min-width: 768px) 50vw, 0px"
+                  className="object-cover"
+                />
               </div>
             </div>
 
