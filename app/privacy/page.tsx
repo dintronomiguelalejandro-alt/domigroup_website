@@ -3,7 +3,6 @@ import { Ban, FileText, Mail, ShieldCheck, UserCheck } from "lucide-react"
 
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
-import { Card } from "@/components/ui/card"
 
 export const metadata: Metadata = {
   title: "Privacy Policy | Domi Global Group",
@@ -63,33 +62,29 @@ export default function PrivacyPage() {
         </section>
 
         <section className="bg-card text-card-foreground">
-          <div className="mx-auto max-w-4xl px-8 py-24">
-            <div className="grid gap-4 sm:grid-cols-2">
+          <div className="mx-auto max-w-3xl px-8 py-24">
+            <div className="space-y-10">
               {points.map((point) => (
-                <Card
-                  key={point.title}
-                  className="gap-0 rounded-2xl border border-border/60 p-7 shadow-none"
-                >
-                  <div className="flex size-12 items-center justify-center rounded-full bg-primary/10">
-                    <point.icon className="size-6 text-primary" strokeWidth={1.75} />
+                <div key={point.title} className="flex gap-4">
+                  <point.icon
+                    className="mt-0.5 size-5 shrink-0 text-primary"
+                    strokeWidth={1.75}
+                  />
+                  <div>
+                    <h2 className="text-base font-semibold">{point.title}</h2>
+                    <p className="mt-1.5 text-sm text-muted-foreground">
+                      {point.description}
+                    </p>
                   </div>
-                  <h2 className="mt-5 text-base font-semibold">
-                    {point.title}
-                  </h2>
-                  <p className="mt-2 text-sm text-muted-foreground">
-                    {point.description}
-                  </p>
-                </Card>
+                </div>
               ))}
             </div>
 
-            <Card className="mt-4 flex-row items-center gap-4 rounded-2xl border border-border/60 p-7 shadow-none">
-              <div className="flex size-12 shrink-0 items-center justify-center rounded-full bg-primary/10">
-                <Mail className="size-6 text-primary" strokeWidth={1.75} />
-              </div>
+            <div className="mt-10 flex gap-4 border-t border-border/60 pt-10">
+              <Mail className="mt-0.5 size-5 shrink-0 text-primary" strokeWidth={1.75} />
               <div>
                 <h2 className="text-base font-semibold">Questions?</h2>
-                <p className="mt-1 text-sm text-muted-foreground">
+                <p className="mt-1.5 text-sm text-muted-foreground">
                   Reach out anytime at{" "}
                   <a
                     href="mailto:sales@domiglobalgroup.com"
@@ -104,7 +99,7 @@ export default function PrivacyPage() {
                   .
                 </p>
               </div>
-            </Card>
+            </div>
           </div>
         </section>
       </main>
