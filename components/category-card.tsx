@@ -13,7 +13,7 @@ export function CategoryCard({
   return (
     <div
       className={cn(
-        "group relative flex aspect-[4/5] overflow-hidden border border-primary-foreground/15 transition-shadow hover:ring-2 hover:ring-white hover:ring-inset",
+        "group relative mx-auto flex aspect-[4/5] w-[78%] overflow-hidden border border-primary-foreground/15 transition-shadow hover:ring-2 hover:ring-white hover:ring-inset sm:mx-0 sm:w-full",
         className
       )}
     >
@@ -21,7 +21,7 @@ export function CategoryCard({
         src={category.image}
         alt={category.title}
         fill
-        sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+        sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 78vw"
         className="object-cover transition-transform duration-500 group-hover:scale-105"
       />
 

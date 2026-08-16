@@ -172,7 +172,7 @@ export default function Page() {
             </p>
 
             <div className="mt-12 grid gap-4 text-left sm:grid-cols-2 lg:grid-cols-4">
-              <div className="flex aspect-[4/5] flex-col justify-between border border-primary-foreground/15 bg-[#04182a] p-6">
+              <div className="mx-auto flex aspect-[4/5] w-[78%] flex-col justify-between border border-primary-foreground/15 bg-[#04182a] p-6 sm:mx-0 sm:w-full">
                 <div>
                   <h3 className="text-lg font-bold tracking-tight text-white uppercase">
                     View All Categories
