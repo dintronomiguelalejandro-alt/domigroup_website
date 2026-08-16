@@ -39,7 +39,7 @@ export default function CategoriesPage() {
                 <CategoryCard
                   key={cat.title}
                   category={cat}
-                  className="border-border/60 hover:border-primary/50"
+                  className="border-border/60"
                 />
               ))}
             </div>

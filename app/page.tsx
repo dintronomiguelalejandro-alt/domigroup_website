@@ -171,31 +171,29 @@ export default function Page() {
               marketplaces.
             </p>
 
-            <div className="mt-12 grid grid-cols-2 gap-3 text-left sm:gap-4 lg:grid-cols-4">
-              <div className="flex aspect-[4/5] flex-col justify-between border border-primary-foreground/15 bg-[#04182a] p-3 sm:p-6">
+            <div className="mt-12 grid gap-4 text-left sm:grid-cols-2 lg:grid-cols-4">
+              <div className="flex aspect-[4/5] flex-col justify-between border border-primary-foreground/15 bg-[#04182a] p-6">
                 <div>
-                  <h3 className="text-base font-bold tracking-tight text-white uppercase sm:text-lg">
+                  <h3 className="text-lg font-bold tracking-tight text-white uppercase">
                     View All Categories
                   </h3>
-                  <p className="mt-1.5 text-xs text-white/60 sm:mt-2 sm:text-sm">
+                  <p className="mt-2 text-sm text-white/60">
                     Explore every product category we source and distribute
                     across North America.
                   </p>
                 </div>
                 <Button
                   variant="outline"
-                  size="sm"
-                  className="mt-3 w-fit border-white/30 px-2.5 text-[10px] text-white hover:bg-white/10 hover:text-white sm:mt-6 sm:px-4 sm:text-xs"
+                  className="mt-6 w-fit border-white/30 text-white hover:bg-white/10 hover:text-white"
                   nativeButton={false}
                   render={<a href="/categories" />}
                 >
-                  <span className="sm:hidden">View All</span>
-                  <span className="hidden sm:inline">View All Categories</span>
+                  View All Categories
                 </Button>
               </div>
 
               {featuredCategories.map((cat) => (
-                <CategoryCard key={cat.title} category={cat} compact />
+                <CategoryCard key={cat.title} category={cat} />
               ))}
             </div>
           </div>
