@@ -34,7 +34,7 @@ export default function CategoriesPage() {
 
         <section className="bg-card text-card-foreground">
           <div className="mx-auto max-w-6xl px-8 py-24">
-            <div className="grid gap-4 text-left sm:grid-cols-2 lg:grid-cols-4">
+            <div className="grid grid-cols-2 gap-3 text-left sm:gap-4 lg:grid-cols-4">
               {allCategories.map((cat) => (
                 <CategoryCard
                   key={cat.title}

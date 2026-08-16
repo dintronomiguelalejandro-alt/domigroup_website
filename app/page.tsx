@@ -171,24 +171,26 @@ export default function Page() {
               marketplaces.
             </p>
 
-            <div className="mt-12 grid gap-4 text-left sm:grid-cols-2 lg:grid-cols-4">
-              <div className="flex aspect-[16/11] flex-col justify-between border border-primary-foreground/15 bg-[#04182a] p-6 sm:aspect-[4/5]">
+            <div className="mt-12 grid grid-cols-2 gap-3 text-left sm:gap-4 lg:grid-cols-4">
+              <div className="flex aspect-[4/5] flex-col justify-between border border-primary-foreground/15 bg-[#04182a] p-3 sm:p-6">
                 <div>
-                  <h3 className="text-lg font-bold tracking-tight text-white uppercase">
+                  <h3 className="text-sm font-bold tracking-tight text-white uppercase sm:text-lg">
                     View All Categories
                   </h3>
-                  <p className="mt-2 text-sm text-white/60">
+                  <p className="mt-1.5 text-[11px] text-white/60 sm:mt-2 sm:text-sm">
                     Explore every product category we source and distribute
                     across North America.
                   </p>
                 </div>
                 <Button
                   variant="outline"
-                  className="mt-6 w-fit border-white/30 text-white hover:bg-white/10 hover:text-white"
+                  size="sm"
+                  className="mt-3 w-fit border-white/30 px-2.5 text-[9px] text-white hover:bg-white/10 hover:text-white sm:mt-6 sm:px-4 sm:text-xs"
                   nativeButton={false}
                   render={<a href="/categories" />}
                 >
-                  View All Categories
+                  <span className="sm:hidden">View All</span>
+                  <span className="hidden sm:inline">View All Categories</span>
                 </Button>
               </div>
 
