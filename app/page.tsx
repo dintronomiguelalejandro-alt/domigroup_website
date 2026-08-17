@@ -207,7 +207,7 @@ export default function Page() {
                 </Button>
               </div>
 
-              {featuredCategories.map((cat) => (
+              {featuredCategories.map(({ icon: _icon, ...cat }) => (
                 <CategoryCard key={cat.title} category={cat} />
               ))}
             </div>

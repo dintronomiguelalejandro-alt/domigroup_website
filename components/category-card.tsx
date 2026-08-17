@@ -1,3 +1,6 @@
+"use client"
+
+import { useState } from "react"
 import Image from "next/image"
 
 import { cn } from "@/lib/utils"
@@ -7,13 +10,17 @@ export function CategoryCard({
   category,
   className,
 }: {
-  category: Category
+  category: Omit<Category, "icon">
   className?: string
 }) {
+  const [open, setOpen] = useState(false)
+
   return (
     <div
+      onClick={() => setOpen((v) => !v)}
       className={cn(
-        "group relative mx-auto flex aspect-[4/5] w-[78%] overflow-hidden border border-primary-foreground/15 transition-shadow hover:ring-[3px] hover:ring-white hover:ring-inset sm:mx-0 sm:w-full",
+        "group relative mx-auto flex aspect-[4/5] w-[78%] cursor-pointer overflow-hidden border border-primary-foreground/15 transition-shadow hover:ring-[3px] hover:ring-white hover:ring-inset sm:mx-0 sm:w-full",
+        open && "ring-[3px] ring-white ring-inset",
         className
       )}
     >
@@ -22,7 +29,10 @@ export function CategoryCard({
         alt={category.title}
         fill
         sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 78vw"
-        className="object-cover transition-transform duration-500 group-hover:scale-105"
+        className={cn(
+          "object-cover transition-transform duration-500 group-hover:scale-105",
+          open && "scale-105"
+        )}
       />
 
       <div className="absolute top-0 left-0 z-10 m-4 bg-primary px-3 py-1.5">
@@ -31,7 +41,12 @@ export function CategoryCard({
         </span>
       </div>
 
-      <div className="absolute inset-0 z-10 flex flex-col justify-end bg-primary p-5 opacity-0 transition-opacity duration-300 group-hover:opacity-95">
+      <div
+        className={cn(
+          "absolute inset-0 z-10 flex flex-col justify-end bg-primary p-5 opacity-0 transition-opacity duration-300 group-hover:opacity-95",
+          open && "opacity-95"
+        )}
+      >
         {category.badge && (
           <span className="text-[11px] font-semibold tracking-widest text-white uppercase">
             {category.badge}
