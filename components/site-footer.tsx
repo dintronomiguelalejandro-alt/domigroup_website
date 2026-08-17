@@ -13,12 +13,15 @@ export function SiteFooter() {
     <footer className="border-t border-primary-foreground/15">
       <div className="mx-auto flex max-w-6xl flex-col gap-6 px-8 py-12 sm:flex-row sm:items-start sm:justify-between">
         <div>
-          <div className="flex items-center gap-2">
+          <Link
+            href="/"
+            className="flex items-center gap-2 transition-colors hover:text-primary-foreground/80"
+          >
             <Globe2 className="size-4 text-primary-foreground" strokeWidth={1.75} />
             <span className="text-sm font-semibold tracking-tight">
               Domi Global Group
             </span>
-          </div>
+          </Link>
           <p className="mt-2 text-xs tracking-wide text-primary-foreground/70 uppercase">
             Global Trade &middot; United States
           </p>
