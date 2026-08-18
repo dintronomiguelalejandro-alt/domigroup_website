@@ -10,7 +10,7 @@ export function AccordionList({
 }: {
   items: { title: string; description: string }[]
 }) {
-  const [openIndex, setOpenIndex] = useState<number | null>(0)
+  const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   return (
     <div className="border-t border-border/60 text-left">
