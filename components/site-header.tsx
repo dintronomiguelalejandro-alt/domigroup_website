@@ -204,7 +204,7 @@ export function SiteHeader() {
             render={<a href={isHome ? "#contact" : "/#contact"} />}
             onClick={() => setOpen(false)}
           >
-            Work With Us
+            Start a Partnership
           </Button>
         </nav>
       </div>

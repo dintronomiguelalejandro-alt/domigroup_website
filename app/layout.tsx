@@ -14,9 +14,9 @@ const fontMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "Domi Global Group | Trading Company",
+  title: "Domi Global Group | Wholesale Trading Company",
   description:
-    "Domi Global Group is a Miami-based trading company connecting leading brands with markets across the United States, Mexico, and Canada.",
+    "Domi Global Group is a Miami-based wholesale trading company. We purchase consumer goods directly from authorized distributors across the United States, Mexico, and Canada.",
 }
 
 export default function RootLayout({

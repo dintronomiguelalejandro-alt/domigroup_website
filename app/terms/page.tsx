@@ -32,7 +32,7 @@ const sections = [
   {
     title: "4. No Direct Sales",
     body: [
-      "This website does not process orders, payments, or transactions of any kind. We don't sell products directly to consumers here; we source and distribute products to authorized retail and marketplace channels. Any product categories or brands mentioned are illustrative of the markets we operate in, not an offer for sale.",
+      "This website does not process orders, payments, or transactions of any kind. This is a business-to-business site: we purchase consumer goods in volume directly from authorized distributors and brand owners. Any product categories mentioned are illustrative of the markets we operate in, not an offer for sale to consumers.",
     ],
   },
   {
@@ -44,7 +44,7 @@ const sections = [
   {
     title: "6. Third-Party Links",
     body: [
-      "This site may link to third-party websites, including marketplaces like Amazon, for reference purposes. We don't control and aren't responsible for the content, policies, or practices of any third-party site.",
+      "This site may link to third-party websites for reference purposes. We don't control and aren't responsible for the content, policies, or practices of any third-party site.",
     ],
   },
   {

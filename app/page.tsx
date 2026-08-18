@@ -1,5 +1,16 @@
 import Image from "next/image"
-import { CheckCircle2, Globe2, Mail, MapPin, Clock, Users } from "lucide-react"
+import {
+  Building2,
+  CheckCircle2,
+  Handshake,
+  Mail,
+  MapPin,
+  Clock,
+  RefreshCcw,
+  ShieldCheck,
+  Tag,
+  Zap,
+} from "lucide-react"
 
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
@@ -9,39 +20,96 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { CategoryCard } from "@/components/category-card"
-import { featuredCategories } from "@/lib/categories"
+import { categories } from "@/lib/categories"
 
 const stats = [
   { value: "3", label: "Markets" },
-  { value: "10+", label: "Categories" },
-  { value: "FL", label: "Florida LLC" },
+  { value: "5+", label: "Categories" },
+  { value: "Miami", label: "Florida HQ" },
+  { value: "24h", label: "Response" },
 ]
 
-const features = [
+const trustPoints = [
+  "Florida Registered Company",
+  "Authorized Wholesale Buyer",
+  "Resale Certificate Holder",
+  "Miami, Florida Operations",
+  "USA · Mexico · Canada",
+]
+
+const checkmarks = [
+  "Legally registered company — Active & Good Standing in Florida",
+  "Valid Resale Certificate for tax-exempt wholesale purchases",
+  "Consistent volume orders — not one-time buyers",
+  "Miami-based operations with national distribution reach",
+  "We strictly respect all MAP pricing policies",
+  "Dedicated purchasing team — fast and professional communication",
+]
+
+const whySellToUs = [
   {
-    icon: CheckCircle2,
-    title: "LLC Registered in Florida",
+    number: "01",
+    icon: RefreshCcw,
+    title: "Consistent Volume Orders",
     description:
-      "Legally constituted company with full compliance in the State of Florida.",
+      "We place regular, recurring purchase orders across multiple product categories. We are built for consistency — not one-time transactions.",
   },
   {
-    icon: Globe2,
-    title: "Global Trade Operations",
+    number: "02",
+    icon: ShieldCheck,
+    title: "Verified & Compliant Buyer",
     description:
-      "Sourcing and distributing top-selling products across North American markets.",
+      "Registered company in good standing. Valid Florida Resale Certificate for tax-exempt wholesale purchases. Full compliance with all legal requirements.",
   },
   {
-    icon: Users,
-    title: "Reliable Business Partner",
+    number: "03",
+    icon: Tag,
+    title: "We Respect MAP Policies",
     description:
-      "We build long-term relationships with authorized distributors and suppliers.",
+      "We strictly follow Minimum Advertised Price policies. We are committed to protecting your brand's pricing integrity across all channels.",
+  },
+  {
+    number: "04",
+    icon: Zap,
+    title: "Fast & Professional Communication",
+    description:
+      "Dedicated purchasing team. We respond within 24 hours, keep communication clear, and make the buying process easy for our suppliers.",
+  },
+  {
+    number: "05",
+    icon: Building2,
+    title: "Miami-Based Operations",
+    description:
+      "Our Miami operations center gives us direct access to major US distribution networks and logistics infrastructure across the Southeast and beyond.",
+  },
+  {
+    number: "06",
+    icon: Handshake,
+    title: "Long-Term Partnerships Only",
+    description:
+      "We are not looking for one-time deals. We seek lasting supplier relationships built on trust, volume, and mutual long-term growth.",
   },
 ]
 
 const markets = [
-  { flag: "🇺🇸", name: "United States" },
-  { flag: "🇲🇽", name: "Mexico" },
-  { flag: "🇨🇦", name: "Canada" },
+  {
+    flag: "🇺🇸",
+    name: "United States",
+    description:
+      "Primary market. We distribute across all major regions through established wholesale channels and our national distribution network.",
+  },
+  {
+    flag: "🇲🇽",
+    name: "Mexico",
+    description:
+      "Fast-growing market with strong and increasing demand for US consumer brands across all major categories.",
+  },
+  {
+    flag: "🇨🇦",
+    name: "Canada",
+    description:
+      "Premium market with high consumer spending and strong brand loyalty toward US consumer products.",
+  },
 ]
 
 export default function Page() {
@@ -54,17 +122,22 @@ export default function Page() {
           <div className="mx-auto max-w-6xl px-8 pt-10 pb-32 md:pt-14 md:pb-40">
             <div className="md:grid md:grid-cols-2 md:items-center md:gap-12 lg:gap-20">
               <div className="mx-auto max-w-2xl text-center md:mx-0 md:max-w-none md:text-left">
-                <h1 className="text-5xl font-semibold tracking-tight text-balance md:text-6xl">
-                  Connecting brands to{" "}
+                <div className="inline-flex items-center border border-primary-foreground/30 px-3 py-1.5 text-xs font-medium tracking-widest text-primary-foreground uppercase">
+                  Authorized Wholesale Buyer · Miami, Florida
+                </div>
+                <h1 className="mt-6 text-5xl font-semibold tracking-tight text-balance md:text-6xl">
+                  We Source. We Buy.{" "}
                   <span className="text-primary-foreground/80">
-                    millions of consumers
+                    We Deliver.
                   </span>
                 </h1>
                 <p className="mx-auto mt-6 max-w-xl text-lg text-primary-foreground/80 md:mx-0">
-                  Your trusted partner in global trade. We connect leading
-                  brands with markets across the Americas — delivering
-                  quality products with reliability, speed, and professional
-                  service.
+                  Domi Global Group is a Miami-based wholesale trading
+                  company. We purchase consumer goods directly from
+                  authorized distributors and move them through our
+                  distribution network across the United States, Mexico, and
+                  Canada. We are looking to build serious, long-term supplier
+                  partnerships.
                 </p>
                 <div className="mt-8 flex flex-wrap justify-center gap-3 md:justify-start">
                   <Button
@@ -73,7 +146,7 @@ export default function Page() {
                     nativeButton={false}
                     render={<a href="#contact" />}
                   >
-                    Work With Us
+                    Start a Partnership →
                   </Button>
                   <Button
                     size="lg"
@@ -114,35 +187,83 @@ export default function Page() {
           </div>
         </section>
 
-        <section id="about" className="border-b border-border/60 bg-card text-card-foreground">
+        <section className="border-b border-border/60 bg-card text-card-foreground">
+          <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-8 gap-y-3 px-8 py-6 text-center">
+            {trustPoints.map((point) => (
+              <span
+                key={point}
+                className="text-xs font-medium tracking-wide text-muted-foreground uppercase"
+              >
+                {point}
+              </span>
+            ))}
+          </div>
+        </section>
+
+        <section id="about" className="border-b border-primary-foreground/15">
           <div className="mx-auto max-w-3xl px-8 py-24 text-center md:text-left">
-            <p className="text-xs font-medium tracking-widest text-primary uppercase">
+            <p className="text-xs font-medium tracking-widest text-primary-foreground uppercase">
               Who We Are
             </p>
             <h2 className="mt-4 text-3xl font-semibold tracking-tight text-balance">
-              A professional trading company based in Miami
+              A Wholesale Trading Company Based in Miami
             </h2>
-            <p className="mx-auto mt-5 max-w-lg text-muted-foreground md:mx-0">
-              Domi Global Group is a Florida-registered trading company
-              specializing in the procurement and distribution of consumer
-              goods across the United States, Mexico, and Canada.
+            <p className="mx-auto mt-5 max-w-lg text-primary-foreground/80 md:mx-0">
+              Domi Global Group is a legally registered trading company in
+              the State of Florida, dedicated to sourcing and purchasing top
+              consumer goods in volume directly from authorized distributors.
+              We operate across the United States, Mexico, and Canada,
+              building serious, long-term supply relationships with the
+              brands and distributors we work with.
             </p>
 
-            <div className="mt-10 space-y-7 text-left">
-              {features.map((feature) => (
-                <div key={feature.title} className="flex gap-4">
-                  <feature.icon
-                    className="mt-0.5 size-5 shrink-0 text-primary"
+            <div className="mt-10 space-y-4 text-left">
+              {checkmarks.map((line) => (
+                <div key={line} className="flex gap-3">
+                  <CheckCircle2
+                    className="mt-0.5 size-5 shrink-0 text-primary-foreground"
                     strokeWidth={1.75}
                   />
-                  <div>
-                    <h3 className="text-sm font-semibold">
-                      {feature.title}
-                    </h3>
-                    <p className="mt-1 text-sm text-muted-foreground">
-                      {feature.description}
-                    </p>
+                  <p className="text-sm text-primary-foreground/90">{line}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-card text-card-foreground">
+          <div className="mx-auto max-w-6xl px-8 py-24 text-center md:text-left">
+            <p className="text-xs font-medium tracking-widest text-primary uppercase">
+              Why Partner With Us
+            </p>
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-balance">
+              Why Sell To Us
+            </h2>
+            <p className="mx-auto mt-5 max-w-xl text-muted-foreground md:mx-0">
+              What we offer our distribution partners
+            </p>
+
+            <div className="mt-12 grid gap-4 text-left sm:grid-cols-2 lg:grid-cols-3">
+              {whySellToUs.map((item) => (
+                <div
+                  key={item.number}
+                  className="border border-border/60 p-6"
+                >
+                  <div className="flex items-center gap-3">
+                    <span className="text-xs font-semibold tracking-widest text-primary">
+                      {item.number}
+                    </span>
+                    <item.icon
+                      className="size-5 text-primary"
+                      strokeWidth={1.75}
+                    />
                   </div>
+                  <h3 className="mt-4 text-base font-semibold">
+                    {item.title}
+                  </h3>
+                  <p className="mt-2 text-sm text-muted-foreground">
+                    {item.description}
+                  </p>
                 </div>
               ))}
             </div>
@@ -158,33 +279,12 @@ export default function Page() {
               What we trade
             </h2>
             <p className="mx-auto mt-5 max-w-xl text-primary-foreground/80 md:mx-0">
-              We work with authorized distributors across the most in-demand
-              consumer product categories on Amazon and major US
-              marketplaces.
+              We actively purchase from authorized distributors across the
+              most in-demand consumer categories in the US market.
             </p>
 
-            <div className="mt-12 grid gap-4 text-left sm:grid-cols-2 lg:grid-cols-4">
-              <div className="mx-auto flex aspect-[4/5] w-[78%] flex-col justify-between border border-primary-foreground/15 bg-[#04182a] p-6 sm:mx-0 sm:w-full">
-                <div>
-                  <h3 className="text-lg font-bold tracking-tight text-white uppercase">
-                    View All Categories
-                  </h3>
-                  <p className="mt-2 text-sm text-white/60">
-                    Explore every product category we source and distribute
-                    across North America.
-                  </p>
-                </div>
-                <Button
-                  variant="outline"
-                  className="mt-6 w-fit border-white/30 text-white hover:bg-white/10 hover:text-white"
-                  nativeButton={false}
-                  render={<a href="/categories" />}
-                >
-                  View All Categories
-                </Button>
-              </div>
-
-              {featuredCategories.map(({ icon: _icon, ...cat }) => (
+            <div className="mt-12 grid gap-4 text-left sm:grid-cols-2 lg:grid-cols-3">
+              {categories.map(({ icon: _icon, ...cat }) => (
                 <CategoryCard key={cat.title} category={cat} />
               ))}
             </div>
@@ -197,24 +297,28 @@ export default function Page() {
               Our Markets
             </p>
             <h2 className="mt-4 text-3xl font-semibold tracking-tight text-balance">
-              Where we operate
+              Where We Operate
             </h2>
             <p className="mx-auto mt-5 max-w-xl text-muted-foreground md:mx-0">
-              We actively trade across three major North American markets,
-              bringing products to millions of consumers through Amazon and
-              major US marketplaces.
+              Three major North American markets, millions of end
+              consumers.
             </p>
 
             <div className="mt-10 grid gap-4 text-left sm:grid-cols-3">
               {markets.map((market) => (
                 <Card
                   key={market.name}
-                  className="flex-row items-center justify-center gap-3 rounded-2xl border border-border/60 px-6 py-5 shadow-none sm:justify-start"
+                  className="gap-2 rounded-2xl border border-border/60 p-6 shadow-none"
                 >
-                  <span className="text-2xl">{market.flag}</span>
-                  <span className="text-sm font-semibold">
-                    {market.name}
-                  </span>
+                  <div className="flex items-center gap-3">
+                    <span className="text-2xl">{market.flag}</span>
+                    <span className="text-sm font-semibold">
+                      {market.name}
+                    </span>
+                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    {market.description}
+                  </p>
                 </Card>
               ))}
             </div>
@@ -225,11 +329,11 @@ export default function Page() {
           <div className="mx-auto flex max-w-6xl flex-col items-center gap-8 px-8 py-16 text-center text-primary-foreground md:flex-row md:items-center md:justify-between md:text-left">
             <div>
               <h2 className="text-2xl font-semibold tracking-tight text-balance md:text-3xl">
-                Ready to bring your products to new markets?
+                Ready to become a trusted supplier?
               </h2>
               <p className="mx-auto mt-3 max-w-xl text-primary-foreground/80 md:mx-0">
-                Partner with Domi Global Group and reach millions of
-                consumers across the United States, Mexico, and Canada.
+                Join our network of authorized distributors and start a
+                long-term wholesale partnership with Domi Global Group.
               </p>
             </div>
             <Button
@@ -247,11 +351,15 @@ export default function Page() {
           <div className="mx-auto grid max-w-6xl gap-16 px-8 py-24 md:grid-cols-2">
             <div className="text-center md:text-left">
               <h2 className="text-3xl font-semibold tracking-tight text-balance">
-                Let&apos;s work together
+                Interested in Supplying Us?
               </h2>
               <p className="mx-auto mt-5 max-w-md text-muted-foreground md:mx-0">
-                We are always looking to partner with authorized distributors
-                and suppliers. Reach out to discuss how we can work together.
+                We are actively looking for authorized distributors and brand
+                owners to establish long-term supply agreements. If you
+                represent a brand or distribute consumer goods and are
+                looking for a serious, consistent wholesale buyer — we want
+                to hear from you. Fill out the form and our purchasing team
+                will get back to you within 24 hours.
               </p>
 
               <div className="mt-10 space-y-6 text-left">
@@ -337,11 +445,11 @@ export default function Page() {
                     name="Message"
                     required
                     className="min-h-28"
-                    placeholder="Tell us about your products and how we can work together..."
+                    placeholder="Tell us about your brand and the products you distribute..."
                   />
                 </div>
                 <Button type="submit" className="w-full">
-                  Send Message
+                  Submit Wholesale Inquiry →
                 </Button>
               </form>
             </Card>

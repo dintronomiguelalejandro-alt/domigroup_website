@@ -45,7 +45,7 @@ export default async function Image() {
             color: "rgba(255,255,255,0.82)",
           }}
         >
-          Your trusted partner in global trade
+          Your Reliable Wholesale Buyer in North America
         </div>
       </div>
     ),
