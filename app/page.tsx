@@ -206,14 +206,18 @@ export default function Page() {
               </p>
             </Reveal>
 
-            <div className="mt-10 space-y-4 text-left">
+            <div className="mt-10 border-t border-border/60 text-left">
               {checkmarks.map((line, i) => (
-                <Reveal key={line} delay={i * 60} className="flex gap-3">
+                <Reveal
+                  key={line}
+                  delay={i * 60}
+                  className="flex items-center justify-between gap-4 border-b border-border/60 py-5"
+                >
+                  <p className="text-base text-card-foreground">{line}</p>
                   <CheckCircle2
-                    className="mt-0.5 size-5 shrink-0 text-primary"
+                    className="size-5 shrink-0 text-primary"
                     strokeWidth={1.75}
                   />
-                  <p className="text-sm text-muted-foreground">{line}</p>
                 </Reveal>
               ))}
             </div>
@@ -234,26 +238,21 @@ export default function Page() {
               </p>
             </Reveal>
 
-            <div className="mt-12 grid gap-4 text-left sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mx-auto mt-12 max-w-3xl border-t border-border/60 text-left md:mx-0">
               {whySellToUs.map((item, i) => (
                 <Reveal
                   key={item.number}
                   delay={(i % 3) * 80}
-                  className="border border-border/60 p-6"
+                  className="border-b border-border/60 py-6"
                 >
-                  <div className="flex items-center gap-3">
-                    <span className="text-xs font-semibold tracking-widest text-primary">
-                      {item.number}
-                    </span>
+                  <div className="flex items-center justify-between gap-4">
+                    <h3 className="text-lg font-semibold">{item.title}</h3>
                     <item.icon
-                      className="size-5 text-primary"
+                      className="size-5 shrink-0 text-primary"
                       strokeWidth={1.75}
                     />
                   </div>
-                  <h3 className="mt-4 text-base font-semibold">
-                    {item.title}
-                  </h3>
-                  <p className="mt-2 text-sm text-muted-foreground">
+                  <p className="mt-2 max-w-xl text-sm text-muted-foreground">
                     {item.description}
                   </p>
                 </Reveal>
