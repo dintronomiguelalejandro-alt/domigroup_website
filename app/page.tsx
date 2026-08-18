@@ -10,7 +10,6 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { CategoryCard } from "@/components/category-card"
 import { Reveal } from "@/components/reveal"
-import { AccordionList } from "@/components/accordion-list"
 import { categories } from "@/lib/categories"
 
 const stats = [
@@ -27,39 +26,6 @@ const checkmarks = [
   "Miami-based operations with national distribution reach",
   "We strictly respect all MAP pricing policies",
   "Dedicated purchasing team — fast and professional communication",
-]
-
-const whySellToUs = [
-  {
-    title: "Consistent Volume Orders",
-    description:
-      "We place regular, recurring purchase orders across multiple product categories. We are built for consistency — not one-time transactions.",
-  },
-  {
-    title: "Verified & Compliant Buyer",
-    description:
-      "Registered company in good standing. Valid Florida Resale Certificate for tax-exempt wholesale purchases. Full compliance with all legal requirements.",
-  },
-  {
-    title: "We Respect MAP Policies",
-    description:
-      "We strictly follow Minimum Advertised Price policies. We are committed to protecting your brand's pricing integrity across all channels.",
-  },
-  {
-    title: "Fast & Professional Communication",
-    description:
-      "Dedicated purchasing team. We respond within 24 hours, keep communication clear, and make the buying process easy for our suppliers.",
-  },
-  {
-    title: "Miami-Based Operations",
-    description:
-      "Our Miami operations center gives us direct access to major US distribution networks and logistics infrastructure across the Southeast and beyond.",
-  },
-  {
-    title: "Long-Term Partnerships Only",
-    description:
-      "We are not looking for one-time deals. We seek lasting supplier relationships built on trust, volume, and mutual long-term growth.",
-  },
 ]
 
 const markets = [
@@ -169,7 +135,7 @@ export default function Page() {
           <div className="mx-auto max-w-3xl px-8 py-24 text-center md:text-left">
             <Reveal>
               <p className="text-xs font-medium tracking-widest text-primary uppercase">
-                Who We Are &amp; Why Partner With Us
+                Who We Are
               </p>
               <h2 className="mt-4 text-3xl font-semibold tracking-tight text-balance">
                 A Wholesale Trading Company Based in Miami
@@ -180,9 +146,7 @@ export default function Page() {
                 top consumer goods in volume directly from authorized
                 distributors. We operate across the United States, Mexico,
                 and Canada, building serious, long-term supply relationships
-                with the brands and distributors we work with. Here&apos;s
-                what that means for the distributors and brands we work
-                with.
+                with the brands and distributors we work with.
               </p>
             </Reveal>
 
@@ -201,18 +165,6 @@ export default function Page() {
                 </Reveal>
               ))}
             </div>
-
-            <Reveal className="mt-14">
-              <h3 className="text-xl font-semibold tracking-tight text-balance">
-                Why Sell To Us
-              </h3>
-              <p className="mx-auto mt-2 max-w-lg text-sm text-muted-foreground md:mx-0">
-                What we offer our distribution partners
-              </p>
-              <div className="mt-6">
-                <AccordionList items={whySellToUs} />
-              </div>
-            </Reveal>
           </div>
         </section>
 
