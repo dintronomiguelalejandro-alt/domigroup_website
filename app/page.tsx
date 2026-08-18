@@ -8,7 +8,6 @@ import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
-import { Separator } from "@/components/ui/separator"
 import { CategoryCard } from "@/components/category-card"
 import { featuredCategories } from "@/lib/categories"
 
@@ -37,14 +36,6 @@ const features = [
     description:
       "We build long-term relationships with authorized distributors and suppliers.",
   },
-]
-
-const companyInfo = [
-  { label: "Company Name", value: "Domi Global Group" },
-  { label: "Registration", value: "State of Florida, USA" },
-  { label: "Headquarters", value: "Miami, Florida 33130" },
-  { label: "Business Type", value: "General Merchandise Trade" },
-  { label: "Established", value: "2026" },
 ]
 
 const markets = [
@@ -124,51 +115,37 @@ export default function Page() {
         </section>
 
         <section id="about" className="border-b border-border/60 bg-card text-card-foreground">
-          <div className="mx-auto grid max-w-6xl gap-16 px-8 py-24 md:grid-cols-[1.1fr_0.9fr]">
-            <div className="text-center md:text-left">
-              <p className="text-xs font-medium tracking-widest text-primary uppercase">
-                Who We Are
-              </p>
-              <h2 className="mt-4 text-3xl font-semibold tracking-tight text-balance">
-                A professional trading company based in Miami
-              </h2>
-              <p className="mx-auto mt-5 max-w-lg text-muted-foreground md:mx-0">
-                Domi Global Group is a Florida-registered trading company
-                specializing in the procurement and distribution of consumer
-                goods across the United States, Mexico, and Canada.
-              </p>
+          <div className="mx-auto max-w-3xl px-8 py-24 text-center md:text-left">
+            <p className="text-xs font-medium tracking-widest text-primary uppercase">
+              Who We Are
+            </p>
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-balance">
+              A professional trading company based in Miami
+            </h2>
+            <p className="mx-auto mt-5 max-w-lg text-muted-foreground md:mx-0">
+              Domi Global Group is a Florida-registered trading company
+              specializing in the procurement and distribution of consumer
+              goods across the United States, Mexico, and Canada.
+            </p>
 
-              <div className="mt-10 space-y-7 text-left">
-                {features.map((feature) => (
-                  <div key={feature.title} className="flex gap-4">
-                    <feature.icon
-                      className="mt-0.5 size-5 shrink-0 text-primary"
-                      strokeWidth={1.75}
-                    />
-                    <div>
-                      <h3 className="text-sm font-semibold">
-                        {feature.title}
-                      </h3>
-                      <p className="mt-1 text-sm text-muted-foreground">
-                        {feature.description}
-                      </p>
-                    </div>
+            <div className="mt-10 space-y-7 text-left">
+              {features.map((feature) => (
+                <div key={feature.title} className="flex gap-4">
+                  <feature.icon
+                    className="mt-0.5 size-5 shrink-0 text-primary"
+                    strokeWidth={1.75}
+                  />
+                  <div>
+                    <h3 className="text-sm font-semibold">
+                      {feature.title}
+                    </h3>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      {feature.description}
+                    </p>
                   </div>
-                ))}
-              </div>
-            </div>
-
-            <Card className="h-fit gap-0 rounded-2xl border border-border/60 bg-muted/40 p-8 shadow-none">
-              {companyInfo.map((row, i) => (
-                <div key={row.label}>
-                  {i > 0 && <Separator className="my-5" />}
-                  <p className="text-[11px] font-medium tracking-widest text-muted-foreground uppercase">
-                    {row.label}
-                  </p>
-                  <p className="mt-1.5 text-sm font-semibold">{row.value}</p>
                 </div>
               ))}
-            </Card>
+            </div>
           </div>
         </section>
 
