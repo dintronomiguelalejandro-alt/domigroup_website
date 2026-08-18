@@ -20,6 +20,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { CategoryCard } from "@/components/category-card"
+import { Reveal } from "@/components/reveal"
 import { categories } from "@/lib/categories"
 
 const stats = [
@@ -114,58 +115,65 @@ export default function Page() {
           <div className="mx-auto max-w-6xl px-8 pt-10 pb-32 md:pt-14 md:pb-40">
             <div className="md:grid md:grid-cols-2 md:items-center md:gap-12 lg:gap-20">
               <div className="mx-auto max-w-2xl text-center md:mx-0 md:max-w-none md:text-left">
-                <div className="inline-flex items-center border border-primary-foreground/30 px-3 py-1.5 text-xs font-medium tracking-widest text-primary-foreground uppercase">
-                  Authorized Wholesale Buyer · Miami, Florida
-                </div>
-                <h1 className="mt-6 text-5xl font-semibold tracking-tight text-balance md:text-6xl">
-                  We Source. We Buy.{" "}
-                  <span className="text-primary-foreground/80">
-                    We Deliver.
-                  </span>
-                </h1>
-                <p className="mx-auto mt-6 max-w-xl text-lg text-primary-foreground/80 md:mx-0">
-                  Domi Global Group is a Miami-based wholesale trading
-                  company. We purchase consumer goods directly from
-                  authorized distributors and move them through our
-                  distribution network across the United States, Mexico, and
-                  Canada. We are looking to build serious, long-term supplier
-                  partnerships.
-                </p>
-                <div className="mt-8 flex flex-wrap justify-center gap-3 md:justify-start">
-                  <Button
-                    size="lg"
-                    className="bg-card text-primary hover:bg-card/90"
-                    nativeButton={false}
-                    render={<a href="#contact" />}
-                  >
-                    Start a Partnership →
-                  </Button>
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
-                    nativeButton={false}
-                    render={<a href="#categories" />}
-                  >
-                    Our Categories
-                  </Button>
-                </div>
+                <Reveal>
+                  <div className="inline-flex items-center border border-primary-foreground/30 px-3 py-1.5 text-xs font-medium tracking-widest text-primary-foreground uppercase">
+                    Authorized Wholesale Buyer · Miami, Florida
+                  </div>
+                  <h1 className="mt-6 text-5xl font-semibold tracking-tight text-balance md:text-6xl">
+                    We Source. We Buy.{" "}
+                    <span className="text-primary-foreground/80">
+                      We Deliver.
+                    </span>
+                  </h1>
+                  <p className="mx-auto mt-6 max-w-xl text-lg text-primary-foreground/80 md:mx-0">
+                    Domi Global Group is a Miami-based wholesale trading
+                    company. We purchase consumer goods directly from
+                    authorized distributors and move them through our
+                    distribution network across the United States, Mexico,
+                    and Canada. We are looking to build serious, long-term
+                    supplier partnerships.
+                  </p>
+                  <div className="mt-8 flex flex-wrap justify-center gap-3 md:justify-start">
+                    <Button
+                      size="lg"
+                      className="bg-card text-primary hover:bg-card/90"
+                      nativeButton={false}
+                      render={<a href="#contact" />}
+                    >
+                      Start a Partnership →
+                    </Button>
+                    <Button
+                      size="lg"
+                      variant="outline"
+                      className="border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
+                      nativeButton={false}
+                      render={<a href="#categories" />}
+                    >
+                      Our Categories
+                    </Button>
+                  </div>
+                </Reveal>
 
-                <div className="mt-16 flex flex-wrap justify-center gap-x-12 gap-y-6 border-t border-primary-foreground/15 pt-8 text-center md:justify-start md:text-left">
-                  {stats.map((stat) => (
-                    <div key={stat.label}>
-                      <div className="text-3xl font-semibold tabular-nums">
-                        {stat.value}
+                <Reveal delay={150}>
+                  <div className="mt-16 flex flex-wrap justify-center gap-x-12 gap-y-6 border-t border-primary-foreground/15 pt-8 text-center md:justify-start md:text-left">
+                    {stats.map((stat) => (
+                      <div key={stat.label}>
+                        <div className="text-3xl font-semibold tabular-nums">
+                          {stat.value}
+                        </div>
+                        <div className="mt-1 text-xs tracking-widest text-primary-foreground/80 uppercase">
+                          {stat.label}
+                        </div>
                       </div>
-                      <div className="mt-1 text-xs tracking-widest text-primary-foreground/80 uppercase">
-                        {stat.label}
-                      </div>
-                    </div>
-                  ))}
-                </div>
+                    ))}
+                  </div>
+                </Reveal>
               </div>
 
-              <div className="relative mt-16 hidden aspect-[4/5] overflow-hidden border border-primary-foreground/15 md:mt-0 md:block">
+              <Reveal
+                delay={100}
+                className="relative mt-16 hidden aspect-[4/5] overflow-hidden border border-primary-foreground/15 md:mt-0 md:block"
+              >
                 <Image
                   src="/hero/delivery.webp"
                   alt="A courier delivering a package to a customer's front door"
@@ -174,37 +182,39 @@ export default function Page() {
                   sizes="(min-width: 768px) 50vw, 0px"
                   className="object-cover"
                 />
-              </div>
+              </Reveal>
             </div>
           </div>
         </section>
 
         <section id="about" className="border-b border-border/60 bg-card text-card-foreground">
           <div className="mx-auto max-w-3xl px-8 py-24 text-center md:text-left">
-            <p className="text-xs font-medium tracking-widest text-primary uppercase">
-              Who We Are
-            </p>
-            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-balance">
-              A Wholesale Trading Company Based in Miami
-            </h2>
-            <p className="mx-auto mt-5 max-w-lg text-muted-foreground md:mx-0">
-              Domi Global Group is a legally registered trading company in
-              the State of Florida, dedicated to sourcing and purchasing top
-              consumer goods in volume directly from authorized distributors.
-              We operate across the United States, Mexico, and Canada,
-              building serious, long-term supply relationships with the
-              brands and distributors we work with.
-            </p>
+            <Reveal>
+              <p className="text-xs font-medium tracking-widest text-primary uppercase">
+                Who We Are
+              </p>
+              <h2 className="mt-4 text-3xl font-semibold tracking-tight text-balance">
+                A Wholesale Trading Company Based in Miami
+              </h2>
+              <p className="mx-auto mt-5 max-w-lg text-muted-foreground md:mx-0">
+                Domi Global Group is a legally registered trading company in
+                the State of Florida, dedicated to sourcing and purchasing
+                top consumer goods in volume directly from authorized
+                distributors. We operate across the United States, Mexico,
+                and Canada, building serious, long-term supply relationships
+                with the brands and distributors we work with.
+              </p>
+            </Reveal>
 
             <div className="mt-10 space-y-4 text-left">
-              {checkmarks.map((line) => (
-                <div key={line} className="flex gap-3">
+              {checkmarks.map((line, i) => (
+                <Reveal key={line} delay={i * 60} className="flex gap-3">
                   <CheckCircle2
                     className="mt-0.5 size-5 shrink-0 text-primary"
                     strokeWidth={1.75}
                   />
                   <p className="text-sm text-muted-foreground">{line}</p>
-                </div>
+                </Reveal>
               ))}
             </div>
           </div>
@@ -212,20 +222,23 @@ export default function Page() {
 
         <section className="bg-card text-card-foreground">
           <div className="mx-auto max-w-6xl px-8 py-24 text-center md:text-left">
-            <p className="text-xs font-medium tracking-widest text-primary uppercase">
-              Why Partner With Us
-            </p>
-            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-balance">
-              Why Sell To Us
-            </h2>
-            <p className="mx-auto mt-5 max-w-xl text-muted-foreground md:mx-0">
-              What we offer our distribution partners
-            </p>
+            <Reveal>
+              <p className="text-xs font-medium tracking-widest text-primary uppercase">
+                Why Partner With Us
+              </p>
+              <h2 className="mt-4 text-3xl font-semibold tracking-tight text-balance">
+                Why Sell To Us
+              </h2>
+              <p className="mx-auto mt-5 max-w-xl text-muted-foreground md:mx-0">
+                What we offer our distribution partners
+              </p>
+            </Reveal>
 
             <div className="mt-12 grid gap-4 text-left sm:grid-cols-2 lg:grid-cols-3">
-              {whySellToUs.map((item) => (
-                <div
+              {whySellToUs.map((item, i) => (
+                <Reveal
                   key={item.number}
+                  delay={(i % 3) * 80}
                   className="border border-border/60 p-6"
                 >
                   <div className="flex items-center gap-3">
@@ -243,7 +256,7 @@ export default function Page() {
                   <p className="mt-2 text-sm text-muted-foreground">
                     {item.description}
                   </p>
-                </div>
+                </Reveal>
               ))}
             </div>
           </div>
@@ -251,20 +264,24 @@ export default function Page() {
 
         <section id="categories" className="border-b border-primary-foreground/15">
           <div className="mx-auto max-w-6xl px-8 py-24 text-center md:text-left">
-            <p className="text-xs font-medium tracking-widest text-primary-foreground uppercase">
-              Product Categories
-            </p>
-            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-balance">
-              What we trade
-            </h2>
-            <p className="mx-auto mt-5 max-w-xl text-primary-foreground/80 md:mx-0">
-              We actively purchase from authorized distributors across the
-              most in-demand consumer categories in the US market.
-            </p>
+            <Reveal>
+              <p className="text-xs font-medium tracking-widest text-primary-foreground uppercase">
+                Product Categories
+              </p>
+              <h2 className="mt-4 text-3xl font-semibold tracking-tight text-balance">
+                What we trade
+              </h2>
+              <p className="mx-auto mt-5 max-w-xl text-primary-foreground/80 md:mx-0">
+                We actively purchase from authorized distributors across the
+                most in-demand consumer categories in the US market.
+              </p>
+            </Reveal>
 
             <div className="mt-12 grid gap-4 text-left sm:grid-cols-2 lg:grid-cols-3">
-              {categories.map(({ icon: _icon, ...cat }) => (
-                <CategoryCard key={cat.title} category={cat} />
+              {categories.map(({ icon: _icon, ...cat }, i) => (
+                <Reveal key={cat.title} delay={(i % 3) * 80}>
+                  <CategoryCard category={cat} />
+                </Reveal>
               ))}
             </div>
           </div>
@@ -272,40 +289,41 @@ export default function Page() {
 
         <section id="markets" className="border-b border-border/60 bg-card text-card-foreground">
           <div className="mx-auto max-w-6xl px-8 py-24 text-center md:text-left">
-            <p className="text-xs font-medium tracking-widest text-primary uppercase">
-              Our Markets
-            </p>
-            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-balance">
-              Where We Operate
-            </h2>
-            <p className="mx-auto mt-5 max-w-xl text-muted-foreground md:mx-0">
-              Three major North American markets, millions of end
-              consumers.
-            </p>
+            <Reveal>
+              <p className="text-xs font-medium tracking-widest text-primary uppercase">
+                Our Markets
+              </p>
+              <h2 className="mt-4 text-3xl font-semibold tracking-tight text-balance">
+                Where We Operate
+              </h2>
+              <p className="mx-auto mt-5 max-w-xl text-muted-foreground md:mx-0">
+                Three major North American markets, millions of end
+                consumers.
+              </p>
+            </Reveal>
 
             <div className="mt-10 grid gap-4 text-left sm:grid-cols-3">
-              {markets.map((market) => (
-                <Card
-                  key={market.name}
-                  className="gap-2 rounded-2xl border border-border/60 p-6 shadow-none"
-                >
-                  <div className="flex items-center gap-3">
-                    <span className="text-2xl">{market.flag}</span>
-                    <span className="text-sm font-semibold">
-                      {market.name}
-                    </span>
-                  </div>
-                  <p className="text-sm text-muted-foreground">
-                    {market.description}
-                  </p>
-                </Card>
+              {markets.map((market, i) => (
+                <Reveal key={market.name} delay={i * 80}>
+                  <Card className="gap-2 rounded-2xl border border-border/60 p-6 shadow-none">
+                    <div className="flex items-center gap-3">
+                      <span className="text-2xl">{market.flag}</span>
+                      <span className="text-sm font-semibold">
+                        {market.name}
+                      </span>
+                    </div>
+                    <p className="text-sm text-muted-foreground">
+                      {market.description}
+                    </p>
+                  </Card>
+                </Reveal>
               ))}
             </div>
           </div>
         </section>
 
         <section className="bg-primary">
-          <div className="mx-auto flex max-w-6xl flex-col items-center gap-8 px-8 py-16 text-center text-primary-foreground md:flex-row md:items-center md:justify-between md:text-left">
+          <Reveal className="mx-auto flex max-w-6xl flex-col items-center gap-8 px-8 py-16 text-center text-primary-foreground md:flex-row md:items-center md:justify-between md:text-left">
             <div>
               <h2 className="text-2xl font-semibold tracking-tight text-balance md:text-3xl">
                 Ready to become a trusted supplier?
@@ -323,12 +341,12 @@ export default function Page() {
             >
               Get In Touch
             </Button>
-          </div>
+          </Reveal>
         </section>
 
         <section id="contact" className="bg-card text-card-foreground">
           <div className="mx-auto grid max-w-6xl gap-16 px-8 py-24 md:grid-cols-2">
-            <div className="text-center md:text-left">
+            <Reveal className="text-center md:text-left">
               <h2 className="text-3xl font-semibold tracking-tight text-balance">
                 Interested in Supplying Us?
               </h2>
@@ -385,8 +403,9 @@ export default function Page() {
                   </div>
                 </div>
               </div>
-            </div>
+            </Reveal>
 
+            <Reveal delay={120}>
             <Card className="gap-0 rounded-2xl border border-border/60 p-8 shadow-none">
               <form
                 action="mailto:sales@domiglobalgroup.com"
@@ -432,6 +451,7 @@ export default function Page() {
                 </Button>
               </form>
             </Card>
+            </Reveal>
           </div>
         </section>
       </main>
