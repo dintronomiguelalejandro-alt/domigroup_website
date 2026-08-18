@@ -166,58 +166,53 @@ export default function Page() {
         </section>
 
         <section id="about" className="border-b border-border/60 bg-card text-card-foreground">
-          <div className="mx-auto max-w-6xl px-8 py-24">
-            <div className="grid gap-16 md:grid-cols-2">
-              <Reveal className="text-center md:text-left">
-                <p className="text-xs font-medium tracking-widest text-primary uppercase">
-                  Who We Are
-                </p>
-                <h2 className="mt-4 text-3xl font-semibold tracking-tight text-balance">
-                  A Wholesale Trading Company Based in Miami
-                </h2>
-                <p className="mx-auto mt-5 max-w-lg text-muted-foreground md:mx-0">
-                  Domi Global Group is a legally registered trading company
-                  in the State of Florida, dedicated to sourcing and
-                  purchasing top consumer goods in volume directly from
-                  authorized distributors. We operate across the United
-                  States, Mexico, and Canada, building serious, long-term
-                  supply relationships with the brands and distributors we
-                  work with.
-                </p>
+          <div className="mx-auto max-w-3xl px-8 py-24 text-center md:text-left">
+            <Reveal>
+              <p className="text-xs font-medium tracking-widest text-primary uppercase">
+                Who We Are &amp; Why Partner With Us
+              </p>
+              <h2 className="mt-4 text-3xl font-semibold tracking-tight text-balance">
+                A Wholesale Trading Company Based in Miami
+              </h2>
+              <p className="mx-auto mt-5 max-w-lg text-muted-foreground md:mx-0">
+                Domi Global Group is a legally registered trading company in
+                the State of Florida, dedicated to sourcing and purchasing
+                top consumer goods in volume directly from authorized
+                distributors. We operate across the United States, Mexico,
+                and Canada, building serious, long-term supply relationships
+                with the brands and distributors we work with. Here&apos;s
+                what that means for the distributors and brands we work
+                with.
+              </p>
+            </Reveal>
 
-                <div className="mt-10 border-t border-border/60 text-left">
-                  {checkmarks.map((line, i) => (
-                    <Reveal
-                      key={line}
-                      delay={i * 60}
-                      className="flex items-center justify-between gap-4 border-b border-border/60 py-5"
-                    >
-                      <p className="text-base text-card-foreground">{line}</p>
-                      <CheckCircle2
-                        className="size-5 shrink-0 text-primary"
-                        strokeWidth={1.75}
-                      />
-                    </Reveal>
-                  ))}
-                </div>
-              </Reveal>
-
-              <Reveal delay={100} className="text-center md:text-left">
-                <p className="text-xs font-medium tracking-widest text-primary uppercase">
-                  Why Partner With Us
-                </p>
-                <h2 className="mt-4 text-3xl font-semibold tracking-tight text-balance">
-                  Why Sell To Us
-                </h2>
-                <p className="mx-auto mt-5 max-w-xl text-muted-foreground md:mx-0">
-                  What we offer our distribution partners
-                </p>
-
-                <div className="mt-10">
-                  <AccordionList items={whySellToUs} />
-                </div>
-              </Reveal>
+            <div className="mt-10 border-t border-border/60 text-left">
+              {checkmarks.map((line, i) => (
+                <Reveal
+                  key={line}
+                  delay={i * 60}
+                  className="flex items-center justify-between gap-4 border-b border-border/60 py-5"
+                >
+                  <p className="text-base text-card-foreground">{line}</p>
+                  <CheckCircle2
+                    className="size-5 shrink-0 text-primary"
+                    strokeWidth={1.75}
+                  />
+                </Reveal>
+              ))}
             </div>
+
+            <Reveal className="mt-14">
+              <h3 className="text-xl font-semibold tracking-tight text-balance">
+                Why Sell To Us
+              </h3>
+              <p className="mx-auto mt-2 max-w-lg text-sm text-muted-foreground md:mx-0">
+                What we offer our distribution partners
+              </p>
+              <div className="mt-6">
+                <AccordionList items={whySellToUs} />
+              </div>
+            </Reveal>
           </div>
         </section>
 
