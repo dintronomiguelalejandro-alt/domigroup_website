@@ -157,16 +157,18 @@ export default function Page() {
         </section>
 
         <section id="about" className="border-b border-border/60 bg-card text-card-foreground">
-          <div className="mx-auto max-w-3xl px-8 py-24 text-left">
-            <Reveal>
-              <p className="text-xs font-medium tracking-widest text-primary uppercase">
-                Who We Are
-              </p>
-            </Reveal>
+          <div className="mx-auto max-w-6xl px-8 py-24 text-left">
+            <div className="max-w-3xl">
+              <Reveal>
+                <p className="text-xs font-medium tracking-widest text-primary uppercase">
+                  Who We Are
+                </p>
+              </Reveal>
 
-            <Reveal delay={80} className="mt-10">
-              <AccordionList items={checkmarks} />
-            </Reveal>
+              <Reveal delay={80} className="mt-10">
+                <AccordionList items={checkmarks} />
+              </Reveal>
+            </div>
           </div>
         </section>
 
