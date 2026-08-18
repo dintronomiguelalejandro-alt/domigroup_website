@@ -29,14 +29,6 @@ const stats = [
   { value: "24h", label: "Response" },
 ]
 
-const trustPoints = [
-  "Florida Registered Company",
-  "Authorized Wholesale Buyer",
-  "Resale Certificate Holder",
-  "Miami, Florida Operations",
-  "USA · Mexico · Canada",
-]
-
 const checkmarks = [
   "Legally registered company — Active & Good Standing in Florida",
   "Valid Resale Certificate for tax-exempt wholesale purchases",
@@ -187,28 +179,15 @@ export default function Page() {
           </div>
         </section>
 
-        <section className="border-b border-border/60 bg-card text-card-foreground">
-          <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-8 gap-y-3 px-8 py-6 text-center">
-            {trustPoints.map((point) => (
-              <span
-                key={point}
-                className="text-xs font-medium tracking-wide text-muted-foreground uppercase"
-              >
-                {point}
-              </span>
-            ))}
-          </div>
-        </section>
-
-        <section id="about" className="border-b border-primary-foreground/15">
+        <section id="about" className="border-b border-border/60 bg-card text-card-foreground">
           <div className="mx-auto max-w-3xl px-8 py-24 text-center md:text-left">
-            <p className="text-xs font-medium tracking-widest text-primary-foreground uppercase">
+            <p className="text-xs font-medium tracking-widest text-primary uppercase">
               Who We Are
             </p>
             <h2 className="mt-4 text-3xl font-semibold tracking-tight text-balance">
               A Wholesale Trading Company Based in Miami
             </h2>
-            <p className="mx-auto mt-5 max-w-lg text-primary-foreground/80 md:mx-0">
+            <p className="mx-auto mt-5 max-w-lg text-muted-foreground md:mx-0">
               Domi Global Group is a legally registered trading company in
               the State of Florida, dedicated to sourcing and purchasing top
               consumer goods in volume directly from authorized distributors.
@@ -221,10 +200,10 @@ export default function Page() {
               {checkmarks.map((line) => (
                 <div key={line} className="flex gap-3">
                   <CheckCircle2
-                    className="mt-0.5 size-5 shrink-0 text-primary-foreground"
+                    className="mt-0.5 size-5 shrink-0 text-primary"
                     strokeWidth={1.75}
                   />
-                  <p className="text-sm text-primary-foreground/90">{line}</p>
+                  <p className="text-sm text-muted-foreground">{line}</p>
                 </div>
               ))}
             </div>
