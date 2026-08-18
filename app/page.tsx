@@ -277,9 +277,31 @@ export default function Page() {
               </p>
             </Reveal>
 
-            <div className="mt-12 grid gap-4 text-left sm:grid-cols-2 lg:grid-cols-3">
-              {categories.map(({ icon: _icon, ...cat }, i) => (
-                <Reveal key={cat.title} delay={(i % 3) * 80}>
+            <div className="mt-12 grid gap-4 text-left sm:grid-cols-2 lg:grid-cols-4">
+              <Reveal>
+                <div className="mx-auto flex aspect-[4/5] w-[78%] flex-col justify-between border border-primary-foreground/15 bg-[#04182a] p-6 sm:mx-0 sm:w-full">
+                  <div>
+                    <h3 className="text-lg font-bold tracking-tight text-white uppercase">
+                      View All Categories
+                    </h3>
+                    <p className="mt-2 text-sm text-white/60">
+                      Explore every product category we source and
+                      distribute across North America.
+                    </p>
+                  </div>
+                  <Button
+                    variant="outline"
+                    className="mt-6 w-fit border-white/30 text-white hover:bg-white/10 hover:text-white"
+                    nativeButton={false}
+                    render={<a href="/categories" />}
+                  >
+                    View All Categories
+                  </Button>
+                </div>
+              </Reveal>
+
+              {categories.slice(0, 3).map(({ icon: _icon, ...cat }, i) => (
+                <Reveal key={cat.title} delay={(i + 1) * 80}>
                   <CategoryCard category={cat} />
                 </Reveal>
               ))}
