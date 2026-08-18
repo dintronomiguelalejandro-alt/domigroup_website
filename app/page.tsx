@@ -1,16 +1,5 @@
 import Image from "next/image"
-import {
-  Building2,
-  CheckCircle2,
-  Handshake,
-  Mail,
-  MapPin,
-  Clock,
-  RefreshCcw,
-  ShieldCheck,
-  Tag,
-  Zap,
-} from "lucide-react"
+import { CheckCircle2, Mail, MapPin, Clock } from "lucide-react"
 
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
@@ -21,6 +10,7 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { CategoryCard } from "@/components/category-card"
 import { Reveal } from "@/components/reveal"
+import { AccordionList } from "@/components/accordion-list"
 import { categories } from "@/lib/categories"
 
 const stats = [
@@ -41,43 +31,31 @@ const checkmarks = [
 
 const whySellToUs = [
   {
-    number: "01",
-    icon: RefreshCcw,
     title: "Consistent Volume Orders",
     description:
       "We place regular, recurring purchase orders across multiple product categories. We are built for consistency — not one-time transactions.",
   },
   {
-    number: "02",
-    icon: ShieldCheck,
     title: "Verified & Compliant Buyer",
     description:
       "Registered company in good standing. Valid Florida Resale Certificate for tax-exempt wholesale purchases. Full compliance with all legal requirements.",
   },
   {
-    number: "03",
-    icon: Tag,
     title: "We Respect MAP Policies",
     description:
       "We strictly follow Minimum Advertised Price policies. We are committed to protecting your brand's pricing integrity across all channels.",
   },
   {
-    number: "04",
-    icon: Zap,
     title: "Fast & Professional Communication",
     description:
       "Dedicated purchasing team. We respond within 24 hours, keep communication clear, and make the buying process easy for our suppliers.",
   },
   {
-    number: "05",
-    icon: Building2,
     title: "Miami-Based Operations",
     description:
       "Our Miami operations center gives us direct access to major US distribution networks and logistics infrastructure across the Southeast and beyond.",
   },
   {
-    number: "06",
-    icon: Handshake,
     title: "Long-Term Partnerships Only",
     description:
       "We are not looking for one-time deals. We seek lasting supplier relationships built on trust, volume, and mutual long-term growth.",
@@ -238,26 +216,9 @@ export default function Page() {
               </p>
             </Reveal>
 
-            <div className="mx-auto mt-12 max-w-3xl border-t border-border/60 text-left md:mx-0">
-              {whySellToUs.map((item, i) => (
-                <Reveal
-                  key={item.number}
-                  delay={(i % 3) * 80}
-                  className="border-b border-border/60 py-6"
-                >
-                  <div className="flex items-center justify-between gap-4">
-                    <h3 className="text-lg font-semibold">{item.title}</h3>
-                    <item.icon
-                      className="size-5 shrink-0 text-primary"
-                      strokeWidth={1.75}
-                    />
-                  </div>
-                  <p className="mt-2 max-w-xl text-sm text-muted-foreground">
-                    {item.description}
-                  </p>
-                </Reveal>
-              ))}
-            </div>
+            <Reveal className="mx-auto mt-12 max-w-3xl md:mx-0">
+              <AccordionList items={whySellToUs} />
+            </Reveal>
           </div>
         </section>
 
