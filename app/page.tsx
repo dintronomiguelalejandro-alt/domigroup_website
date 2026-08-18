@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { CheckCircle2, Mail, MapPin, Clock } from "lucide-react"
+import { Mail, MapPin, Clock } from "lucide-react"
 
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { CategoryCard } from "@/components/category-card"
+import { AccordionList } from "@/components/accordion-list"
 import { Reveal } from "@/components/reveal"
 import { categories } from "@/lib/categories"
 
@@ -20,12 +21,36 @@ const stats = [
 ]
 
 const checkmarks = [
-  "Legally registered company — Active & Good Standing in Florida",
-  "Valid Resale Certificate for tax-exempt wholesale purchases",
-  "Consistent volume orders — not one-time buyers",
-  "Miami-based operations with national distribution reach",
-  "We strictly respect all MAP pricing policies",
-  "Dedicated purchasing team — fast and professional communication",
+  {
+    title: "Legally registered company — Active & Good Standing in Florida",
+    description:
+      "We are a properly registered Florida company in active, good standing status — fully able to purchase, invoice, and operate as a wholesale buyer.",
+  },
+  {
+    title: "Valid Resale Certificate for tax-exempt wholesale purchases",
+    description:
+      "Our Florida Resale Certificate lets us purchase inventory tax-exempt for wholesale resale, fully compliant with state requirements.",
+  },
+  {
+    title: "Consistent volume orders — not one-time buyers",
+    description:
+      "We place regular, recurring purchase orders across multiple product categories. We are built for consistency — not one-time transactions.",
+  },
+  {
+    title: "Miami-based operations with national distribution reach",
+    description:
+      "Our Miami operations center gives us direct access to major US distribution networks and logistics infrastructure across the Southeast and beyond.",
+  },
+  {
+    title: "We strictly respect all MAP pricing policies",
+    description:
+      "We follow Minimum Advertised Price policies closely, protecting your brand's pricing integrity across every channel.",
+  },
+  {
+    title: "Dedicated purchasing team — fast and professional communication",
+    description:
+      "We respond within 24 hours and keep communication clear, making the buying process easy for our suppliers.",
+  },
 ]
 
 const markets = [
@@ -132,39 +157,16 @@ export default function Page() {
         </section>
 
         <section id="about" className="border-b border-border/60 bg-card text-card-foreground">
-          <div className="mx-auto max-w-3xl px-8 py-24 text-center md:text-left">
+          <div className="mx-auto max-w-3xl px-8 py-24 text-left">
             <Reveal>
               <p className="text-xs font-medium tracking-widest text-primary uppercase">
                 Who We Are
               </p>
-              <h2 className="mt-4 text-3xl font-semibold tracking-tight text-balance">
-                A Wholesale Trading Company Based in Miami
-              </h2>
-              <p className="mx-auto mt-5 max-w-lg text-muted-foreground md:mx-0">
-                Domi Global Group is a legally registered trading company in
-                the State of Florida, dedicated to sourcing and purchasing
-                top consumer goods in volume directly from authorized
-                distributors. We operate across the United States, Mexico,
-                and Canada, building serious, long-term supply relationships
-                with the brands and distributors we work with.
-              </p>
             </Reveal>
 
-            <div className="mt-10 border-t border-border/60 text-left">
-              {checkmarks.map((line, i) => (
-                <Reveal
-                  key={line}
-                  delay={i * 60}
-                  className="flex items-center justify-between gap-4 border-b border-border/60 py-5"
-                >
-                  <p className="text-base text-card-foreground">{line}</p>
-                  <CheckCircle2
-                    className="size-5 shrink-0 text-primary"
-                    strokeWidth={1.75}
-                  />
-                </Reveal>
-              ))}
-            </div>
+            <Reveal delay={80} className="mt-10">
+              <AccordionList items={checkmarks} />
+            </Reveal>
           </div>
         </section>
 
