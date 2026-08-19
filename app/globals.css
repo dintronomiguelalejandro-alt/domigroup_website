@@ -132,3 +132,9 @@
     display: none;
     }
 }
+
+@media (pointer: fine) {
+  * {
+    cursor: none !important;
+  }
+}
