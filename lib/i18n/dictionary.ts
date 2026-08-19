@@ -40,7 +40,6 @@ const dictionary = {
     },
     home: {
       hero: {
-        badge: "Authorized Wholesale Buyer · Miami, Florida",
         titleLine1: "We Source. We Buy.",
         titleLine2: "We Deliver.",
         paragraph:
@@ -201,7 +200,6 @@ const dictionary = {
     },
     home: {
       hero: {
-        badge: "Comprador Mayorista Autorizado · Miami, Florida",
         titleLine1: "Buscamos. Compramos.",
         titleLine2: "Entregamos.",
         paragraph:

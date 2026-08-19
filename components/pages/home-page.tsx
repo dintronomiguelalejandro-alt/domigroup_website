@@ -27,12 +27,9 @@ export function HomePage({ locale }: { locale: Locale }) {
             <div className="md:grid md:grid-cols-2 md:items-center md:gap-12 lg:gap-20">
               <div className="mx-auto max-w-2xl text-center md:mx-0 md:max-w-none md:text-left">
                 <Reveal>
-                  <div className="inline-flex items-center border-2 border-white px-3 py-1.5 text-xs font-medium tracking-widest text-primary-foreground uppercase">
-                    {t.hero.badge}
-                  </div>
                   <h1
                     className={cn(
-                      "mt-6 text-5xl font-semibold tracking-tight text-balance",
+                      "text-5xl font-semibold tracking-tight text-balance",
                       locale === "es" ? "md:text-[42px]" : "md:text-6xl"
                     )}
                   >
