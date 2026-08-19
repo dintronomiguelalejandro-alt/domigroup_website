@@ -23,7 +23,7 @@ export function HomePage({ locale }: { locale: Locale }) {
 
       <main>
         <section className="border-b-2 border-white">
-          <div className="mx-auto max-w-6xl px-8 pt-20 pb-32 md:pt-24 md:pb-40">
+          <div className="mx-auto max-w-6xl px-8 pt-10 pb-32 md:pt-24 md:pb-40">
             <div className="md:grid md:grid-cols-2 md:items-center md:gap-12 lg:gap-20">
               <div className="mx-auto max-w-2xl text-center md:mx-0 md:max-w-none md:text-left">
                 <Reveal>
