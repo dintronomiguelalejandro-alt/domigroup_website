@@ -81,7 +81,7 @@ export default function Page() {
 
       <main>
         <section className="border-b border-primary-foreground/15">
-          <div className="mx-auto max-w-6xl px-8 pt-10 pb-32 md:pt-14 md:pb-40">
+          <div className="mx-auto max-w-6xl px-8 pt-32 pb-32 md:pt-40 md:pb-40">
             <div className="md:grid md:grid-cols-2 md:items-center md:gap-12 lg:gap-20">
               <div className="mx-auto max-w-2xl text-center md:mx-0 md:max-w-none md:text-left">
                 <Reveal>
