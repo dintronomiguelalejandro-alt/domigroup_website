@@ -190,23 +190,13 @@ export function HomePage({ locale }: { locale: Locale }) {
         </section>
 
         <section className="bg-primary">
-          <Reveal className="mx-auto flex max-w-6xl flex-col items-center gap-8 px-8 py-16 text-center text-primary-foreground md:flex-row md:items-center md:justify-between md:text-left">
-            <div>
-              <h2 className="text-2xl font-semibold tracking-tight text-balance md:text-3xl">
-                {t.ctaBanner.title}
-              </h2>
-              <p className="mx-auto mt-3 max-w-xl text-primary-foreground/80 md:mx-0">
-                {t.ctaBanner.paragraph}
-              </p>
-            </div>
-            <Button
-              size="lg"
-              className="shrink-0 bg-card text-primary hover:bg-card/90"
-              nativeButton={false}
-              render={<a href={`${home}#contact`} />}
-            >
-              {t.ctaBanner.button}
-            </Button>
+          <Reveal className="mx-auto max-w-6xl px-8 py-16 text-center text-primary-foreground">
+            <h2 className="text-2xl font-semibold tracking-tight text-balance md:text-3xl">
+              {t.ctaBanner.title}
+            </h2>
+            <p className="mx-auto mt-3 max-w-xl text-primary-foreground/80">
+              {t.ctaBanner.paragraph}
+            </p>
           </Reveal>
         </section>
 

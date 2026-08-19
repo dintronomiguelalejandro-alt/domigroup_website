@@ -102,14 +102,13 @@ const dictionary = {
         title: "Ready to become a trusted supplier?",
         paragraph:
           "Join our network of authorized distributors and start a long-term wholesale partnership with Domi Global Group.",
-        button: "Get In Touch",
       },
       contact: {
         title: "Interested in Supplying Us?",
         paragraph:
           "We are actively looking for authorized distributors and brand owners to establish long-term supply agreements. If you represent a brand or distribute consumer goods and are looking for a serious, consistent wholesale buyer — we want to hear from you. Fill out the form and our purchasing team will get back to you within 24 hours.",
         email: { label: "Email", value: "sales@domi-globalgroup.com" },
-        address: { label: "Address", value: "1065 SW 8th St, Miami, FL 33130" },
+        address: { label: "Address", value: "Miami, FL" },
         hours: { label: "Business Hours", value: "Mon–Fri · 9am–6pm EST" },
       },
     },
@@ -231,14 +230,13 @@ const dictionary = {
         title: "¿Listo para convertirse en un proveedor de confianza?",
         paragraph:
           "Únase a nuestra red de distribuidores autorizados e inicie una alianza mayorista a largo plazo con Domi Global Group.",
-        button: "Contáctenos",
       },
       contact: {
         title: "¿Le interesa ser nuestro proveedor?",
         paragraph:
           "Estamos buscando activamente distribuidores autorizados y propietarios de marcas para establecer acuerdos de suministro a largo plazo. Si representa una marca o distribuye bienes de consumo y busca un comprador mayorista serio y constante, queremos saber de usted. Complete el formulario y nuestro equipo de compras se pondrá en contacto con usted en un plazo de 24 horas.",
         email: { label: "Correo Electrónico", value: "sales@domi-globalgroup.com" },
-        address: { label: "Dirección", value: "1065 SW 8th St, Miami, FL 33130" },
+        address: { label: "Dirección", value: "Miami, FL" },
         hours: { label: "Horario de Atención", value: "Lun–Vie · 9am–6pm EST" },
       },
     },
