@@ -152,15 +152,6 @@ export function HomePage({ locale }: { locale: Locale }) {
                     </Reveal>
                   )
                 })}
-
-              <Reveal delay={360}>
-                <a
-                  href={`${home}/categories`}
-                  className="mt-8 inline-block text-sm font-semibold tracking-widest text-primary-foreground uppercase underline underline-offset-4 hover:text-primary-foreground/80"
-                >
-                  {t.categories.viewAllCard.button} →
-                </a>
-              </Reveal>
             </div>
           </div>
         </section>

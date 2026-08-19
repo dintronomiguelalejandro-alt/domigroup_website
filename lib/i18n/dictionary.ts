@@ -87,12 +87,6 @@ const dictionary = {
         title: "What we trade",
         paragraph:
           "We actively purchase from authorized distributors across the most in-demand consumer categories in the US market.",
-        viewAllCard: {
-          title: "View All Categories",
-          description:
-            "Explore every product category we source and distribute across North America.",
-          button: "View All Categories",
-        },
       },
       markets: {
         eyebrow: "Our Markets",
@@ -222,12 +216,6 @@ const dictionary = {
         title: "Lo que comercializamos",
         paragraph:
           "Compramos activamente a distribuidores autorizados en las categorías de consumo más demandadas del mercado estadounidense.",
-        viewAllCard: {
-          title: "Ver Todas las Categorías",
-          description:
-            "Explore todas las categorías de productos que compramos y distribuimos en Norteamérica.",
-          button: "Ver Todas las Categorías",
-        },
       },
       markets: {
         eyebrow: "Nuestros Mercados",
