@@ -5,9 +5,7 @@ import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
+import { ContactForm } from "@/components/contact-form"
 import { CategoryCard } from "@/components/category-card"
 import { AccordionList } from "@/components/accordion-list"
 import { Reveal } from "@/components/reveal"
@@ -350,51 +348,7 @@ export default function Page() {
             </Reveal>
 
             <Reveal delay={120}>
-            <Card className="gap-0 rounded-2xl border-2 border-primary p-8 shadow-none">
-              <form
-                action="mailto:sales@domiglobalgroup.com"
-                method="post"
-                encType="text/plain"
-                className="space-y-5"
-              >
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="first-name">First name</Label>
-                    <Input id="first-name" name="First Name" required />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="last-name">Last name</Label>
-                    <Input id="last-name" name="Last Name" required />
-                  </div>
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="email">Business email</Label>
-                  <Input
-                    id="email"
-                    name="Business Email"
-                    type="email"
-                    required
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="company">Company name</Label>
-                  <Input id="company" name="Company Name" />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="message">Message</Label>
-                  <Textarea
-                    id="message"
-                    name="Message"
-                    required
-                    className="min-h-28"
-                    placeholder="Tell us about your brand and the products you distribute..."
-                  />
-                </div>
-                <Button type="submit" className="w-full">
-                  Submit Wholesale Inquiry →
-                </Button>
-              </form>
-            </Card>
+              <ContactForm />
             </Reveal>
           </div>
         </section>
