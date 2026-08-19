@@ -6,6 +6,7 @@ import { SiteFooter } from "@/components/site-footer"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { ContactForm } from "@/components/contact-form"
+import { CategoryCard } from "@/components/category-card"
 import { AccordionList } from "@/components/accordion-list"
 import { Reveal } from "@/components/reveal"
 import { categories, localizeCategory } from "@/lib/categories"
@@ -130,7 +131,7 @@ export function HomePage({ locale }: { locale: Locale }) {
               </p>
             </Reveal>
 
-            <div className="mt-12 text-left">
+            <div className="mt-12 grid gap-4 text-left sm:grid-cols-2 lg:grid-cols-3">
               {categories
                 .filter((cat) =>
                   [
@@ -143,12 +144,13 @@ export function HomePage({ locale }: { locale: Locale }) {
                   ].includes(cat.title)
                 )
                 .map((cat, i) => {
-                  const localized = localizeCategory(cat, locale)
+                  const { icon: Icon, ...localized } = localizeCategory(cat, locale)
                   return (
                     <Reveal key={cat.title} delay={i * 60}>
-                      <p className="mx-auto max-w-xl py-4 text-xl text-primary-foreground md:mx-0">
-                        {localized.title}
-                      </p>
+                      <CategoryCard
+                        category={localized}
+                        icon={<Icon strokeWidth={1.5} />}
+                      />
                     </Reveal>
                   )
                 })}
