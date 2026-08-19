@@ -11,7 +11,6 @@ import { AccordionList } from "@/components/accordion-list"
 import { Reveal } from "@/components/reveal"
 import { categories, localizeCategory } from "@/lib/categories"
 import { getDictionary, type Locale } from "@/lib/i18n/dictionary"
-import { cn } from "@/lib/utils"
 
 export function HomePage({ locale }: { locale: Locale }) {
   const t = getDictionary(locale).home
@@ -27,12 +26,7 @@ export function HomePage({ locale }: { locale: Locale }) {
             <div className="md:grid md:grid-cols-2 md:items-center md:gap-12 lg:gap-20">
               <div className="mx-auto max-w-2xl text-center md:mx-0 md:max-w-none md:text-left">
                 <Reveal>
-                  <h1
-                    className={cn(
-                      "text-5xl font-semibold tracking-tight text-balance",
-                      locale === "es" ? "md:text-[42px]" : "md:text-6xl"
-                    )}
-                  >
+                  <h1 className="text-5xl font-semibold tracking-tight text-balance md:text-6xl">
                     {t.hero.titleLine1}{" "}
                     <span className="text-primary-foreground/80">
                       {t.hero.titleLine2}
