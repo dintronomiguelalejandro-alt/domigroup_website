@@ -132,3 +132,13 @@
     display: none;
     }
 }
+
+.border {
+  border-width: 3px;
+}
+.border-t {
+  border-top-width: 3px;
+}
+.border-b {
+  border-bottom-width: 3px;
+}
