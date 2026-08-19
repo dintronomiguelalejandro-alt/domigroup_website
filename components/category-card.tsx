@@ -20,7 +20,7 @@ export function CategoryCard({
     <div
       onClick={() => setOpen((v) => !v)}
       className={cn(
-        "group relative mx-auto flex aspect-[4/5] w-[78%] cursor-pointer flex-col items-center justify-center gap-4 overflow-hidden border border-primary-foreground/15 bg-card p-6 text-center text-card-foreground transition-shadow hover:ring-[3px] hover:ring-white hover:ring-inset sm:mx-0 sm:w-full",
+        "group relative mx-auto flex aspect-[4/5] w-[78%] cursor-pointer flex-col items-center justify-center gap-4 overflow-hidden border-2 border-primary bg-card p-6 text-center text-card-foreground transition-shadow hover:ring-[3px] hover:ring-white hover:ring-inset sm:mx-0 sm:w-full",
         open && "ring-[3px] ring-white ring-inset",
         className
       )}
@@ -56,7 +56,7 @@ export function CategoryCard({
           {category.tags.map((tag) => (
             <span
               key={tag}
-              className="border border-white/30 px-2 py-0.5 text-[11px] text-white"
+              className="border-2 border-white px-2 py-0.5 text-[11px] text-white"
             >
               {tag}
             </span>

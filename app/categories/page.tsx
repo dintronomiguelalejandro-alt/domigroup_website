@@ -17,7 +17,7 @@ export default function CategoriesPage() {
       <SiteHeader />
 
       <main>
-        <section className="border-b border-primary-foreground/15">
+        <section className="border-b-2 border-white">
           <div className="mx-auto max-w-3xl px-8 py-24 text-center md:py-32">
             <p className="text-xs font-medium tracking-widest text-primary-foreground uppercase">
               Product Categories
@@ -40,7 +40,6 @@ export default function CategoriesPage() {
                   key={cat.title}
                   category={cat}
                   icon={<Icon strokeWidth={1.5} />}
-                  className="border-border/60"
                 />
               ))}
             </div>

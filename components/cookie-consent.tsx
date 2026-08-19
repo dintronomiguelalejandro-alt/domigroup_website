@@ -18,7 +18,7 @@ export function CookieConsent() {
   return (
     <div
       className={cn(
-        "fixed inset-x-0 bottom-0 z-50 border-t border-border bg-card text-card-foreground shadow-[0_-8px_30px_rgba(0,0,0,0.15)] transition-all motion-reduce:transition-none",
+        "fixed inset-x-0 bottom-0 z-50 border-t-2 border-primary bg-card text-card-foreground shadow-[0_-8px_30px_rgba(0,0,0,0.15)] transition-all motion-reduce:transition-none",
         open
           ? "translate-y-0 opacity-100 duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
           : "pointer-events-none translate-y-full opacity-0 duration-300 ease-[cubic-bezier(0.64,0,0.78,0)]"

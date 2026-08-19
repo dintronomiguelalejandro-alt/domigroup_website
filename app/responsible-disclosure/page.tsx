@@ -61,7 +61,7 @@ export default function ResponsibleDisclosurePage() {
       <SiteHeader />
 
       <main>
-        <section className="border-b border-primary-foreground/15">
+        <section className="border-b-2 border-white">
           <div className="mx-auto max-w-3xl px-8 py-24 text-center md:py-32">
             <p className="text-xs font-medium tracking-widest text-primary-foreground uppercase">
               Legal
@@ -96,7 +96,7 @@ export default function ResponsibleDisclosurePage() {
               ))}
             </div>
 
-            <div className="mt-14 flex gap-4 border-t border-border/60 pt-14">
+            <div className="mt-14 flex gap-4 border-t-2 border-primary pt-14">
               <Mail className="mt-0.5 size-5 shrink-0 text-primary" strokeWidth={1.75} />
               <div>
                 <h2 className="text-base font-semibold">Report an issue</h2>

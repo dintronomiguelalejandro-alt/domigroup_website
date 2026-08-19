@@ -80,12 +80,12 @@ export default function Page() {
       <SiteHeader />
 
       <main>
-        <section className="border-b border-primary-foreground/15">
+        <section className="border-b-2 border-white">
           <div className="mx-auto max-w-6xl px-8 pt-20 pb-32 md:pt-24 md:pb-40">
             <div className="md:grid md:grid-cols-2 md:items-center md:gap-12 lg:gap-20">
               <div className="mx-auto max-w-2xl text-center md:mx-0 md:max-w-none md:text-left">
                 <Reveal>
-                  <div className="inline-flex items-center border border-primary-foreground/30 px-3 py-1.5 text-xs font-medium tracking-widest text-primary-foreground uppercase">
+                  <div className="inline-flex items-center border-2 border-white px-3 py-1.5 text-xs font-medium tracking-widest text-primary-foreground uppercase">
                     Authorized Wholesale Buyer · Miami, Florida
                   </div>
                   <h1 className="mt-6 text-5xl font-semibold tracking-tight text-balance md:text-6xl">
@@ -114,7 +114,7 @@ export default function Page() {
                     <Button
                       size="lg"
                       variant="outline"
-                      className="border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
+                      className="border-2 border-white text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
                       nativeButton={false}
                       render={<a href="#categories" />}
                     >
@@ -124,7 +124,7 @@ export default function Page() {
                 </Reveal>
 
                 <Reveal delay={150}>
-                  <div className="mt-16 flex flex-wrap justify-center gap-x-12 gap-y-6 border-t border-primary-foreground/15 pt-8 text-center md:justify-start md:text-left">
+                  <div className="mt-16 flex flex-wrap justify-center gap-x-12 gap-y-6 border-t-2 border-white pt-8 text-center md:justify-start md:text-left">
                     {stats.map((stat) => (
                       <div key={stat.label}>
                         <div className="text-3xl font-semibold tabular-nums">
@@ -141,7 +141,7 @@ export default function Page() {
 
               <Reveal
                 delay={100}
-                className="relative mt-16 hidden aspect-[4/5] overflow-hidden border border-primary-foreground/15 md:mt-0 md:block"
+                className="relative mt-16 hidden aspect-[4/5] overflow-hidden border-2 border-white md:mt-0 md:block"
               >
                 <Image
                   src="/hero/delivery.webp"
@@ -156,10 +156,10 @@ export default function Page() {
           </div>
         </section>
 
-        <section id="about" className="border-b border-border/60 bg-card text-card-foreground">
+        <section id="about" className="border-b-2 border-primary bg-card text-card-foreground">
           <div className="mx-auto max-w-6xl px-8 py-24 text-left">
             <div className="md:grid md:grid-cols-2 md:items-center md:gap-12 lg:gap-20">
-              <Reveal className="relative aspect-[4/5] overflow-hidden border border-border/60">
+              <Reveal className="relative aspect-[4/5] overflow-hidden border-2 border-primary">
                 <Image
                   src="/about/handoff.png"
                   alt="A courier handing a package to a customer at an office"
@@ -184,7 +184,7 @@ export default function Page() {
           </div>
         </section>
 
-        <section id="categories" className="border-b border-primary-foreground/15">
+        <section id="categories" className="border-b-2 border-white">
           <div className="mx-auto max-w-6xl px-8 py-24 text-center md:text-left">
             <Reveal>
               <p className="text-xs font-medium tracking-widest text-primary-foreground uppercase">
@@ -201,7 +201,7 @@ export default function Page() {
 
             <div className="mt-12 grid gap-4 text-left sm:grid-cols-2 lg:grid-cols-4">
               <Reveal>
-                <div className="mx-auto flex aspect-[4/5] w-[78%] flex-col justify-between border border-primary-foreground/15 bg-[#04182a] p-6 sm:mx-0 sm:w-full">
+                <div className="mx-auto flex aspect-[4/5] w-[78%] flex-col justify-between border-2 border-white bg-[#04182a] p-6 sm:mx-0 sm:w-full">
                   <div>
                     <h3 className="text-lg font-bold tracking-tight text-white uppercase">
                       View All Categories
@@ -213,7 +213,7 @@ export default function Page() {
                   </div>
                   <Button
                     variant="outline"
-                    className="mt-6 w-fit border-white/30 text-white hover:bg-white/10 hover:text-white"
+                    className="mt-6 w-fit border-2 border-white text-white hover:bg-white/10 hover:text-white"
                     nativeButton={false}
                     render={<a href="/categories" />}
                   >
@@ -231,7 +231,7 @@ export default function Page() {
           </div>
         </section>
 
-        <section id="markets" className="border-b border-border/60 bg-card text-card-foreground">
+        <section id="markets" className="border-b-2 border-primary bg-card text-card-foreground">
           <div className="mx-auto max-w-6xl px-8 py-24 text-center md:text-left">
             <Reveal>
               <p className="text-xs font-medium tracking-widest text-primary uppercase">
@@ -249,7 +249,7 @@ export default function Page() {
             <div className="mt-10 grid gap-4 text-left sm:grid-cols-3">
               {markets.map((market, i) => (
                 <Reveal key={market.name} delay={i * 80}>
-                  <Card className="gap-2 rounded-2xl border border-border/60 p-6 shadow-none">
+                  <Card className="gap-2 rounded-2xl border-2 border-primary p-6 shadow-none">
                     <div className="flex items-center gap-3">
                       <span className="text-2xl">{market.flag}</span>
                       <span className="text-sm font-semibold">
@@ -350,7 +350,7 @@ export default function Page() {
             </Reveal>
 
             <Reveal delay={120}>
-            <Card className="gap-0 rounded-2xl border border-border/60 p-8 shadow-none">
+            <Card className="gap-0 rounded-2xl border-2 border-primary p-8 shadow-none">
               <form
                 action="mailto:sales@domiglobalgroup.com"
                 method="post"

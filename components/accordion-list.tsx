@@ -13,11 +13,11 @@ export function AccordionList({
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   return (
-    <div className="border-t border-border/60 text-left">
+    <div className="border-t-2 border-primary text-left">
       {items.map((item, i) => {
         const open = openIndex === i
         return (
-          <div key={item.title} className="border-b border-border/60">
+          <div key={item.title} className="border-b-2 border-primary">
             <button
               type="button"
               onClick={() => setOpenIndex(open ? null : i)}
