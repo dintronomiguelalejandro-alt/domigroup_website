@@ -147,7 +147,7 @@ export function HomePage({ locale }: { locale: Locale }) {
                   </div>
                   <Button
                     variant="outline"
-                    className="mt-6 w-fit border-2 border-white text-white hover:bg-white/10 hover:text-white"
+                    className="mt-6 h-auto w-full min-h-11 justify-center border-2 border-white py-3 text-center whitespace-normal text-white hover:bg-white/10 hover:text-white"
                     nativeButton={false}
                     render={<a href={`${home}/categories`} />}
                   >
