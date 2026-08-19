@@ -6,7 +6,6 @@ import { SiteFooter } from "@/components/site-footer"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { ContactForm } from "@/components/contact-form"
-import { CategoryCard } from "@/components/category-card"
 import { AccordionList } from "@/components/accordion-list"
 import { Reveal } from "@/components/reveal"
 import { categories, localizeCategory } from "@/lib/categories"
@@ -131,39 +130,37 @@ export function HomePage({ locale }: { locale: Locale }) {
               </p>
             </Reveal>
 
-            <div className="mt-12 grid gap-4 text-left sm:grid-cols-2 lg:grid-cols-4">
-              <Reveal>
-                <div className="flex flex-col justify-between gap-6 border-2 border-white bg-[#0d0d0d] p-6">
-                  <div>
-                    <h3 className="text-lg font-bold tracking-tight text-white uppercase">
-                      {t.categories.viewAllCard.title}
-                    </h3>
-                    <p className="mt-2 text-sm text-white/60">
-                      {t.categories.viewAllCard.description}
-                    </p>
-                  </div>
-                  <Button
-                    variant="outline"
-                    className="mt-6 h-auto w-full min-h-11 justify-center border-2 border-white py-3 text-center whitespace-normal text-white hover:bg-white/10 hover:text-white"
-                    nativeButton={false}
-                    render={<a href={`${home}/categories`} />}
-                  >
-                    {t.categories.viewAllCard.button}
-                  </Button>
-                </div>
-              </Reveal>
-
-              {categories.slice(0, 3).map((cat, i) => {
-                const { icon: Icon, ...localized } = localizeCategory(cat, locale)
-                return (
-                  <Reveal key={cat.title} delay={(i + 1) * 80}>
-                    <CategoryCard
-                      category={localized}
-                      icon={<Icon strokeWidth={1.5} />}
-                    />
-                  </Reveal>
+            <div className="mt-12 text-left">
+              {categories
+                .filter((cat) =>
+                  [
+                    "Beauty & Personal Care",
+                    "Home & Kitchen",
+                    "Toys & Games",
+                    "Tools & Hardware",
+                    "Sports & Outdoors",
+                    "Pet Supplies",
+                  ].includes(cat.title)
                 )
-              })}
+                .map((cat, i) => {
+                  const localized = localizeCategory(cat, locale)
+                  return (
+                    <Reveal key={cat.title} delay={i * 60}>
+                      <p className="mx-auto max-w-xl py-4 text-xl text-primary-foreground md:mx-0">
+                        {localized.title}
+                      </p>
+                    </Reveal>
+                  )
+                })}
+
+              <Reveal delay={360}>
+                <a
+                  href={`${home}/categories`}
+                  className="mt-8 inline-block text-sm font-semibold tracking-widest text-primary-foreground uppercase underline underline-offset-4 hover:text-primary-foreground/80"
+                >
+                  {t.categories.viewAllCard.button} →
+                </a>
+              </Reveal>
             </div>
           </div>
         </section>
