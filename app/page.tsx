@@ -139,7 +139,7 @@ export default function Page() {
 
               <Reveal
                 delay={100}
-                className="relative mt-16 hidden aspect-[4/5] overflow-hidden border-2 border-white md:mt-0 md:block"
+                className="relative mt-16 hidden aspect-[4/5] overflow-hidden md:mt-0 md:block"
               >
                 <Image
                   src="/hero/delivery.webp"
@@ -157,7 +157,7 @@ export default function Page() {
         <section id="about" className="border-b-2 border-primary bg-card text-card-foreground">
           <div className="mx-auto max-w-6xl px-8 py-24 text-left">
             <div className="md:grid md:grid-cols-2 md:items-center md:gap-12 lg:gap-20">
-              <Reveal className="relative aspect-[4/5] overflow-hidden border-2 border-primary">
+              <Reveal className="relative aspect-[4/5] overflow-hidden">
                 <Image
                   src="/about/handoff.png"
                   alt="A courier handing a package to a customer at an office"
