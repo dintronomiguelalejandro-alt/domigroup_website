@@ -44,16 +44,23 @@ export function ContactForm() {
         }
       )
 
-      if (!res.ok) {
-        throw new Error("Something went wrong.")
+      const result = await res.json().catch(() => null)
+
+      if (!res.ok || !result || result.success === "false" || result.success === false) {
+        throw new Error(
+          result?.message ||
+            "Something went wrong. Please try again or email us directly."
+        )
       }
 
       setStatus("success")
       form.reset()
-    } catch {
+    } catch (error) {
       setStatus("error")
       setErrorMessage(
-        "Something went wrong. Please try again or email us directly."
+        error instanceof Error
+          ? error.message
+          : "Something went wrong. Please try again or email us directly."
       )
     }
   }
