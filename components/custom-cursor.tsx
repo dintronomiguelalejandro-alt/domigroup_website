@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react"
 export function CustomCursor() {
   const ref = useRef<HTMLDivElement>(null)
   const [visible, setVisible] = useState(false)
-  const [hovering, setHovering] = useState(false)
+  const [onLightBg, setOnLightBg] = useState(false)
 
   useEffect(() => {
     if (!window.matchMedia("(pointer: fine)").matches) return
@@ -18,7 +18,7 @@ export function CustomCursor() {
       cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`
 
       const target = e.target as HTMLElement
-      setHovering(!!target.closest("a, button, [role='button'], input, textarea"))
+      setOnLightBg(!!target.closest(".bg-card"))
     }
     const onLeave = () => setVisible(false)
 
@@ -34,9 +34,9 @@ export function CustomCursor() {
     <div
       ref={ref}
       aria-hidden="true"
-      className={`pointer-events-none fixed top-0 left-0 z-[100] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary transition-[opacity,width,height] duration-150 ease-out ${
+      className={`pointer-events-none fixed top-0 left-0 z-[100] size-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full transition-[opacity,background-color] duration-150 ease-out ${
         visible ? "opacity-100" : "opacity-0"
-      } ${hovering ? "size-8" : "size-4"}`}
+      } ${onLightBg ? "bg-primary" : "bg-white"}`}
     />
   )
 }
