@@ -1,0 +1,338 @@
+export type Locale = "en" | "es"
+
+export const locales: Locale[] = ["en", "es"]
+
+export function localePath(locale: Locale, path: string = "") {
+  const base = locale === "es" ? "/es" : ""
+  if (!path) return base || "/"
+  return `${base}${path}`
+}
+
+const dictionary = {
+  en: {
+    header: {
+      nav: [
+        { href: "#about", label: "About" },
+        { href: "#categories", label: "Categories" },
+        { href: "#markets", label: "Markets" },
+        { href: "#contact", label: "Contact" },
+      ],
+      cta: "Start a Partnership",
+      toggleMenu: "Toggle menu",
+      switchLanguage: "Español",
+    },
+    footer: {
+      tagline: "Global Trade · United States",
+      copyright: "© 2026 Domi Global Group. All rights reserved.",
+      legalLinks: [
+        { href: "/privacy", label: "Privacy Policy" },
+        { href: "/cookies", label: "Cookie Policy" },
+        { href: "/terms", label: "Terms & Conditions" },
+        { href: "/responsible-disclosure", label: "Responsible Disclosure" },
+      ],
+    },
+    cookieConsent: {
+      text: "We use cookies to improve your experience and understand site usage. See our",
+      linkLabel: "Cookie Policy",
+      textAfter: "for details.",
+      necessaryOnly: "Necessary Only",
+      acceptAll: "Accept All",
+    },
+    home: {
+      hero: {
+        badge: "Authorized Wholesale Buyer · Miami, Florida",
+        titleLine1: "We Source. We Buy.",
+        titleLine2: "We Deliver.",
+        paragraph:
+          "Domi Global Group is a Miami-based wholesale trading company. We purchase consumer goods directly from authorized distributors and move them through our distribution network across the United States, Mexico, and Canada. We are looking to build serious, long-term supplier partnerships.",
+        ctaPrimary: "Start a Partnership →",
+        ctaSecondary: "Our Categories",
+        stats: [
+          { value: "3", label: "Markets" },
+          { value: "5+", label: "Categories" },
+          { value: "Miami", label: "Florida HQ" },
+          { value: "24h", label: "Response" },
+        ],
+        imageAlt: "A courier delivering a package to a customer's front door",
+      },
+      about: {
+        imageAlt: "A courier handing a package to a customer at an office",
+        eyebrow: "Who We Are",
+        checkmarks: [
+          {
+            title:
+              "Legally registered company — Active & Good Standing in Florida",
+            description:
+              "We are a properly registered Florida company in active, good standing status — fully able to purchase, invoice, and operate as a wholesale buyer.",
+          },
+          {
+            title: "Valid Resale Certificate for tax-exempt wholesale purchases",
+            description:
+              "Our Florida Resale Certificate lets us purchase inventory tax-exempt for wholesale resale, fully compliant with state requirements.",
+          },
+          {
+            title: "Consistent volume orders — not one-time buyers",
+            description:
+              "We place regular, recurring purchase orders across multiple product categories. We are built for consistency — not one-time transactions.",
+          },
+          {
+            title: "Miami-based operations with national distribution reach",
+            description:
+              "Our Miami operations center gives us direct access to major US distribution networks and logistics infrastructure across the Southeast and beyond.",
+          },
+          {
+            title: "We strictly respect all MAP pricing policies",
+            description:
+              "We follow Minimum Advertised Price policies closely, protecting your brand's pricing integrity across every channel.",
+          },
+          {
+            title:
+              "Dedicated purchasing team — fast and professional communication",
+            description:
+              "We respond within 24 hours and keep communication clear, making the buying process easy for our suppliers.",
+          },
+        ],
+      },
+      categories: {
+        eyebrow: "Product Categories",
+        title: "What we trade",
+        paragraph:
+          "We actively purchase from authorized distributors across the most in-demand consumer categories in the US market.",
+        viewAllCard: {
+          title: "View All Categories",
+          description:
+            "Explore every product category we source and distribute across North America.",
+          button: "View All Categories",
+        },
+      },
+      markets: {
+        eyebrow: "Our Markets",
+        title: "Where We Operate",
+        paragraph: "Three major North American markets, millions of end consumers.",
+        items: [
+          {
+            flag: "🇺🇸",
+            name: "United States",
+            description:
+              "Primary market. We distribute across all major regions through established wholesale channels and our national distribution network.",
+          },
+          {
+            flag: "🇲🇽",
+            name: "Mexico",
+            description:
+              "Fast-growing market with strong and increasing demand for US consumer brands across all major categories.",
+          },
+          {
+            flag: "🇨🇦",
+            name: "Canada",
+            description:
+              "Premium market with high consumer spending and strong brand loyalty toward US consumer products.",
+          },
+        ],
+      },
+      ctaBanner: {
+        title: "Ready to become a trusted supplier?",
+        paragraph:
+          "Join our network of authorized distributors and start a long-term wholesale partnership with Domi Global Group.",
+        button: "Get In Touch",
+      },
+      contact: {
+        title: "Interested in Supplying Us?",
+        paragraph:
+          "We are actively looking for authorized distributors and brand owners to establish long-term supply agreements. If you represent a brand or distribute consumer goods and are looking for a serious, consistent wholesale buyer — we want to hear from you. Fill out the form and our purchasing team will get back to you within 24 hours.",
+        email: { label: "Email", value: "sales@domi-globalgroup.com" },
+        address: { label: "Address", value: "1065 SW 8th St, Miami, FL 33130" },
+        hours: { label: "Business Hours", value: "Mon–Fri · 9am–6pm EST" },
+      },
+    },
+    categoriesPage: {
+      eyebrow: "Product Categories",
+      title: "Everything we trade",
+      paragraph:
+        "The full range of consumer categories we actively purchase and distribute across the US market.",
+      metaTitle: "Product Categories | Domi Global Group",
+      metaDescription:
+        "Every consumer product category Domi Global Group sources and purchases across the United States, Mexico, and Canada.",
+    },
+    contactForm: {
+      firstName: "First name",
+      lastName: "Last name",
+      email: "Business email",
+      company: "Company name",
+      message: "Message",
+      messagePlaceholder:
+        "Tell us about your brand and the products you distribute...",
+      submit: "Submit Wholesale Inquiry →",
+      sending: "Sending…",
+      successTitle: "Message sent",
+      successBody:
+        "Thank you for reaching out. Our purchasing team will get back to you within 24 hours.",
+      genericError: "Something went wrong. Please try again.",
+    },
+  },
+  es: {
+    header: {
+      nav: [
+        { href: "#about", label: "Nosotros" },
+        { href: "#categories", label: "Categorías" },
+        { href: "#markets", label: "Mercados" },
+        { href: "#contact", label: "Contacto" },
+      ],
+      cta: "Iniciar una Asociación",
+      toggleMenu: "Alternar menú",
+      switchLanguage: "English",
+    },
+    footer: {
+      tagline: "Comercio Global · Estados Unidos",
+      copyright: "© 2026 Domi Global Group. Todos los derechos reservados.",
+      legalLinks: [
+        { href: "/privacy", label: "Política de Privacidad" },
+        { href: "/cookies", label: "Política de Cookies" },
+        { href: "/terms", label: "Términos y Condiciones" },
+        { href: "/responsible-disclosure", label: "Divulgación Responsable" },
+      ],
+    },
+    cookieConsent: {
+      text: "Utilizamos cookies para mejorar su experiencia y comprender el uso del sitio. Consulte nuestra",
+      linkLabel: "Política de Cookies",
+      textAfter: "para más detalles.",
+      necessaryOnly: "Solo lo Necesario",
+      acceptAll: "Aceptar Todo",
+    },
+    home: {
+      hero: {
+        badge: "Comprador Mayorista Autorizado · Miami, Florida",
+        titleLine1: "Buscamos. Compramos.",
+        titleLine2: "Entregamos.",
+        paragraph:
+          "Domi Global Group es una empresa mayorista con sede en Miami. Compramos bienes de consumo directamente a distribuidores autorizados y los movemos a través de nuestra red de distribución en Estados Unidos, México y Canadá. Buscamos establecer alianzas serias y de largo plazo con nuestros proveedores.",
+        ctaPrimary: "Iniciar una Asociación →",
+        ctaSecondary: "Nuestras Categorías",
+        stats: [
+          { value: "3", label: "Mercados" },
+          { value: "5+", label: "Categorías" },
+          { value: "Miami", label: "Sede en Florida" },
+          { value: "24h", label: "Respuesta" },
+        ],
+        imageAlt: "Un mensajero entregando un paquete en la puerta de un cliente",
+      },
+      about: {
+        imageAlt: "Un mensajero entregando un paquete a un cliente en una oficina",
+        eyebrow: "Quiénes Somos",
+        checkmarks: [
+          {
+            title: "Empresa legalmente registrada — Activa y en regla en Florida",
+            description:
+              "Somos una empresa de Florida debidamente registrada, activa y en regla — con plena capacidad para comprar, facturar y operar como comprador mayorista.",
+          },
+          {
+            title:
+              "Certificado de Reventa válido para compras mayoristas exentas de impuestos",
+            description:
+              "Nuestro Certificado de Reventa de Florida nos permite comprar inventario exento de impuestos para reventa mayorista, en pleno cumplimiento con los requisitos estatales.",
+          },
+          {
+            title: "Pedidos de volumen constante — no somos compradores ocasionales",
+            description:
+              "Realizamos pedidos de compra regulares y recurrentes en múltiples categorías de productos. Estamos hechos para la consistencia, no para transacciones únicas.",
+          },
+          {
+            title: "Operaciones con sede en Miami y alcance de distribución nacional",
+            description:
+              "Nuestro centro de operaciones en Miami nos da acceso directo a las principales redes de distribución de EE. UU. y a infraestructura logística en el sureste del país y más allá.",
+          },
+          {
+            title:
+              "Respetamos estrictamente todas las políticas de precio mínimo anunciado (MAP)",
+            description:
+              "Seguimos de cerca las políticas de Precio Mínimo Anunciado, protegiendo la integridad de precios de su marca en todos los canales.",
+          },
+          {
+            title:
+              "Equipo de compras dedicado — comunicación rápida y profesional",
+            description:
+              "Respondemos en menos de 24 horas y mantenemos una comunicación clara, facilitando el proceso de compra para nuestros proveedores.",
+          },
+        ],
+      },
+      categories: {
+        eyebrow: "Categorías de Productos",
+        title: "Lo que comercializamos",
+        paragraph:
+          "Compramos activamente a distribuidores autorizados en las categorías de consumo más demandadas del mercado estadounidense.",
+        viewAllCard: {
+          title: "Ver Todas las Categorías",
+          description:
+            "Explore todas las categorías de productos que compramos y distribuimos en Norteamérica.",
+          button: "Ver Todas las Categorías",
+        },
+      },
+      markets: {
+        eyebrow: "Nuestros Mercados",
+        title: "Dónde Operamos",
+        paragraph: "Tres grandes mercados norteamericanos, millones de consumidores finales.",
+        items: [
+          {
+            flag: "🇺🇸",
+            name: "Estados Unidos",
+            description:
+              "Mercado principal. Distribuimos en todas las regiones principales a través de canales mayoristas establecidos y nuestra red de distribución nacional.",
+          },
+          {
+            flag: "🇲🇽",
+            name: "México",
+            description:
+              "Mercado de rápido crecimiento con una demanda fuerte y creciente de marcas de consumo estadounidenses en todas las categorías principales.",
+          },
+          {
+            flag: "🇨🇦",
+            name: "Canadá",
+            description:
+              "Mercado premium con alto gasto del consumidor y fuerte lealtad de marca hacia los productos de consumo estadounidenses.",
+          },
+        ],
+      },
+      ctaBanner: {
+        title: "¿Listo para convertirse en un proveedor de confianza?",
+        paragraph:
+          "Únase a nuestra red de distribuidores autorizados e inicie una alianza mayorista a largo plazo con Domi Global Group.",
+        button: "Contáctenos",
+      },
+      contact: {
+        title: "¿Le interesa ser nuestro proveedor?",
+        paragraph:
+          "Estamos buscando activamente distribuidores autorizados y propietarios de marcas para establecer acuerdos de suministro a largo plazo. Si representa una marca o distribuye bienes de consumo y busca un comprador mayorista serio y constante, queremos saber de usted. Complete el formulario y nuestro equipo de compras se pondrá en contacto con usted en un plazo de 24 horas.",
+        email: { label: "Correo Electrónico", value: "sales@domi-globalgroup.com" },
+        address: { label: "Dirección", value: "1065 SW 8th St, Miami, FL 33130" },
+        hours: { label: "Horario de Atención", value: "Lun–Vie · 9am–6pm EST" },
+      },
+    },
+    categoriesPage: {
+      eyebrow: "Categorías de Productos",
+      title: "Todo lo que comercializamos",
+      paragraph:
+        "La gama completa de categorías de consumo que compramos y distribuimos activamente en el mercado estadounidense.",
+      metaTitle: "Categorías de Productos | Domi Global Group",
+      metaDescription:
+        "Todas las categorías de productos de consumo que Domi Global Group compra y distribuye en Estados Unidos, México y Canadá.",
+    },
+    contactForm: {
+      firstName: "Nombre",
+      lastName: "Apellido",
+      email: "Correo electrónico empresarial",
+      company: "Nombre de la empresa",
+      message: "Mensaje",
+      messagePlaceholder: "Cuéntenos sobre su marca y los productos que distribuye...",
+      submit: "Enviar Consulta Mayorista →",
+      sending: "Enviando…",
+      successTitle: "Mensaje enviado",
+      successBody:
+        "Gracias por contactarnos. Nuestro equipo de compras se pondrá en contacto con usted en un plazo de 24 horas.",
+      genericError: "Algo salió mal. Por favor, inténtelo de nuevo.",
+    },
+  },
+} as const
+
+export function getDictionary(locale: Locale) {
+  return dictionary[locale]
+}

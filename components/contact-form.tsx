@@ -7,10 +7,12 @@ import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
+import { getDictionary, type Locale } from "@/lib/i18n/dictionary"
 
 type Status = "idle" | "loading" | "success" | "error"
 
-export function ContactForm() {
+export function ContactForm({ locale = "en" }: { locale?: Locale }) {
+  const t = getDictionary(locale).contactForm
   const [status, setStatus] = useState<Status>("idle")
   const [errorMessage, setErrorMessage] = useState("")
 
@@ -38,16 +40,14 @@ export function ContactForm() {
       const result = await res.json()
 
       if (!res.ok) {
-        throw new Error(result.error || "Something went wrong.")
+        throw new Error(result.error || t.genericError)
       }
 
       setStatus("success")
       form.reset()
     } catch (error) {
       setStatus("error")
-      setErrorMessage(
-        error instanceof Error ? error.message : "Something went wrong."
-      )
+      setErrorMessage(error instanceof Error ? error.message : t.genericError)
     }
   }
 
@@ -55,12 +55,9 @@ export function ContactForm() {
     return (
       <Card className="gap-2 rounded-2xl border-2 border-primary p-8 text-center shadow-none">
         <h3 className="text-lg font-semibold tracking-tight">
-          Message sent
+          {t.successTitle}
         </h3>
-        <p className="text-sm text-muted-foreground">
-          Thank you for reaching out. Our purchasing team will get back to
-          you within 24 hours.
-        </p>
+        <p className="text-sm text-muted-foreground">{t.successBody}</p>
       </Card>
     )
   }
@@ -70,30 +67,30 @@ export function ContactForm() {
       <form onSubmit={handleSubmit} className="space-y-5">
         <div className="grid grid-cols-2 gap-4">
           <div className="space-y-2">
-            <Label htmlFor="first-name">First name</Label>
+            <Label htmlFor="first-name">{t.firstName}</Label>
             <Input id="first-name" name="firstName" required />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="last-name">Last name</Label>
+            <Label htmlFor="last-name">{t.lastName}</Label>
             <Input id="last-name" name="lastName" required />
           </div>
         </div>
         <div className="space-y-2">
-          <Label htmlFor="email">Business email</Label>
+          <Label htmlFor="email">{t.email}</Label>
           <Input id="email" name="email" type="email" required />
         </div>
         <div className="space-y-2">
-          <Label htmlFor="company">Company name</Label>
+          <Label htmlFor="company">{t.company}</Label>
           <Input id="company" name="company" />
         </div>
         <div className="space-y-2">
-          <Label htmlFor="message">Message</Label>
+          <Label htmlFor="message">{t.message}</Label>
           <Textarea
             id="message"
             name="message"
             required
             className="min-h-28"
-            placeholder="Tell us about your brand and the products you distribute..."
+            placeholder={t.messagePlaceholder}
           />
         </div>
 
@@ -102,9 +99,7 @@ export function ContactForm() {
         )}
 
         <Button type="submit" className="w-full" disabled={status === "loading"}>
-          {status === "loading"
-            ? "Sending…"
-            : "Submit Wholesale Inquiry →"}
+          {status === "loading" ? t.sending : t.submit}
         </Button>
       </form>
     </Card>

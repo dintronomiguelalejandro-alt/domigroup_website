@@ -2,13 +2,18 @@
 
 import { useEffect, useState } from "react"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { Cookie } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
+import { getDictionary } from "@/lib/i18n/dictionary"
 
 export function CookieConsent() {
   const [open, setOpen] = useState(false)
+  const pathname = usePathname()
+  const locale = pathname.startsWith("/es") ? "es" : "en"
+  const t = getDictionary(locale).cookieConsent
 
   useEffect(() => {
     const id = requestAnimationFrame(() => setOpen(true))
@@ -30,15 +35,14 @@ export function CookieConsent() {
             <Cookie className="size-4 text-primary" strokeWidth={1.75} />
           </div>
           <p className="text-sm text-muted-foreground">
-            We use cookies to improve your experience and understand site
-            usage. See our{" "}
+            {t.text}{" "}
             <Link
               href="/cookies"
               className="font-medium text-primary hover:underline"
             >
-              Cookie Policy
+              {t.linkLabel}
             </Link>{" "}
-            for details.
+            {t.textAfter}
           </p>
         </div>
 
@@ -48,10 +52,10 @@ export function CookieConsent() {
             variant="outline"
             onClick={() => setOpen(false)}
           >
-            Necessary Only
+            {t.necessaryOnly}
           </Button>
           <Button size="sm" onClick={() => setOpen(false)}>
-            Accept All
+            {t.acceptAll}
           </Button>
         </div>
       </div>

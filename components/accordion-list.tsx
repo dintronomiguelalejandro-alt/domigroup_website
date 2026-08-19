@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils"
 export function AccordionList({
   items,
 }: {
-  items: { title: string; description: string }[]
+  items: readonly { title: string; description: string }[]
 }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 

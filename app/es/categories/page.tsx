@@ -3,9 +3,9 @@ import type { Metadata } from "next"
 import { CategoriesListing } from "@/components/pages/categories-listing"
 
 export const metadata: Metadata = {
-  title: "Product Categories | Domi Global Group",
+  title: "Categorías de Productos | Domi Global Group",
   description:
-    "Every consumer product category Domi Global Group sources and purchases across the United States, Mexico, and Canada.",
+    "Todas las categorías de productos de consumo que Domi Global Group compra y distribuye en Estados Unidos, México y Canadá.",
   alternates: {
     languages: {
       en: "/categories",
@@ -15,5 +15,5 @@ export const metadata: Metadata = {
 }
 
 export default function CategoriesPage() {
-  return <CategoriesListing locale="en" />
+  return <CategoriesListing locale="es" />
 }

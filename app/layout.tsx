@@ -4,6 +4,7 @@ import type { Metadata } from "next"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { CookieConsent } from "@/components/cookie-consent"
+import { LocaleSync } from "@/components/locale-sync"
 import { cn } from "@/lib/utils";
 
 const montserrat = Montserrat({ subsets: ["latin"], variable: "--font-sans" })
@@ -32,6 +33,7 @@ export default function RootLayout({
     >
       <body>
         <ThemeProvider>
+          <LocaleSync />
           {children}
           <CookieConsent />
         </ThemeProvider>

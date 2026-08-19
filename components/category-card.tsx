@@ -3,14 +3,14 @@
 import { useState } from "react"
 
 import { cn } from "@/lib/utils"
-import type { Category } from "@/lib/categories"
+import type { LocalizedCategory } from "@/lib/categories"
 
 export function CategoryCard({
   category,
   icon,
   className,
 }: {
-  category: Omit<Category, "icon">
+  category: Omit<LocalizedCategory, "icon">
   icon: React.ReactNode
   className?: string
 }) {

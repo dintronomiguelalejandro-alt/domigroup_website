@@ -9,17 +9,14 @@ import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { ModeToggle } from "@/components/mode-toggle"
 import { LogoFull } from "@/components/logo-full"
+import { LanguageToggle } from "@/components/language-toggle"
+import { getDictionary, localePath, type Locale } from "@/lib/i18n/dictionary"
 
-const links = [
-  { href: "#about", label: "About" },
-  { href: "#categories", label: "Categories" },
-  { href: "#markets", label: "Markets" },
-  { href: "#contact", label: "Contact" },
-]
-
-export function SiteHeader() {
+export function SiteHeader({ locale = "en" }: { locale?: Locale }) {
+  const t = getDictionary(locale).header
   const pathname = usePathname()
-  const isHome = pathname === "/"
+  const home = localePath(locale)
+  const isHome = pathname === home
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
@@ -61,7 +58,7 @@ export function SiteHeader() {
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-10 py-6">
         <Link
-          href="/"
+          href={home}
           onClick={(e) => {
             setOpen(false)
             if (isHome) {
@@ -100,10 +97,10 @@ export function SiteHeader() {
             )}
           />
           <nav className="flex items-center gap-10">
-            {links.map((link) => (
+            {t.nav.map((link) => (
               <a
                 key={link.href}
-                href={isHome ? link.href : `/${link.href}`}
+                href={isHome ? link.href : `${home}${link.href}`}
                 className={cn(
                   "text-lg transition-colors duration-300",
                   scrolled
@@ -115,6 +112,14 @@ export function SiteHeader() {
               </a>
             ))}
           </nav>
+          <LanguageToggle
+            locale={locale}
+            className={cn(
+              scrolled
+                ? "text-black hover:text-primary"
+                : "text-white hover:text-white/80"
+            )}
+          />
         </div>
 
         <div className="flex items-center gap-2 md:hidden">
@@ -141,7 +146,7 @@ export function SiteHeader() {
                   )
             )}
             onClick={() => setOpen((v) => !v)}
-            aria-label="Toggle menu"
+            aria-label={t.toggleMenu}
             aria-expanded={open}
           >
             <span className="relative flex size-7 flex-col items-center justify-center">
@@ -181,10 +186,10 @@ export function SiteHeader() {
         }}
       >
         <nav className="flex h-full flex-col items-center justify-center gap-2">
-          {links.map((link, i) => (
+          {t.nav.map((link, i) => (
             <a
               key={link.href}
-              href={isHome ? link.href : `/${link.href}`}
+              href={isHome ? link.href : `${home}${link.href}`}
               onClick={() => setOpen(false)}
               style={{ transitionDelay: open ? `${100 + i * 70}ms` : "0ms" }}
               className={cn(
@@ -197,14 +202,18 @@ export function SiteHeader() {
               {link.label}
             </a>
           ))}
+          <LanguageToggle
+            locale={locale}
+            className="mt-2 text-foreground/70 hover:text-foreground"
+          />
           <Button
             size="lg"
             className="mt-6 bg-card text-primary hover:bg-card/90"
             nativeButton={false}
-            render={<a href={isHome ? "#contact" : "/#contact"} />}
+            render={<a href={isHome ? "#contact" : `${home}#contact`} />}
             onClick={() => setOpen(false)}
           >
-            Start a Partnership
+            {t.cta}
           </Button>
         </nav>
       </div>
