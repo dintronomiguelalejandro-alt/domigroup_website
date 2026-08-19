@@ -20,6 +20,16 @@ export function CookieConsent() {
     return () => cancelAnimationFrame(id)
   }, [])
 
+  useEffect(() => {
+    if (!open) return
+    const { style } = document.body
+    const previousOverflow = style.overflow
+    style.overflow = "hidden"
+    return () => {
+      style.overflow = previousOverflow
+    }
+  }, [open])
+
   return (
     <div
       className={cn(
