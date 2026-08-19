@@ -124,7 +124,7 @@
     @apply bg-background text-foreground;
     }
   html {
-    @apply font-sans;
+    @apply bg-background font-sans;
     scrollbar-width: none;
     -ms-overflow-style: none;
     }
