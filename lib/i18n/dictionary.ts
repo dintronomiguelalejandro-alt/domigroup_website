@@ -70,19 +70,9 @@ const dictionary = {
               "Our Florida Resale Certificate lets us purchase inventory tax-exempt for wholesale resale, fully compliant with state requirements.",
           },
           {
-            title: "Consistent volume orders — not one-time buyers",
-            description:
-              "We place regular, recurring purchase orders across multiple product categories. We are built for consistency — not one-time transactions.",
-          },
-          {
             title: "Miami-based operations with national distribution reach",
             description:
               "Our Miami operations center gives us direct access to major US distribution networks and logistics infrastructure across the Southeast and beyond.",
-          },
-          {
-            title: "We strictly respect all MAP pricing policies",
-            description:
-              "We follow Minimum Advertised Price policies closely, protecting your brand's pricing integrity across every channel.",
           },
           {
             title:
@@ -215,20 +205,9 @@ const dictionary = {
               "Nuestro Certificado de Reventa de Florida nos permite comprar inventario exento de impuestos para reventa mayorista, en pleno cumplimiento con los requisitos estatales.",
           },
           {
-            title: "Pedidos de volumen constante — no somos compradores ocasionales",
-            description:
-              "Realizamos pedidos de compra regulares y recurrentes en múltiples categorías de productos. Estamos hechos para la consistencia, no para transacciones únicas.",
-          },
-          {
             title: "Operaciones con sede en Miami y alcance de distribución nacional",
             description:
               "Nuestro centro de operaciones en Miami nos da acceso directo a las principales redes de distribución de EE. UU. y a infraestructura logística en el sureste del país y más allá.",
-          },
-          {
-            title:
-              "Respetamos estrictamente todas las políticas de precio mínimo anunciado (MAP)",
-            description:
-              "Seguimos de cerca las políticas de Precio Mínimo Anunciado, protegiendo la integridad de precios de su marca en todos los canales.",
           },
           {
             title:
