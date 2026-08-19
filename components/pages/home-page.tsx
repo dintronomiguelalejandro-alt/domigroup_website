@@ -57,7 +57,7 @@ export function HomePage({ locale }: { locale: Locale }) {
                 </Reveal>
 
                 <Reveal delay={150}>
-                  <div className="mt-16 flex flex-wrap justify-center gap-x-12 gap-y-6 border-t-2 border-white pt-8 text-center md:justify-start md:text-left">
+                  <div className="mt-16 flex flex-wrap justify-center gap-x-5 gap-y-6 border-t-2 border-white pt-8 text-center sm:gap-x-12 md:justify-start md:text-left">
                     {t.hero.stats.map((stat) => (
                       <div key={stat.label}>
                         <div className="text-3xl font-semibold tabular-nums">
