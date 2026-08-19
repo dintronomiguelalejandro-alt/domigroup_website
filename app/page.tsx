@@ -158,16 +158,28 @@ export default function Page() {
 
         <section id="about" className="border-b border-border/60 bg-card text-card-foreground">
           <div className="mx-auto max-w-6xl px-8 py-24 text-left">
-            <div className="max-w-3xl">
-              <Reveal>
-                <p className="text-xs font-medium tracking-widest text-primary uppercase">
-                  Who We Are
-                </p>
+            <div className="md:grid md:grid-cols-2 md:items-center md:gap-12 lg:gap-20">
+              <Reveal className="relative aspect-[4/5] overflow-hidden border border-border/60">
+                <Image
+                  src="/about/handoff.png"
+                  alt="A courier handing a package to a customer at an office"
+                  fill
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className="object-cover"
+                />
               </Reveal>
 
-              <Reveal delay={80} className="mt-10">
-                <AccordionList items={checkmarks} />
-              </Reveal>
+              <div className="mt-10 md:mt-0">
+                <Reveal>
+                  <p className="text-xs font-medium tracking-widest text-primary uppercase">
+                    Who We Are
+                  </p>
+                </Reveal>
+
+                <Reveal delay={80} className="mt-10">
+                  <AccordionList items={checkmarks} />
+                </Reveal>
+              </div>
             </div>
           </div>
         </section>
