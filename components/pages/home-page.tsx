@@ -10,11 +10,11 @@ import { CategoryCard } from "@/components/category-card"
 import { AccordionList } from "@/components/accordion-list"
 import { Reveal } from "@/components/reveal"
 import { categories, localizeCategory } from "@/lib/categories"
-import { getDictionary, localePath, type Locale } from "@/lib/i18n/dictionary"
+import { getDictionary, type Locale } from "@/lib/i18n/dictionary"
 
 export function HomePage({ locale }: { locale: Locale }) {
   const t = getDictionary(locale).home
-  const home = localePath(locale)
+  const home = locale === "es" ? "/es" : ""
 
   return (
     <div className="min-h-svh bg-background">
