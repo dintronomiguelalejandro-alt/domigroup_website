@@ -23,34 +23,22 @@ export function ContactForm() {
     const data = new FormData(form)
 
     try {
-      const res = await fetch(
-        "https://formsubmit.co/ajax/sales@domiglobalgroup.com",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-          body: JSON.stringify({
-            "First name": data.get("firstName"),
-            "Last name": data.get("lastName"),
-            Email: data.get("email"),
-            Company: data.get("company"),
-            Message: data.get("message"),
-            _subject: "New wholesale inquiry from the website",
-            _template: "table",
-            _captcha: "false",
-          }),
-        }
-      )
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          firstName: data.get("firstName"),
+          lastName: data.get("lastName"),
+          email: data.get("email"),
+          company: data.get("company"),
+          message: data.get("message"),
+        }),
+      })
 
-      const result = await res.json().catch(() => null)
+      const result = await res.json()
 
-      if (!res.ok || !result || result.success === "false" || result.success === false) {
-        throw new Error(
-          result?.message ||
-            "Something went wrong. Please try again or email us directly."
-        )
+      if (!res.ok) {
+        throw new Error(result.error || "Something went wrong.")
       }
 
       setStatus("success")
@@ -58,9 +46,7 @@ export function ContactForm() {
     } catch (error) {
       setStatus("error")
       setErrorMessage(
-        error instanceof Error
-          ? error.message
-          : "Something went wrong. Please try again or email us directly."
+        error instanceof Error ? error.message : "Something went wrong."
       )
     }
   }
