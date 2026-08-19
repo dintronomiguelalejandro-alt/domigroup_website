@@ -133,7 +133,7 @@ export function HomePage({ locale }: { locale: Locale }) {
 
             <div className="mt-12 grid gap-4 text-left sm:grid-cols-2 lg:grid-cols-4">
               <Reveal>
-                <div className="mx-auto flex aspect-[4/5] w-[78%] flex-col justify-between border-2 border-white bg-[#04182a] p-6 sm:mx-0 sm:w-full">
+                <div className="flex flex-col justify-between gap-6 border-2 border-white bg-[#0d0d0d] p-6">
                   <div>
                     <h3 className="text-lg font-bold tracking-tight text-white uppercase">
                       {t.categories.viewAllCard.title}

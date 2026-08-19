@@ -26,9 +26,9 @@ export function CategoriesListing({ locale }: { locale: Locale }) {
           </div>
         </section>
 
-        <section className="bg-card text-card-foreground">
-          <div className="mx-auto max-w-6xl px-8 py-24">
-            <div className="grid gap-4 text-left sm:grid-cols-2 lg:grid-cols-4">
+        <section className="bg-[#0a0a0a] text-white">
+          <div className="mx-auto max-w-[1600px] px-8 py-24">
+            <div className="grid gap-4 text-left sm:grid-cols-2 md:grid-cols-4 xl:grid-cols-8">
               {categories.map((cat) => {
                 const { icon: Icon, ...localized } = localizeCategory(cat, locale)
                 return (
