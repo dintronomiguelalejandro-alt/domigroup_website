@@ -1,16 +1,17 @@
 "use client"
 
 import { useState } from "react"
-import Image from "next/image"
 
 import { cn } from "@/lib/utils"
 import type { Category } from "@/lib/categories"
 
 export function CategoryCard({
   category,
+  icon,
   className,
 }: {
   category: Omit<Category, "icon">
+  icon: React.ReactNode
   className?: string
 }) {
   const [open, setOpen] = useState(false)
@@ -19,31 +20,29 @@ export function CategoryCard({
     <div
       onClick={() => setOpen((v) => !v)}
       className={cn(
-        "group relative mx-auto flex aspect-[4/5] w-[78%] cursor-pointer overflow-hidden border border-primary-foreground/15 transition-shadow hover:ring-[3px] hover:ring-white hover:ring-inset sm:mx-0 sm:w-full",
+        "group relative mx-auto flex aspect-[4/5] w-[78%] cursor-pointer flex-col items-center justify-center gap-4 overflow-hidden border border-primary-foreground/15 bg-card p-6 text-center text-card-foreground transition-shadow hover:ring-[3px] hover:ring-white hover:ring-inset sm:mx-0 sm:w-full",
         open && "ring-[3px] ring-white ring-inset",
         className
       )}
     >
-      <Image
-        src={category.image}
-        alt={category.title}
-        fill
-        sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 78vw"
-        className={cn(
-          "object-cover transition-transform duration-500 group-hover:scale-105",
-          open && "scale-105"
-        )}
-      />
+      {category.badge && (
+        <div className="absolute top-0 left-0 z-10 m-4 bg-primary px-3 py-1.5">
+          <span className="text-sm font-bold tracking-tight text-primary-foreground uppercase">
+            {category.badge}
+          </span>
+        </div>
+      )}
 
-      <div className="absolute top-0 left-0 z-10 m-4 bg-primary px-3 py-1.5">
-        <span className="text-sm font-bold tracking-tight text-primary-foreground uppercase">
-          {category.title}
-        </span>
+      <div className="text-primary transition-transform duration-500 group-hover:scale-105 [&_svg]:size-12">
+        {icon}
       </div>
+      <span className="text-sm font-bold tracking-tight uppercase">
+        {category.title}
+      </span>
 
       <div
         className={cn(
-          "absolute inset-0 z-10 flex flex-col justify-end bg-primary p-5 opacity-0 transition-opacity duration-300 group-hover:opacity-95",
+          "absolute inset-0 z-10 flex flex-col justify-end bg-primary p-5 text-left opacity-0 transition-opacity duration-300 group-hover:opacity-95",
           open && "opacity-95"
         )}
       >

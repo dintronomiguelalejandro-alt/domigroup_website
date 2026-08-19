@@ -35,10 +35,11 @@ export default function CategoriesPage() {
         <section className="bg-card text-card-foreground">
           <div className="mx-auto max-w-6xl px-8 py-24">
             <div className="grid gap-4 text-left sm:grid-cols-2 lg:grid-cols-4">
-              {categories.map(({ icon: _icon, ...cat }) => (
+              {categories.map(({ icon: Icon, ...cat }) => (
                 <CategoryCard
                   key={cat.title}
                   category={cat}
+                  icon={<Icon strokeWidth={1.5} />}
                   className="border-border/60"
                 />
               ))}

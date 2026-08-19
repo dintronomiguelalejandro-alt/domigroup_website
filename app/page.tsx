@@ -222,9 +222,9 @@ export default function Page() {
                 </div>
               </Reveal>
 
-              {categories.slice(0, 3).map(({ icon: _icon, ...cat }, i) => (
+              {categories.slice(0, 3).map(({ icon: Icon, ...cat }, i) => (
                 <Reveal key={cat.title} delay={(i + 1) * 80}>
-                  <CategoryCard category={cat} />
+                  <CategoryCard category={cat} icon={<Icon strokeWidth={1.5} />} />
                 </Reveal>
               ))}
             </div>
