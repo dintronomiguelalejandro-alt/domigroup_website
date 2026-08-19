@@ -26,7 +26,7 @@ export function LanguageToggle({
     <Link
       href={targetHref}
       className={cn(
-        "text-xs font-semibold tracking-widest uppercase transition-colors",
+        "border-2 border-current px-3 py-1.5 text-xs font-semibold tracking-widest uppercase transition-colors",
         className
       )}
     >
