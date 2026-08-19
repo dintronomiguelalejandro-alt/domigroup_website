@@ -169,10 +169,10 @@ export default function CookiesPage() {
                   your first visit, or by clearing cookies in your browser
                   settings. Questions? Email{" "}
                   <a
-                    href="mailto:sales@domiglobalgroup.com"
+                    href="mailto:sales@domi-globalgroup.com"
                     className="font-medium text-primary hover:underline"
                   >
-                    sales@domiglobalgroup.com
+                    sales@domi-globalgroup.com
                   </a>
                   .
                 </p>

@@ -312,7 +312,7 @@ export default function Page() {
                       Email
                     </p>
                     <p className="mt-1 text-sm font-semibold">
-                      sales@domiglobalgroup.com
+                      sales@domi-globalgroup.com
                     </p>
                   </div>
                 </div>

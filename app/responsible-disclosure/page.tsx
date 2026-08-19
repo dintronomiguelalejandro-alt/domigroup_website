@@ -26,7 +26,7 @@ const sections = [
   {
     title: "3. How to Report a Vulnerability",
     body: [
-      "If you believe you've found a security vulnerability, email us at sales@domiglobalgroup.com with the subject line \"Security Disclosure.\" Please give us a reasonable amount of time to investigate and address the issue before disclosing it publicly.",
+      "If you believe you've found a security vulnerability, email us at sales@domi-globalgroup.com with the subject line \"Security Disclosure.\" Please give us a reasonable amount of time to investigate and address the issue before disclosing it publicly.",
     ],
   },
   {
@@ -103,10 +103,10 @@ export default function ResponsibleDisclosurePage() {
                 <p className="mt-1.5 text-sm text-muted-foreground">
                   Email us at{" "}
                   <a
-                    href="mailto:sales@domiglobalgroup.com"
+                    href="mailto:sales@domi-globalgroup.com"
                     className="font-medium text-primary hover:underline"
                   >
-                    sales@domiglobalgroup.com
+                    sales@domi-globalgroup.com
                   </a>{" "}
                   with the subject line &quot;Security Disclosure.&quot;
                 </p>

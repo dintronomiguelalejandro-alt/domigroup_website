@@ -120,10 +120,10 @@ export default function TermsPage() {
                 <p className="mt-1.5 text-sm text-muted-foreground">
                   Reach out anytime at{" "}
                   <a
-                    href="mailto:sales@domiglobalgroup.com"
+                    href="mailto:sales@domi-globalgroup.com"
                     className="font-medium text-primary hover:underline"
                   >
-                    sales@domiglobalgroup.com
+                    sales@domi-globalgroup.com
                   </a>
                   .
                 </p>

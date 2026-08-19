@@ -68,7 +68,7 @@ const sections = [
     title: "5. Your Rights and Choices",
     body: [
       "You can ask us at any time to confirm what personal information we hold about you, correct inaccurate information, or delete your information from our records. You can also withdraw consent for non-essential cookies at any time from the cookie banner or your browser settings, without affecting the site's core functionality.",
-      "To exercise any of these rights, email us at sales@domiglobalgroup.com. We'll respond within a reasonable timeframe, typically within 30 days.",
+      "To exercise any of these rights, email us at sales@domi-globalgroup.com. We'll respond within a reasonable timeframe, typically within 30 days.",
     ],
   },
   {
@@ -162,10 +162,10 @@ export default function PrivacyPage() {
                 <p className="mt-1.5 text-sm text-muted-foreground">
                   Reach out anytime at{" "}
                   <a
-                    href="mailto:sales@domiglobalgroup.com"
+                    href="mailto:sales@domi-globalgroup.com"
                     className="font-medium text-primary hover:underline"
                   >
-                    sales@domiglobalgroup.com
+                    sales@domi-globalgroup.com
                   </a>
                   . For details on cookies specifically, see our{" "}
                   <a href="/cookies" className="font-medium text-primary hover:underline">
