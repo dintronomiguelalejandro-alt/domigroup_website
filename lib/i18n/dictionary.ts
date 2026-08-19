@@ -109,24 +109,9 @@ const dictionary = {
         title: "Where We Operate",
         paragraph: "Three major North American markets, millions of end consumers.",
         items: [
-          {
-            flag: "🇺🇸",
-            name: "United States",
-            description:
-              "Primary market. We distribute across all major regions through established wholesale channels and our national distribution network.",
-          },
-          {
-            flag: "🇲🇽",
-            name: "Mexico",
-            description:
-              "Fast-growing market with strong and increasing demand for US consumer brands across all major categories.",
-          },
-          {
-            flag: "🇨🇦",
-            name: "Canada",
-            description:
-              "Premium market with high consumer spending and strong brand loyalty toward US consumer products.",
-          },
+          { flag: "🇺🇸", name: "United States" },
+          { flag: "🇲🇽", name: "Mexico" },
+          { flag: "🇨🇦", name: "Canada" },
         ],
       },
       ctaBanner: {
@@ -270,24 +255,9 @@ const dictionary = {
         title: "Dónde Operamos",
         paragraph: "Tres grandes mercados norteamericanos, millones de consumidores finales.",
         items: [
-          {
-            flag: "🇺🇸",
-            name: "Estados Unidos",
-            description:
-              "Mercado principal. Distribuimos en todas las regiones principales a través de canales mayoristas establecidos y nuestra red de distribución nacional.",
-          },
-          {
-            flag: "🇲🇽",
-            name: "México",
-            description:
-              "Mercado de rápido crecimiento con una demanda fuerte y creciente de marcas de consumo estadounidenses en todas las categorías principales.",
-          },
-          {
-            flag: "🇨🇦",
-            name: "Canadá",
-            description:
-              "Mercado premium con alto gasto del consumidor y fuerte lealtad de marca hacia los productos de consumo estadounidenses.",
-          },
+          { flag: "🇺🇸", name: "Estados Unidos" },
+          { flag: "🇲🇽", name: "México" },
+          { flag: "🇨🇦", name: "Canadá" },
         ],
       },
       ctaBanner: {

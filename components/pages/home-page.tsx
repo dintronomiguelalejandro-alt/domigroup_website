@@ -198,9 +198,6 @@ export function HomePage({ locale }: { locale: Locale }) {
                         {market.name}
                       </span>
                     </div>
-                    <p className="text-sm text-muted-foreground">
-                      {market.description}
-                    </p>
                   </Card>
                 </Reveal>
               ))}
