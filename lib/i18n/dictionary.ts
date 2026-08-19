@@ -188,8 +188,8 @@ const dictionary = {
         titleLine1: "Buscamos. Compramos.",
         titleLine2: "Entregamos.",
         paragraph:
-          "Domi Global Group es una empresa mayorista con sede en Miami. Compramos bienes de consumo directamente a distribuidores autorizados y los movemos a través de nuestra red de distribución en Estados Unidos, México y Canadá. Buscamos establecer alianzas serias y de largo plazo con nuestros proveedores.",
-        ctaPrimary: "Iniciar una Asociación →",
+          "Domi Global Group es una empresa mayorista con sede en Miami. Compramos bienes de consumo a distribuidores autorizados y los distribuimos en Estados Unidos, México y Canadá, buscando alianzas serias y duraderas.",
+        ctaPrimary: "Iniciar Ahora →",
         ctaSecondary: "Nuestras Categorías",
         stats: [
           { value: "3", label: "Mercados" },
