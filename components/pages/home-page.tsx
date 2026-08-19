@@ -57,13 +57,13 @@ export function HomePage({ locale }: { locale: Locale }) {
                 </Reveal>
 
                 <Reveal delay={150}>
-                  <div className="mt-16 flex flex-wrap justify-center gap-x-5 gap-y-6 border-t-2 border-white pt-8 text-center md:justify-start md:text-left">
+                  <div className="mt-16 flex flex-wrap justify-center gap-x-2 gap-y-6 border-t-2 border-white pt-8 text-center sm:gap-x-5 md:justify-start md:text-left">
                     {t.hero.stats.map((stat) => (
                       <div key={stat.label}>
-                        <div className="text-3xl font-semibold tabular-nums">
+                        <div className="text-xl font-semibold tabular-nums sm:text-3xl">
                           {stat.value}
                         </div>
-                        <div className="mt-1 text-xs tracking-widest text-primary-foreground/80 uppercase">
+                        <div className="mt-1 text-[9px] tracking-wider text-primary-foreground/80 uppercase sm:text-xs sm:tracking-widest">
                           {stat.label}
                         </div>
                       </div>
