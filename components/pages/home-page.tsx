@@ -26,7 +26,7 @@ export function HomePage({ locale }: { locale: Locale }) {
             <div className="lg:grid lg:grid-cols-2 lg:items-center lg:gap-12 xl:gap-20">
               <div className="mx-auto max-w-2xl text-center lg:mx-0 lg:max-w-none lg:text-left">
                 <Reveal>
-                  <h1 className="text-5xl font-semibold tracking-tight text-balance md:text-6xl">
+                  <h1 className="text-4xl font-semibold tracking-tight text-balance md:text-5xl">
                     {t.hero.titleLine1}{" "}
                     <span className="text-primary-foreground/80">
                       {t.hero.titleLine2}
