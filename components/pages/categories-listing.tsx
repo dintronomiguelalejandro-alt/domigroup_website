@@ -13,7 +13,7 @@ export function CategoriesListing({ locale }: { locale: Locale }) {
 
       <main>
         <section className="border-b-2 border-white">
-          <div className="mx-auto max-w-3xl px-8 py-24 text-center md:py-32">
+          <div className="mx-auto max-w-3xl px-10 py-24 text-center md:py-32">
             <p className="text-xs font-medium tracking-widest text-primary-foreground uppercase">
               {t.eyebrow}
             </p>
@@ -27,7 +27,7 @@ export function CategoriesListing({ locale }: { locale: Locale }) {
         </section>
 
         <section className="bg-[#0a0a0a] text-white">
-          <div className="mx-auto max-w-[1600px] px-8 py-24">
+          <div className="mx-auto max-w-[1600px] px-10 py-24">
             <div className="grid grid-cols-1 gap-4 text-left sm:grid-cols-2 md:grid-cols-4 xl:grid-cols-8">
               {categories.map((cat) => {
                 const { icon: Icon, ...localized } = localizeCategory(cat, locale)

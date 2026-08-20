@@ -8,7 +8,7 @@ export function SiteFooter({ locale = "en" }: { locale?: Locale }) {
 
   return (
     <footer className="border-t-2 border-white">
-      <div className="mx-auto flex max-w-6xl flex-col gap-6 px-8 py-12 sm:flex-row sm:items-start sm:justify-between">
+      <div className="mx-auto flex max-w-6xl flex-col gap-6 px-10 py-12 sm:flex-row sm:items-start sm:justify-between">
         <div>
           <Link
             href={localePath(locale)}

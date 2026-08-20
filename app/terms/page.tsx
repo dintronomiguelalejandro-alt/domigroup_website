@@ -80,7 +80,7 @@ export default function TermsPage() {
 
       <main>
         <section className="border-b-2 border-white">
-          <div className="mx-auto max-w-3xl px-8 py-24 text-center md:py-32">
+          <div className="mx-auto max-w-3xl px-10 py-24 text-center md:py-32">
             <p className="text-xs font-medium tracking-widest text-primary-foreground uppercase">
               Legal
             </p>
@@ -97,7 +97,7 @@ export default function TermsPage() {
         </section>
 
         <section className="bg-card text-card-foreground">
-          <div className="mx-auto max-w-3xl px-8 py-24">
+          <div className="mx-auto max-w-3xl px-10 py-24">
             <div className="space-y-10">
               {sections.map((section) => (
                 <div key={section.title}>

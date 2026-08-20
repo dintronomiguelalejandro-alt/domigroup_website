@@ -22,7 +22,7 @@ export function HomePage({ locale }: { locale: Locale }) {
 
       <main>
         <section className="border-b-2 border-white">
-          <div className="mx-auto max-w-6xl px-8 pt-10 pb-32 md:pt-24 md:pb-40">
+          <div className="mx-auto max-w-6xl px-10 pt-10 pb-32 md:pt-24 md:pb-40">
             <div className="md:grid md:grid-cols-2 md:items-center md:gap-12 lg:gap-20">
               <div className="mx-auto max-w-2xl text-center md:mx-0 md:max-w-none md:text-left">
                 <Reveal>
@@ -90,7 +90,7 @@ export function HomePage({ locale }: { locale: Locale }) {
         </section>
 
         <section id="about" className="border-b-2 border-primary bg-card text-card-foreground">
-          <div className="mx-auto max-w-6xl px-8 py-24 text-left">
+          <div className="mx-auto max-w-6xl px-10 py-24 text-left">
             <div className="md:grid md:grid-cols-2 md:items-stretch md:gap-12 lg:gap-20">
               <Reveal className="relative aspect-[4/5] overflow-hidden md:aspect-auto">
                 <Image
@@ -118,7 +118,7 @@ export function HomePage({ locale }: { locale: Locale }) {
         </section>
 
         <section id="categories" className="border-b-2 border-white">
-          <div className="mx-auto max-w-6xl px-8 py-24 text-center md:text-left">
+          <div className="mx-auto max-w-6xl px-10 py-24 text-center md:text-left">
             <Reveal>
               <p className="text-xs font-medium tracking-widest text-primary-foreground uppercase">
                 {t.categories.eyebrow}
@@ -159,7 +159,7 @@ export function HomePage({ locale }: { locale: Locale }) {
         </section>
 
         <section id="markets" className="border-b-2 border-primary bg-card text-card-foreground">
-          <div className="mx-auto max-w-6xl px-8 py-24 text-center md:text-left">
+          <div className="mx-auto max-w-6xl px-10 py-24 text-center md:text-left">
             <Reveal>
               <p className="text-xs font-medium tracking-widest text-primary uppercase">
                 {t.markets.eyebrow}
@@ -190,7 +190,7 @@ export function HomePage({ locale }: { locale: Locale }) {
         </section>
 
         <section className="bg-primary">
-          <Reveal className="mx-auto max-w-6xl px-8 py-16 text-center text-primary-foreground">
+          <Reveal className="mx-auto max-w-6xl px-10 py-16 text-center text-primary-foreground">
             <h2 className="text-2xl font-semibold tracking-tight text-balance md:text-3xl">
               {t.ctaBanner.title}
             </h2>
@@ -201,7 +201,7 @@ export function HomePage({ locale }: { locale: Locale }) {
         </section>
 
         <section id="contact" className="bg-card text-card-foreground">
-          <div className="mx-auto grid max-w-6xl grid-cols-1 gap-16 px-8 py-24 md:grid-cols-2">
+          <div className="mx-auto grid max-w-6xl grid-cols-1 gap-16 px-10 py-24 md:grid-cols-2">
             <Reveal className="text-center md:text-left">
               <h2 className="text-3xl font-semibold tracking-tight text-balance">
                 {t.contact.title}
