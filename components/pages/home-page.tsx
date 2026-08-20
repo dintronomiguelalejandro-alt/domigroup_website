@@ -131,7 +131,7 @@ export function HomePage({ locale }: { locale: Locale }) {
               </p>
             </Reveal>
 
-            <div className="mt-12 grid gap-4 text-left sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-12 grid grid-cols-1 gap-4 text-left sm:grid-cols-2 lg:grid-cols-3">
               {categories
                 .filter((cat) =>
                   [
@@ -172,7 +172,7 @@ export function HomePage({ locale }: { locale: Locale }) {
               </p>
             </Reveal>
 
-            <div className="mt-10 grid gap-4 text-left sm:grid-cols-3">
+            <div className="mt-10 grid grid-cols-1 gap-4 text-left sm:grid-cols-3">
               {t.markets.items.map((market, i) => (
                 <Reveal key={market.name} delay={i * 80}>
                   <Card className="gap-2 rounded-2xl border-2 border-primary p-6 shadow-none">
@@ -201,7 +201,7 @@ export function HomePage({ locale }: { locale: Locale }) {
         </section>
 
         <section id="contact" className="bg-card text-card-foreground">
-          <div className="mx-auto grid max-w-6xl gap-16 px-8 py-24 md:grid-cols-2">
+          <div className="mx-auto grid max-w-6xl grid-cols-1 gap-16 px-8 py-24 md:grid-cols-2">
             <Reveal className="text-center md:text-left">
               <h2 className="text-3xl font-semibold tracking-tight text-balance">
                 {t.contact.title}

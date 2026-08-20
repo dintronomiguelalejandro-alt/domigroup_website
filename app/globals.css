@@ -122,11 +122,15 @@
     }
   body {
     @apply bg-background text-foreground;
+    overflow-x: hidden;
+    max-width: 100vw;
     }
   html {
     @apply bg-background font-sans;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    overflow-x: hidden;
+    max-width: 100vw;
     }
   html::-webkit-scrollbar {
     display: none;
