@@ -1,4 +1,3 @@
-import Image from "next/image"
 import { Mail, MapPin, Clock } from "lucide-react"
 
 import { SiteHeader } from "@/components/site-header"
@@ -23,97 +22,67 @@ export function HomePage({ locale }: { locale: Locale }) {
       <main>
         <section className="border-b-2 border-white">
           <div className="mx-auto max-w-6xl px-10 pt-10 pb-32 md:pt-24 md:pb-40">
-            <div className="md:grid md:grid-cols-2 md:items-center md:gap-12 lg:gap-20">
-              <div className="mx-auto max-w-2xl text-center md:mx-0 md:max-w-none md:text-left">
-                <Reveal>
-                  <h1 className="text-5xl font-semibold tracking-tight text-balance md:text-6xl">
-                    {t.hero.titleLine1}{" "}
-                    <span className="text-primary-foreground/80">
-                      {t.hero.titleLine2}
-                    </span>
-                  </h1>
-                  <p className="mx-auto mt-6 max-w-xl text-lg text-primary-foreground/80 md:mx-0">
-                    {t.hero.paragraph}
-                  </p>
-                  <div className="mt-8 flex flex-wrap justify-center gap-3 md:justify-start">
-                    <Button
-                      size="lg"
-                      className="bg-card text-primary hover:bg-card/90"
-                      nativeButton={false}
-                      render={<a href={`${home}#contact`} />}
-                    >
-                      {t.hero.ctaPrimary}
-                    </Button>
-                    <Button
-                      size="lg"
-                      variant="outline"
-                      className="border-2 border-white text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
-                      nativeButton={false}
-                      render={<a href={`${home}#categories`} />}
-                    >
-                      {t.hero.ctaSecondary}
-                    </Button>
-                  </div>
-                </Reveal>
+            <div className="mx-auto max-w-2xl text-center">
+              <Reveal>
+                <h1 className="text-5xl font-semibold tracking-tight text-balance md:text-6xl">
+                  {t.hero.titleLine1}{" "}
+                  <span className="text-primary-foreground/80">
+                    {t.hero.titleLine2}
+                  </span>
+                </h1>
+                <p className="mx-auto mt-6 max-w-xl text-lg text-primary-foreground/80">
+                  {t.hero.paragraph}
+                </p>
+                <div className="mt-8 flex flex-wrap justify-center gap-3">
+                  <Button
+                    size="lg"
+                    className="bg-card text-primary hover:bg-card/90"
+                    nativeButton={false}
+                    render={<a href={`${home}#contact`} />}
+                  >
+                    {t.hero.ctaPrimary}
+                  </Button>
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="border-2 border-white text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
+                    nativeButton={false}
+                    render={<a href={`${home}#categories`} />}
+                  >
+                    {t.hero.ctaSecondary}
+                  </Button>
+                </div>
+              </Reveal>
 
-                <Reveal delay={150}>
-                  <div className="mt-16 flex flex-wrap justify-center gap-x-2 gap-y-6 border-t-2 border-white pt-8 text-center sm:gap-x-5 md:justify-start md:text-left">
-                    {t.hero.stats.map((stat) => (
-                      <div key={stat.label}>
-                        <div className="text-xl font-semibold tabular-nums sm:text-3xl">
-                          {stat.value}
-                        </div>
-                        <div className="mt-1 text-[9px] tracking-wider text-primary-foreground/80 uppercase sm:text-xs sm:tracking-widest">
-                          {stat.label}
-                        </div>
+              <Reveal delay={150}>
+                <div className="mt-16 flex flex-wrap justify-center gap-x-2 gap-y-6 border-t-2 border-white pt-8 text-center sm:gap-x-5">
+                  {t.hero.stats.map((stat) => (
+                    <div key={stat.label}>
+                      <div className="text-xl font-semibold tabular-nums sm:text-3xl">
+                        {stat.value}
                       </div>
-                    ))}
-                  </div>
-                </Reveal>
-              </div>
-
-              <Reveal
-                delay={100}
-                className="relative mt-16 hidden aspect-[4/5] overflow-hidden md:mt-0 md:block"
-              >
-                <Image
-                  src="/hero/delivery.webp"
-                  alt={t.hero.imageAlt}
-                  fill
-                  priority
-                  sizes="(min-width: 768px) 50vw, 0px"
-                  className="object-cover"
-                />
+                      <div className="mt-1 text-[9px] tracking-wider text-primary-foreground/80 uppercase sm:text-xs sm:tracking-widest">
+                        {stat.label}
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </Reveal>
             </div>
           </div>
         </section>
 
         <section id="about" className="border-b-2 border-primary bg-card text-card-foreground">
-          <div className="mx-auto max-w-6xl px-10 py-24 text-left">
-            <div className="md:grid md:grid-cols-2 md:items-stretch md:gap-12 lg:gap-20">
-              <Reveal className="relative aspect-[4/5] overflow-hidden md:aspect-auto">
-                <Image
-                  src="/about/handoff.png"
-                  alt={t.about.imageAlt}
-                  fill
-                  sizes="(min-width: 768px) 50vw, 100vw"
-                  className="object-cover"
-                />
-              </Reveal>
+          <div className="mx-auto max-w-2xl px-10 py-24 text-center">
+            <Reveal>
+              <p className="text-xs font-medium tracking-widest text-primary uppercase">
+                {t.about.eyebrow}
+              </p>
+            </Reveal>
 
-              <div className="mt-10 md:mt-0">
-                <Reveal>
-                  <p className="text-xs font-medium tracking-widest text-primary uppercase">
-                    {t.about.eyebrow}
-                  </p>
-                </Reveal>
-
-                <Reveal delay={80} className="mt-10">
-                  <AccordionList items={t.about.checkmarks} />
-                </Reveal>
-              </div>
-            </div>
+            <Reveal delay={80} className="mt-10">
+              <AccordionList items={t.about.checkmarks} />
+            </Reveal>
           </div>
         </section>
 
