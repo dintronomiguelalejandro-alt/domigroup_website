@@ -62,23 +62,23 @@ const dictionary = {
             title:
               "Legally registered company — Active & Good Standing in Florida",
             description:
-              "We are a properly registered Florida company in active, good standing status — fully able to purchase, invoice, and operate as a wholesale buyer.",
+              "A properly registered Florida company in active, good standing status — fully able to purchase and operate as a wholesale buyer.",
           },
           {
             title: "Valid Resale Certificate for tax-exempt wholesale purchases",
             description:
-              "Our Florida Resale Certificate lets us purchase inventory tax-exempt for wholesale resale, fully compliant with state requirements.",
+              "Our Florida Resale Certificate lets us purchase inventory tax-exempt for wholesale resale, fully compliant with state law.",
           },
           {
             title: "Miami-based operations with national distribution reach",
             description:
-              "Our Miami operations center gives us direct access to major US distribution networks and logistics infrastructure across the Southeast and beyond.",
+              "Our Miami operations center gives us direct access to major US distribution networks across the Southeast and beyond.",
           },
           {
             title:
               "Dedicated purchasing team — fast and professional communication",
             description:
-              "We respond within 24 hours and keep communication clear, making the buying process easy for our suppliers.",
+              "We respond within 24 hours and keep communication clear and easy for our suppliers.",
           },
         ],
       },
@@ -189,24 +189,24 @@ const dictionary = {
           {
             title: "Empresa legalmente registrada — Activa y en regla en Florida",
             description:
-              "Somos una empresa de Florida debidamente registrada, activa y en regla — con plena capacidad para comprar, facturar y operar como comprador mayorista.",
+              "Empresa de Florida debidamente registrada, activa y en regla — con plena capacidad para comprar y operar como comprador mayorista.",
           },
           {
             title:
               "Certificado de Reventa válido para compras mayoristas exentas de impuestos",
             description:
-              "Nuestro Certificado de Reventa de Florida nos permite comprar inventario exento de impuestos para reventa mayorista, en pleno cumplimiento con los requisitos estatales.",
+              "Nuestro Certificado de Reventa de Florida nos permite comprar inventario exento de impuestos para reventa mayorista, conforme a la ley estatal.",
           },
           {
             title: "Operaciones con sede en Miami y alcance de distribución nacional",
             description:
-              "Nuestro centro de operaciones en Miami nos da acceso directo a las principales redes de distribución de EE. UU. y a infraestructura logística en el sureste del país y más allá.",
+              "Nuestro centro de operaciones en Miami nos da acceso directo a las principales redes de distribución de EE. UU. en el sureste del país y más allá.",
           },
           {
             title:
               "Equipo de compras dedicado — comunicación rápida y profesional",
             description:
-              "Respondemos en menos de 24 horas y mantenemos una comunicación clara, facilitando el proceso de compra para nuestros proveedores.",
+              "Respondemos en menos de 24 horas y mantenemos una comunicación clara y sencilla para nuestros proveedores.",
           },
         ],
       },
