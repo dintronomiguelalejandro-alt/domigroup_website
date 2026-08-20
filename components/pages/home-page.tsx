@@ -91,8 +91,8 @@ export function HomePage({ locale }: { locale: Locale }) {
 
         <section id="about" className="border-b-2 border-primary bg-card text-card-foreground">
           <div className="mx-auto max-w-6xl px-8 py-24 text-left">
-            <div className="md:grid md:grid-cols-2 md:items-center md:gap-12 lg:gap-20">
-              <Reveal className="relative aspect-[4/5] overflow-hidden">
+            <div className="md:grid md:grid-cols-2 md:items-stretch md:gap-12 lg:gap-20">
+              <Reveal className="relative aspect-[4/5] overflow-hidden md:aspect-auto">
                 <Image
                   src="/about/handoff.png"
                   alt={t.about.imageAlt}
