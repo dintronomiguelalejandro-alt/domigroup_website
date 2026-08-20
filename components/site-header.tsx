@@ -208,15 +208,6 @@ export function SiteHeader({ locale = "en" }: { locale?: Locale }) {
             locale={locale}
             className="mt-2 text-foreground/70 hover:text-foreground"
           />
-          <Button
-            size="lg"
-            className="mt-6 bg-card text-primary hover:bg-card/90"
-            nativeButton={false}
-            render={<a href={isHome ? "#contact" : `${home}#contact`} />}
-            onClick={() => setOpen(false)}
-          >
-            {t.cta}
-          </Button>
         </nav>
       </div>
     </>
