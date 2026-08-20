@@ -2,7 +2,6 @@ import { Geist_Mono, Montserrat } from "next/font/google"
 import type { Metadata } from "next"
 
 import "./globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
 import { CookieConsent } from "@/components/cookie-consent"
 import { LocaleSync } from "@/components/locale-sync"
 import { CustomCursor } from "@/components/custom-cursor"
@@ -33,12 +32,10 @@ export default function RootLayout({
       className={cn("antialiased", fontMono.variable, "font-sans", montserrat.variable)}
     >
       <body>
-        <ThemeProvider>
-          <LocaleSync />
-          <CustomCursor />
-          {children}
-          <CookieConsent />
-        </ThemeProvider>
+        <LocaleSync />
+        <CustomCursor />
+        {children}
+        <CookieConsent />
       </body>
     </html>
   )

@@ -7,7 +7,6 @@ import { usePathname } from "next/navigation"
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
-import { ModeToggle } from "@/components/mode-toggle"
 import { LogoFull } from "@/components/logo-full"
 import { LanguageToggle } from "@/components/language-toggle"
 import { getDictionary, localePath, type Locale } from "@/lib/i18n/dictionary"
@@ -90,14 +89,6 @@ export function SiteHeader({ locale = "en" }: { locale?: Locale }) {
         </Link>
 
         <div className="hidden items-center gap-10 md:flex">
-          <ModeToggle
-            className={cn(
-              "transition-colors duration-300",
-              scrolled
-                ? "text-black hover:bg-primary/10 hover:text-primary"
-                : "text-white hover:bg-white/10 hover:text-white/80"
-            )}
-          />
           <nav className="flex items-center gap-10">
             {t.nav.map((link) => (
               <a
@@ -125,14 +116,6 @@ export function SiteHeader({ locale = "en" }: { locale?: Locale }) {
         </div>
 
         <div className="flex items-center gap-2 md:hidden">
-          <ModeToggle
-            className={cn(
-              "transition-colors duration-300",
-              scrolled
-                ? "text-black hover:bg-primary/10 hover:text-primary"
-                : "text-white hover:bg-white/10 hover:text-white/80"
-            )}
-          />
           <Button
             variant="ghost"
             size="icon-lg"
