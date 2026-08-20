@@ -98,7 +98,11 @@ export function ContactForm({ locale = "en" }: { locale?: Locale }) {
           <p className="text-sm text-destructive">{errorMessage}</p>
         )}
 
-        <Button type="submit" className="w-full" disabled={status === "loading"}>
+        <Button
+          type="submit"
+          className="h-auto min-h-11 w-full py-3 text-center whitespace-normal"
+          disabled={status === "loading"}
+        >
           {status === "loading" ? t.sending : t.submit}
         </Button>
       </form>
