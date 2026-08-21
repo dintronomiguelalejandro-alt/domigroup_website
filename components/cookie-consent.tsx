@@ -9,6 +9,20 @@ import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { getDictionary } from "@/lib/i18n/dictionary"
 
+const CONSENT_COOKIE = "cookie-consent"
+
+function getConsentCookie() {
+  return document.cookie
+    .split("; ")
+    .find((row) => row.startsWith(`${CONSENT_COOKIE}=`))
+    ?.split("=")[1]
+}
+
+function setConsentCookie(value: "necessary" | "all") {
+  const oneYear = 60 * 60 * 24 * 365
+  document.cookie = `${CONSENT_COOKIE}=${value}; path=/; max-age=${oneYear}; SameSite=Lax`
+}
+
 export function CookieConsent() {
   const [open, setOpen] = useState(false)
   const pathname = usePathname()
@@ -16,9 +30,15 @@ export function CookieConsent() {
   const t = getDictionary(locale).cookieConsent
 
   useEffect(() => {
+    if (getConsentCookie()) return
     const id = requestAnimationFrame(() => setOpen(true))
     return () => cancelAnimationFrame(id)
   }, [])
+
+  function choose(value: "necessary" | "all") {
+    setConsentCookie(value)
+    setOpen(false)
+  }
 
   useEffect(() => {
     if (!open) return
@@ -60,11 +80,11 @@ export function CookieConsent() {
           <Button
             size="sm"
             variant="outline"
-            onClick={() => setOpen(false)}
+            onClick={() => choose("necessary")}
           >
             {t.necessaryOnly}
           </Button>
-          <Button size="sm" onClick={() => setOpen(false)}>
+          <Button size="sm" onClick={() => choose("all")}>
             {t.acceptAll}
           </Button>
         </div>

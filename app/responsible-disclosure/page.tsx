@@ -3,6 +3,8 @@ import { Mail } from "lucide-react"
 
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
+import { LegalToc } from "@/components/legal-toc"
+import { LegalSection } from "@/components/legal-section"
 
 export const metadata: Metadata = {
   title: "Responsible Disclosure Policy | Domi Global Group",
@@ -12,43 +14,57 @@ export const metadata: Metadata = {
 
 const sections = [
   {
-    title: "1. Our Commitment",
+    id: "our-commitment",
+    number: "01",
+    title: "Our Commitment",
     body: [
       "Domi Global Group takes the security of our website and the information entrusted to us seriously. We value the work of security researchers who help us identify and fix vulnerabilities, and we're committed to working with anyone who reports an issue in good faith.",
     ],
   },
   {
-    title: "2. Scope",
+    id: "scope",
+    number: "02",
+    title: "Scope",
     body: [
       "This policy covers domiglobalgroup.com and any subdomains we operate. It does not cover third-party services we link to or rely on, such as our hosting provider's infrastructure — please report issues with those services directly to the provider responsible.",
     ],
   },
   {
-    title: "3. How to Report a Vulnerability",
+    id: "how-to-report-a-vulnerability",
+    number: "03",
+    title: "How to Report a Vulnerability",
     body: [
       "If you believe you've found a security vulnerability, email us at sales@domi-globalgroup.com with the subject line \"Security Disclosure.\" Please give us a reasonable amount of time to investigate and address the issue before disclosing it publicly.",
     ],
   },
   {
-    title: "4. What to Include in Your Report",
+    id: "what-to-include-in-your-report",
+    number: "04",
+    title: "What to Include in Your Report",
     body: [
       "To help us reproduce and fix the issue quickly, please include: a description of the vulnerability and its potential impact, step-by-step instructions to reproduce it, any relevant URLs, screenshots, or proof-of-concept code, and the browser or tool you used to find it.",
     ],
   },
   {
-    title: "5. Our Process",
+    id: "our-process",
+    number: "05",
+    title: "Our Process",
     body: [
       "We'll acknowledge your report within 5 business days, investigate and validate the issue, and keep you reasonably informed of our progress toward a fix. Response and remediation times depend on the severity and complexity of the issue.",
     ],
   },
   {
-    title: "6. Safe Harbor",
+    id: "safe-harbor",
+    number: "06",
+    title: "Safe Harbor",
     body: [
       "We will not pursue legal action against researchers who discover and report vulnerabilities in good faith, in accordance with this policy — provided you avoid privacy violations, data destruction, service disruption, and only interact with accounts and data you own or have explicit permission to test.",
     ],
   },
   {
-    title: "7. What Not to Do",
+    id: "what-not-to-do",
+    number: "07",
+    title: "What Not to Do",
     body: [
       "Please don't access, modify, or delete data that isn't yours, perform testing that could degrade the site's performance or availability (including automated scanning that generates significant traffic), or publicly disclose an issue before we've had a reasonable opportunity to address it.",
     ],
@@ -81,18 +97,11 @@ export default function ResponsibleDisclosurePage() {
 
         <section className="bg-card text-card-foreground">
           <div className="mx-auto max-w-3xl px-10 py-24">
-            <div className="space-y-10">
+            <LegalToc items={sections} />
+
+            <div className="mt-14 space-y-10">
               {sections.map((section) => (
-                <div key={section.title}>
-                  <h2 className="text-lg font-semibold">{section.title}</h2>
-                  <div className="mt-3 space-y-3">
-                    {section.body.map((paragraph, i) => (
-                      <p key={i} className="text-sm text-muted-foreground">
-                        {paragraph}
-                      </p>
-                    ))}
-                  </div>
-                </div>
+                <LegalSection key={section.id} {...section} />
               ))}
             </div>
 

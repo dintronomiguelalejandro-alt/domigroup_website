@@ -1,8 +1,10 @@
 import type { Metadata } from "next"
-import { Cookie, LineChart, Settings2, ShieldCheck } from "lucide-react"
+import { Cookie, ShieldCheck } from "lucide-react"
 
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
+import { LegalToc } from "@/components/legal-toc"
+import { LegalSection } from "@/components/legal-section"
 
 export const metadata: Metadata = {
   title: "Cookie Policy | Domi Global Group",
@@ -15,18 +17,7 @@ const categories = [
     icon: ShieldCheck,
     name: "Necessary",
     description:
-      "Required for the site to work — navigation, security, and remembering your cookie choice. Always active.",
-  },
-  {
-    icon: LineChart,
-    name: "Analytics",
-    description:
-      "Help us understand how visitors use the site, so we know what to improve.",
-  },
-  {
-    icon: Settings2,
-    name: "Preferences",
-    description: "Remember small choices, like your light/dark mode setting.",
+      "A single first-party cookie that remembers the choice you make in our cookie banner, so we don't ask again on your next visit. This is the only cookie this site currently sets.",
   },
 ]
 
@@ -51,33 +42,43 @@ const browserLinks = [
 
 const sections = [
   {
-    title: "1. What Are Cookies",
+    id: "what-are-cookies",
+    number: "01",
+    title: "What Are Cookies",
     body: [
-      "Cookies are small text files that a website stores on your device when you visit it. They let the site remember information about your visit — like your cookie preference or a setting you changed — so it doesn't have to ask again the next time. \"Similar technologies\" is a catch-all for related tools, like local storage, that work the same way.",
+      "Cookies are small text files that a website stores on your device when you visit it. They let the site remember information about your visit — like your cookie preference or a setting you changed — so it doesn't have to ask again the next time.",
     ],
   },
   {
-    title: "2. First-Party and Third-Party Cookies",
+    id: "first-party-and-third-party-cookies",
+    number: "02",
+    title: "First-Party and Third-Party Cookies",
     body: [
-      "First-party cookies are set directly by this site (domiglobalgroup.com) and are only readable by us. We use these for necessary and preference cookies, like remembering your cookie choice or your light/dark mode setting.",
-      "Third-party cookies are set by services we use to run the site, such as our analytics provider. These help us understand aggregate visitor behavior — pages viewed, time on site, general location by country — without identifying you personally. We don't use third-party advertising or retargeting cookies.",
+      "First-party cookies are set directly by this site (domiglobalgroup.com) and are only readable by us. Right now, the only cookie we set is the necessary cookie described above, which remembers your cookie banner choice.",
+      "We do not currently use any third-party cookies — no analytics, no advertising, and no tracking of any kind. If that ever changes, we'll update this policy and, where required, ask for your consent first.",
     ],
   },
   {
-    title: "3. How Long Cookies Last",
+    id: "how-long-this-cookie-lasts",
+    number: "03",
+    title: "How Long This Cookie Lasts",
     body: [
-      "Session cookies are temporary and are deleted automatically when you close your browser. Persistent cookies stay on your device for a set period — for us, typically between 30 days and 12 months, depending on the cookie's purpose — or until you delete them manually.",
+      "The necessary cookie described above is a persistent cookie that stays on your device for up to 12 months, or until you clear it manually through your browser settings.",
     ],
   },
   {
-    title: "4. How to Disable Cookies in Your Browser",
+    id: "how-to-disable-cookies-in-your-browser",
+    number: "04",
+    title: "How to Disable Cookies in Your Browser",
     body: [
       "Beyond our cookie banner, every major browser lets you block or delete cookies at the browser level. Keep in mind that blocking necessary cookies may affect how parts of the site work.",
     ],
     links: browserLinks,
   },
   {
-    title: "5. Changes to This Policy",
+    id: "changes-to-this-policy",
+    number: "05",
+    title: "Changes to This Policy",
     body: [
       "We may update this Cookie Policy from time to time as we add or remove tools from the site. We'll update the \"Last updated\" date at the top of this page when we do.",
     ],
@@ -129,34 +130,13 @@ export default function CookiesPage() {
               ))}
             </div>
 
-            <div className="mt-14 space-y-10 border-t-2 border-primary pt-14">
+            <div className="mt-14 border-t-2 border-primary pt-14">
+              <LegalToc items={sections} />
+            </div>
+
+            <div className="mt-14 space-y-10">
               {sections.map((section) => (
-                <div key={section.title}>
-                  <h2 className="text-lg font-semibold">{section.title}</h2>
-                  <div className="mt-3 space-y-3">
-                    {section.body.map((paragraph, i) => (
-                      <p key={i} className="text-sm text-muted-foreground">
-                        {paragraph}
-                      </p>
-                    ))}
-                  </div>
-                  {section.links && (
-                    <ul className="mt-4 space-y-2">
-                      {section.links.map((browser) => (
-                        <li key={browser.name}>
-                          <a
-                            href={browser.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-sm font-medium text-primary hover:underline"
-                          >
-                            {browser.name} &rarr;
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
+                <LegalSection key={section.id} {...section} />
               ))}
             </div>
 

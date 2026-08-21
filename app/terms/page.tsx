@@ -3,6 +3,8 @@ import { Mail } from "lucide-react"
 
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
+import { LegalToc } from "@/components/legal-toc"
+import { LegalSection } from "@/components/legal-section"
 
 export const metadata: Metadata = {
   title: "Terms & Conditions | Domi Global Group",
@@ -12,61 +14,81 @@ export const metadata: Metadata = {
 
 const sections = [
   {
-    title: "1. Acceptance of Terms",
+    id: "acceptance-of-terms",
+    number: "01",
+    title: "Acceptance of Terms",
     body: [
       "By accessing or using this website (domiglobalgroup.com), you agree to be bound by these Terms & Conditions. If you don't agree with any part of these terms, please don't use the site.",
     ],
   },
   {
-    title: "2. About Domi Global Group",
+    id: "about-domi-global-group",
+    number: "02",
+    title: "About Domi Global Group",
     body: [
       "Domi Global Group is a Florida-registered limited liability company based in Miami, Florida, specializing in the procurement and distribution of consumer goods across the United States, Mexico, and Canada.",
     ],
   },
   {
-    title: "3. Use of This Website",
+    id: "use-of-this-website",
+    number: "03",
+    title: "Use of This Website",
     body: [
       "This website is provided for informational purposes — to describe our business, product categories, and markets, and to let potential partners and suppliers get in touch with us. You agree to use the site only for lawful purposes and not to attempt to interfere with its normal operation, security, or availability.",
     ],
   },
   {
-    title: "4. No Direct Sales",
+    id: "no-direct-sales",
+    number: "04",
+    title: "No Direct Sales",
     body: [
       "This website does not process orders, payments, or transactions of any kind. This is a business-to-business site: we purchase consumer goods in volume directly from authorized distributors and brand owners. Any product categories mentioned are illustrative of the markets we operate in, not an offer for sale to consumers.",
     ],
   },
   {
-    title: "5. Intellectual Property",
+    id: "intellectual-property",
+    number: "05",
+    title: "Intellectual Property",
     body: [
       "The Domi Global Group name, logo, and the content of this site — text, graphics, and layout — are the property of Domi Global Group unless otherwise noted, and may not be copied, reproduced, or used without our prior written permission. Product photography used on this site is either owned by us, generated for our use, or licensed under terms that permit commercial use.",
     ],
   },
   {
-    title: "6. Third-Party Links",
+    id: "third-party-links",
+    number: "06",
+    title: "Third-Party Links",
     body: [
       "This site may link to third-party websites for reference purposes. We don't control and aren't responsible for the content, policies, or practices of any third-party site.",
     ],
   },
   {
-    title: "7. Disclaimer of Warranties",
+    id: "disclaimer-of-warranties",
+    number: "07",
+    title: "Disclaimer of Warranties",
     body: [
       "This site and its content are provided \"as is,\" without warranties of any kind, express or implied. We make reasonable efforts to keep information on this site accurate and up to date, but we don't guarantee that it's complete, current, or error-free.",
     ],
   },
   {
-    title: "8. Limitation of Liability",
+    id: "limitation-of-liability",
+    number: "08",
+    title: "Limitation of Liability",
     body: [
       "To the fullest extent permitted by law, Domi Global Group is not liable for any indirect, incidental, or consequential damages arising from your use of, or inability to use, this website.",
     ],
   },
   {
-    title: "9. Governing Law",
+    id: "governing-law",
+    number: "09",
+    title: "Governing Law",
     body: [
       "These terms are governed by the laws of the State of Florida, USA, without regard to its conflict-of-law principles. Any disputes arising from these terms will be handled in the state or federal courts located in Miami-Dade County, Florida.",
     ],
   },
   {
-    title: "10. Changes to These Terms",
+    id: "changes-to-these-terms",
+    number: "10",
+    title: "Changes to These Terms",
     body: [
       "We may update these Terms & Conditions from time to time. We'll update the \"Last updated\" date at the top of this page when we do. Continued use of the site after changes take effect means you accept the revised terms.",
     ],
@@ -98,18 +120,11 @@ export default function TermsPage() {
 
         <section className="bg-card text-card-foreground">
           <div className="mx-auto max-w-3xl px-10 py-24">
-            <div className="space-y-10">
+            <LegalToc items={sections} />
+
+            <div className="mt-14 space-y-10">
               {sections.map((section) => (
-                <div key={section.title}>
-                  <h2 className="text-lg font-semibold">{section.title}</h2>
-                  <div className="mt-3 space-y-3">
-                    {section.body.map((paragraph, i) => (
-                      <p key={i} className="text-sm text-muted-foreground">
-                        {paragraph}
-                      </p>
-                    ))}
-                  </div>
-                </div>
+                <LegalSection key={section.id} {...section} />
               ))}
             </div>
 

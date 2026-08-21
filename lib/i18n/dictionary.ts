@@ -32,7 +32,7 @@ const dictionary = {
       ],
     },
     cookieConsent: {
-      text: "We use cookies to improve your experience and understand site usage. See our",
+      text: "We use a first-party cookie to remember your choice here. See our",
       linkLabel: "Cookie Policy",
       textAfter: "for details.",
       necessaryOnly: "Necessary Only",
@@ -160,7 +160,7 @@ const dictionary = {
       ],
     },
     cookieConsent: {
-      text: "Utilizamos cookies para mejorar su experiencia y comprender el uso del sitio. Consulte nuestra",
+      text: "Utilizamos una cookie propia para recordar su elección aquí. Consulte nuestra",
       linkLabel: "Política de Cookies",
       textAfter: "para más detalles.",
       necessaryOnly: "Solo lo Necesario",
