@@ -31,8 +31,8 @@ export function CookieConsent() {
 
   useEffect(() => {
     if (getConsentCookie()) return
-    const id = requestAnimationFrame(() => setOpen(true))
-    return () => cancelAnimationFrame(id)
+    const id = window.setTimeout(() => setOpen(true), 0)
+    return () => window.clearTimeout(id)
   }, [])
 
   function choose(value: "necessary" | "all") {
