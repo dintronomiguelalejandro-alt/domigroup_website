@@ -45,7 +45,6 @@ const dictionary = {
         paragraph:
           "Domi Global Group is a Miami-based wholesale trading company. We purchase consumer goods directly from authorized distributors and move them through our distribution network across the United States, Mexico, and Canada. We are looking to build serious, long-term supplier partnerships.",
         ctaPrimary: "Start a Partnership →",
-        ctaSecondary: "Our Categories",
         stats: [
           { value: "3", label: "Markets" },
           { value: "5+", label: "Categories" },
@@ -174,7 +173,6 @@ const dictionary = {
         paragraph:
           "Domi Global Group es una empresa mayorista con sede en Miami. Compramos bienes de consumo a distribuidores autorizados y los distribuimos en Estados Unidos, México y Canadá, buscando alianzas serias y duraderas.",
         ctaPrimary: "Iniciar una Alianza →",
-        ctaSecondary: "Nuestras Categorías",
         stats: [
           { value: "3", label: "Mercados" },
           { value: "5+", label: "Categorías" },
