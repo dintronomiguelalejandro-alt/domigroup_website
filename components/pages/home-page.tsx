@@ -24,7 +24,7 @@ export function HomePage({ locale }: { locale: Locale }) {
         <section className="border-b-2 border-white">
           <div className="mx-auto max-w-6xl px-10 pt-10 pb-32 md:pt-24 md:pb-40">
             <div className="lg:grid lg:grid-cols-2 lg:items-center lg:gap-12 xl:gap-20">
-              <div className="mx-auto max-w-2xl text-center lg:mx-0 lg:max-w-none lg:text-left">
+              <div className="@container mx-auto max-w-2xl text-center lg:mx-0 lg:max-w-none lg:text-left">
                 <Reveal>
                   <h1 className="text-4xl font-semibold tracking-tight text-balance md:text-5xl">
                     {t.hero.titleLine1}{" "}
@@ -35,10 +35,10 @@ export function HomePage({ locale }: { locale: Locale }) {
                   <p className="mx-auto mt-6 max-w-xl text-lg text-primary-foreground/80 lg:mx-0">
                     {t.hero.paragraph}
                   </p>
-                  <div className="mt-8 flex flex-wrap justify-center gap-1.5 sm:gap-3 lg:justify-start">
+                  <div className="mt-8 flex flex-wrap justify-center gap-1.5 @[520px]:gap-3 lg:justify-start">
                     <Button
                       size="xs"
-                      className="bg-card text-[9px] tracking-normal text-primary hover:bg-card/90 sm:h-11 sm:px-8 sm:text-xs sm:tracking-widest"
+                      className="bg-card text-[9px] tracking-normal text-primary hover:bg-card/90 @[520px]:h-11 @[520px]:px-8 @[520px]:text-xs @[520px]:tracking-widest"
                       nativeButton={false}
                       render={<a href={`${home}#contact`} />}
                     >
@@ -47,7 +47,7 @@ export function HomePage({ locale }: { locale: Locale }) {
                     <Button
                       size="xs"
                       variant="outline"
-                      className="border-2 border-white text-[9px] tracking-normal text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground sm:h-11 sm:px-8 sm:text-xs sm:tracking-widest"
+                      className="border-2 border-white text-[9px] tracking-normal text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground @[520px]:h-11 @[520px]:px-8 @[520px]:text-xs @[520px]:tracking-widest"
                       nativeButton={false}
                       render={<a href={`${home}#categories`} />}
                     >
