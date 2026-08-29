@@ -70,9 +70,9 @@ const dictionary = {
               "Our Resale Certificate lets us purchase inventory tax-exempt for wholesale resale.",
           },
           {
-            title: "Miami-based operations with national distribution reach",
+            title: "Miami-based operations with cross-border distribution reach",
             description:
-              "Our Miami operations give us direct access to major US distribution networks.",
+              "Our Miami operations give us direct access to distribution networks across the U.S., Mexico, and Canada.",
           },
           {
             title:
@@ -86,7 +86,7 @@ const dictionary = {
         eyebrow: "Product Categories",
         title: "What we trade",
         paragraph:
-          "We actively purchase from authorized distributors across the most in-demand consumer categories in the US market.",
+          "We actively purchase from authorized distributors across the most in-demand consumer categories, distributed across our markets in the U.S., Mexico, and Canada.",
       },
       markets: {
         eyebrow: "Our Markets",
@@ -172,7 +172,7 @@ const dictionary = {
         titleLine2: "Entregamos.",
         paragraph:
           "Domi Global Group es una empresa mayorista con sede en Miami. Compramos bienes de consumo a distribuidores autorizados y los distribuimos en Estados Unidos, México y Canadá, buscando alianzas serias y duraderas.",
-        ctaPrimary: "Iniciar Ahora →",
+        ctaPrimary: "Iniciar una Alianza →",
         ctaSecondary: "Nuestras Categorías",
         stats: [
           { value: "3", label: "Mercados" },
@@ -198,9 +198,9 @@ const dictionary = {
               "Nuestro Certificado de Reventa nos permite comprar inventario exento de impuestos para reventa mayorista.",
           },
           {
-            title: "Operaciones con sede en Miami y alcance de distribución nacional",
+            title: "Operaciones con sede en Miami y alcance de distribución transfronteriza",
             description:
-              "Nuestras operaciones en Miami nos dan acceso directo a las principales redes de distribución de EE. UU.",
+              "Nuestras operaciones en Miami nos dan acceso directo a redes de distribución en EE. UU., México y Canadá.",
           },
           {
             title:
@@ -214,7 +214,7 @@ const dictionary = {
         eyebrow: "Categorías de Productos",
         title: "Lo que comercializamos",
         paragraph:
-          "Compramos activamente a distribuidores autorizados en las categorías de consumo más demandadas del mercado estadounidense.",
+          "Compramos activamente a distribuidores autorizados en las categorías de consumo más demandadas, distribuidas en nuestros mercados de EE. UU., México y Canadá.",
       },
       markets: {
         eyebrow: "Nuestros Mercados",
