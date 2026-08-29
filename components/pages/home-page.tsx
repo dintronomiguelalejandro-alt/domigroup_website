@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { Mail, MapPin, Clock } from "lucide-react"
+import { Mail, MapPin, Clock, Phone } from "lucide-react"
 
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
@@ -222,6 +222,20 @@ export function HomePage({ locale }: { locale: Locale }) {
                     </p>
                     <p className="mt-1 text-sm font-semibold">
                       {t.contact.email.value}
+                    </p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <Phone
+                    className="mt-0.5 size-5 shrink-0 text-primary"
+                    strokeWidth={1.75}
+                  />
+                  <div>
+                    <p className="text-[11px] font-medium tracking-widest text-muted-foreground uppercase">
+                      {t.contact.phone.label}
+                    </p>
+                    <p className="mt-1 text-sm font-semibold">
+                      {t.contact.phone.value}
                     </p>
                   </div>
                 </div>

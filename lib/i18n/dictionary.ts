@@ -108,6 +108,7 @@ const dictionary = {
         paragraph:
           "We are actively looking for authorized distributors and brand owners to establish long-term supply agreements. If you represent a brand or distribute consumer goods and are looking for a serious, consistent wholesale buyer — we want to hear from you. Fill out the form and our purchasing team will get back to you within 24 hours.",
         email: { label: "Email", value: "sales@domi-globalgroup.com" },
+        phone: { label: "Phone", value: "+1 (917) 730-3689" },
         address: { label: "Address", value: "Miami, FL" },
         hours: { label: "Business Hours", value: "Mon–Fri · 9am–6pm EST" },
       },
@@ -236,6 +237,7 @@ const dictionary = {
         paragraph:
           "Estamos buscando activamente distribuidores autorizados y propietarios de marcas para establecer acuerdos de suministro a largo plazo. Si representa una marca o distribuye bienes de consumo y busca un comprador mayorista serio y constante, queremos saber de usted. Complete el formulario y nuestro equipo de compras se pondrá en contacto con usted en un plazo de 24 horas.",
         email: { label: "Correo Electrónico", value: "sales@domi-globalgroup.com" },
+        phone: { label: "Teléfono", value: "+1 (917) 730-3689" },
         address: { label: "Dirección", value: "Miami, FL" },
         hours: { label: "Horario de Atención", value: "Lun–Vie · 9am–6pm EST" },
       },
