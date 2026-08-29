@@ -35,10 +35,10 @@ export function HomePage({ locale }: { locale: Locale }) {
                   <p className="mx-auto mt-6 max-w-xl text-lg text-primary-foreground/80 lg:mx-0">
                     {t.hero.paragraph}
                   </p>
-                  <div className="mt-8 flex flex-wrap justify-center gap-1.5 @[520px]:gap-3 lg:justify-start">
+                  <div className="mt-8 flex flex-wrap justify-center gap-1 @[400px]:gap-2 @[520px]:gap-3 lg:justify-start">
                     <Button
                       size="xs"
-                      className="bg-card text-[9px] tracking-normal text-primary hover:bg-card/90 @[520px]:h-11 @[520px]:px-8 @[520px]:text-xs @[520px]:tracking-widest"
+                      className="bg-card px-1.5 text-[10px] tracking-normal text-primary hover:bg-card/90 @[400px]:h-9 @[400px]:px-5 @[400px]:text-[11px] @[400px]:tracking-wide @[520px]:h-11 @[520px]:px-8 @[520px]:text-xs @[520px]:tracking-widest"
                       nativeButton={false}
                       render={<a href={`${home}#contact`} />}
                     >
@@ -47,7 +47,7 @@ export function HomePage({ locale }: { locale: Locale }) {
                     <Button
                       size="xs"
                       variant="outline"
-                      className="border-2 border-white text-[9px] tracking-normal text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground @[520px]:h-11 @[520px]:px-8 @[520px]:text-xs @[520px]:tracking-widest"
+                      className="border-2 border-white px-1.5 text-[10px] tracking-normal text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground @[400px]:h-9 @[400px]:px-5 @[400px]:text-[11px] @[400px]:tracking-wide @[520px]:h-11 @[520px]:px-8 @[520px]:text-xs @[520px]:tracking-widest"
                       nativeButton={false}
                       render={<a href={`${home}#categories`} />}
                     >
