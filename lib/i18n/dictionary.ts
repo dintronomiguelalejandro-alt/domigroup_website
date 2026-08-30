@@ -54,7 +54,7 @@ const dictionary = {
         imageAlt: "Two colleagues reviewing business details together on a laptop",
       },
       about: {
-        imageAlt: "A courier handing a package to a customer at an office",
+        imageAlt: "Illustration of two people shaking hands over a signed agreement",
         eyebrow: "Who We Are",
         checkmarks: [
           {
@@ -91,6 +91,7 @@ const dictionary = {
         eyebrow: "Our Markets",
         title: "Where We Operate",
         paragraph: "Three major North American markets, millions of end consumers.",
+        imageAlt: "Illustration of a world map with connected trade routes",
         items: [
           { flag: "🇺🇸", name: "United States" },
           { flag: "🇲🇽", name: "Mexico" },
@@ -182,7 +183,7 @@ const dictionary = {
         imageAlt: "Dos colegas revisando detalles de negocio juntos en una laptop",
       },
       about: {
-        imageAlt: "Un mensajero entregando un paquete a un cliente en una oficina",
+        imageAlt: "Ilustración de dos personas dándose la mano sobre un acuerdo firmado",
         eyebrow: "Quiénes Somos",
         checkmarks: [
           {
@@ -219,6 +220,7 @@ const dictionary = {
         eyebrow: "Nuestros Mercados",
         title: "Dónde Operamos",
         paragraph: "Tres grandes mercados norteamericanos, millones de consumidores finales.",
+        imageAlt: "Ilustración de un mapa mundial con rutas comerciales conectadas",
         items: [
           { flag: "🇺🇸", name: "Estados Unidos" },
           { flag: "🇲🇽", name: "México" },

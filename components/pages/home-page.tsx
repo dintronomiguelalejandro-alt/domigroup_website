@@ -83,13 +83,13 @@ export function HomePage({ locale }: { locale: Locale }) {
         <section id="about" className="border-b-2 border-primary bg-card text-card-foreground">
           <div className="mx-auto max-w-6xl px-10 py-24 text-center lg:text-left">
             <div className="lg:grid lg:grid-cols-2 lg:items-stretch lg:gap-12 xl:gap-20">
-              <Reveal className="relative hidden aspect-[4/5] overflow-hidden lg:block lg:aspect-auto">
+              <Reveal className="hidden items-center justify-center lg:flex">
                 <Image
-                  src="/about/handoff.png"
+                  src="/illustrations/handshake-deal.svg"
                   alt={t.about.imageAlt}
-                  fill
-                  sizes="(min-width: 1024px) 50vw, 100vw"
-                  className="object-cover"
+                  width={457}
+                  height={440}
+                  className="w-full max-w-md"
                 />
               </Reveal>
 
@@ -151,31 +151,48 @@ export function HomePage({ locale }: { locale: Locale }) {
 
         <section id="markets" className="border-b-2 border-primary bg-card text-card-foreground">
           <div className="mx-auto max-w-6xl px-10 py-24 text-center md:text-left">
-            <Reveal>
-              <p className="text-xs font-medium tracking-widest text-primary uppercase">
-                {t.markets.eyebrow}
-              </p>
-              <h2 className="mt-4 text-3xl font-semibold tracking-tight text-balance">
-                {t.markets.title}
-              </h2>
-              <p className="mx-auto mt-5 max-w-xl text-muted-foreground md:mx-0">
-                {t.markets.paragraph}
-              </p>
-            </Reveal>
-
-            <div className="mt-10 grid grid-cols-1 gap-4 text-left sm:grid-cols-3">
-              {t.markets.items.map((market, i) => (
-                <Reveal key={market.name} delay={i * 80}>
-                  <Card className="gap-2 rounded-2xl border-2 border-primary p-6 shadow-none">
-                    <div className="flex items-center gap-3">
-                      <span className="text-2xl">{market.flag}</span>
-                      <span className="text-sm font-semibold">
-                        {market.name}
-                      </span>
-                    </div>
-                  </Card>
+            <div className="lg:grid lg:grid-cols-2 lg:items-center lg:gap-12 xl:gap-20">
+              <div>
+                <Reveal>
+                  <p className="text-xs font-medium tracking-widest text-primary uppercase">
+                    {t.markets.eyebrow}
+                  </p>
+                  <h2 className="mt-4 text-3xl font-semibold tracking-tight text-balance">
+                    {t.markets.title}
+                  </h2>
+                  <p className="mx-auto mt-5 max-w-xl text-muted-foreground md:mx-0">
+                    {t.markets.paragraph}
+                  </p>
                 </Reveal>
-              ))}
+
+                <div className="mt-10 grid grid-cols-1 gap-4 text-left sm:grid-cols-3">
+                  {t.markets.items.map((market, i) => (
+                    <Reveal key={market.name} delay={i * 80}>
+                      <Card className="gap-2 rounded-2xl border-2 border-primary p-6 shadow-none">
+                        <div className="flex items-center gap-3">
+                          <span className="text-2xl">{market.flag}</span>
+                          <span className="text-sm font-semibold">
+                            {market.name}
+                          </span>
+                        </div>
+                      </Card>
+                    </Reveal>
+                  ))}
+                </div>
+              </div>
+
+              <Reveal
+                delay={100}
+                className="mt-16 hidden items-center justify-center lg:mt-0 lg:flex"
+              >
+                <Image
+                  src="/illustrations/travel-everywhere.svg"
+                  alt={t.markets.imageAlt}
+                  width={500}
+                  height={403}
+                  className="w-full max-w-md"
+                />
+              </Reveal>
             </div>
           </div>
         </section>
