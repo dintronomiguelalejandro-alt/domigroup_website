@@ -151,48 +151,31 @@ export function HomePage({ locale }: { locale: Locale }) {
 
         <section id="markets" className="border-b-2 border-primary bg-card text-card-foreground">
           <div className="mx-auto max-w-6xl px-10 py-24 text-center md:text-left">
-            <div className="lg:grid lg:grid-cols-2 lg:items-center lg:gap-12 xl:gap-20">
-              <div>
-                <Reveal>
-                  <p className="text-xs font-medium tracking-widest text-primary uppercase">
-                    {t.markets.eyebrow}
-                  </p>
-                  <h2 className="mt-4 text-3xl font-semibold tracking-tight text-balance">
-                    {t.markets.title}
-                  </h2>
-                  <p className="mx-auto mt-5 max-w-xl text-muted-foreground md:mx-0">
-                    {t.markets.paragraph}
-                  </p>
+            <Reveal>
+              <p className="text-xs font-medium tracking-widest text-primary uppercase">
+                {t.markets.eyebrow}
+              </p>
+              <h2 className="mt-4 text-3xl font-semibold tracking-tight text-balance">
+                {t.markets.title}
+              </h2>
+              <p className="mx-auto mt-5 max-w-xl text-muted-foreground md:mx-0">
+                {t.markets.paragraph}
+              </p>
+            </Reveal>
+
+            <div className="mt-10 grid grid-cols-1 gap-4 text-left sm:grid-cols-3">
+              {t.markets.items.map((market, i) => (
+                <Reveal key={market.name} delay={i * 80}>
+                  <Card className="gap-2 rounded-2xl border-2 border-primary p-6 shadow-none">
+                    <div className="flex items-center gap-3">
+                      <span className="text-2xl">{market.flag}</span>
+                      <span className="text-sm font-semibold">
+                        {market.name}
+                      </span>
+                    </div>
+                  </Card>
                 </Reveal>
-
-                <div className="mt-10 grid grid-cols-1 gap-4 text-left sm:grid-cols-3">
-                  {t.markets.items.map((market, i) => (
-                    <Reveal key={market.name} delay={i * 80}>
-                      <Card className="gap-2 rounded-2xl border-2 border-primary p-6 shadow-none">
-                        <div className="flex items-center gap-3">
-                          <span className="text-2xl">{market.flag}</span>
-                          <span className="text-sm font-semibold">
-                            {market.name}
-                          </span>
-                        </div>
-                      </Card>
-                    </Reveal>
-                  ))}
-                </div>
-              </div>
-
-              <Reveal
-                delay={100}
-                className="mt-16 hidden items-center justify-center lg:mt-0 lg:flex"
-              >
-                <Image
-                  src="/illustrations/travel-everywhere.svg"
-                  alt={t.markets.imageAlt}
-                  width={500}
-                  height={403}
-                  className="w-full max-w-md"
-                />
-              </Reveal>
+              ))}
             </div>
           </div>
         </section>

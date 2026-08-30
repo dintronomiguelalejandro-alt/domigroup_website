@@ -91,7 +91,6 @@ const dictionary = {
         eyebrow: "Our Markets",
         title: "Where We Operate",
         paragraph: "Three major North American markets, millions of end consumers.",
-        imageAlt: "Illustration of a world map with connected trade routes",
         items: [
           { flag: "🇺🇸", name: "United States" },
           { flag: "🇲🇽", name: "Mexico" },
@@ -220,7 +219,6 @@ const dictionary = {
         eyebrow: "Nuestros Mercados",
         title: "Dónde Operamos",
         paragraph: "Tres grandes mercados norteamericanos, millones de consumidores finales.",
-        imageAlt: "Ilustración de un mapa mundial con rutas comerciales conectadas",
         items: [
           { flag: "🇺🇸", name: "Estados Unidos" },
           { flag: "🇲🇽", name: "México" },
