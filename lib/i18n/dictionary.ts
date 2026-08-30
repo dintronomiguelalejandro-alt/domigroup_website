@@ -51,7 +51,7 @@ const dictionary = {
           { value: "Miami", label: "Florida HQ" },
           { value: "24h", label: "Response" },
         ],
-        imageAlt: "Two colleagues reviewing business details together on a laptop",
+        imageAlt: "Illustration of a warehouse with pallets and a worker managing inventory",
       },
       about: {
         imageAlt: "Illustration of two people shaking hands over a signed agreement",
@@ -180,7 +180,7 @@ const dictionary = {
           { value: "Miami", label: "Sede en Florida" },
           { value: "24h", label: "Respuesta" },
         ],
-        imageAlt: "Dos colegas revisando detalles de negocio juntos en una laptop",
+        imageAlt: "Ilustración de un almacén con pallets y un trabajador gestionando inventario",
       },
       about: {
         imageAlt: "Ilustración de dos personas dándose la mano sobre un acuerdo firmado",

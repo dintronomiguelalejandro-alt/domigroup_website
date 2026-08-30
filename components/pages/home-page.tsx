@@ -65,15 +65,15 @@ export function HomePage({ locale }: { locale: Locale }) {
 
               <Reveal
                 delay={100}
-                className="relative mt-16 hidden aspect-[4/5] overflow-hidden lg:mt-0 lg:block"
+                className="mt-16 hidden items-center justify-center lg:mt-0 lg:flex"
               >
                 <Image
-                  src="/hero/coworkers-laptop.jpg"
+                  src="/illustrations/logistics.svg"
                   alt={t.hero.imageAlt}
-                  fill
+                  width={800}
+                  height={406}
                   priority
-                  sizes="(min-width: 1024px) 50vw, 0px"
-                  className="object-cover"
+                  className="w-full max-w-lg"
                 />
               </Reveal>
             </div>
