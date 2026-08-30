@@ -68,7 +68,7 @@ export function HomePage({ locale }: { locale: Locale }) {
                 className="relative mt-16 hidden aspect-[4/5] overflow-hidden lg:mt-0 lg:block"
               >
                 <Image
-                  src="/hero/delivery.webp"
+                  src="/hero/coworkers-laptop.jpg"
                   alt={t.hero.imageAlt}
                   fill
                   priority
